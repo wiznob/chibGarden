@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="chibGarden"
+run/main_scene="res://menu.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -18,6 +19,12 @@ config/icon="res://icon.png"
 window/size/width=1080
 window/size/height=2400
 window/handheld/orientation="portrait"
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
+
+[global]
+
+laod=false
 
 [gui]
 

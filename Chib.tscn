@@ -96,17 +96,14 @@ offset = Vector2( 1032.6, -2814.65 )
 
 [node name="ChibLeg2" type="Sprite" parent="ChibBody"]
 position = Vector2( 129.295, 616.505 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 6 )
 
 [node name="Eyes1" type="Sprite" parent="ChibBody"]
 position = Vector2( 22.8164, -687.984 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 4 )
 
 [node name="ChibLeg" type="Sprite" parent="ChibBody"]
 position = Vector2( -159.719, 616.504 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 6 )
 
 [node name="ChibArm2" type="Sprite" parent="ChibBody"]

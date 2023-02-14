@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="chibGarden"
-run/main_scene="res://Chib.tscn"
+run/main_scene="res://test.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -19,7 +19,7 @@ config/icon="res://icon.png"
 window/size/width=1080
 window/size/height=1920
 window/handheld/orientation="portrait"
-window/stretch/mode="viewport"
+window/stretch/mode="2d"
 window/stretch/aspect="expand"
 
 [global]

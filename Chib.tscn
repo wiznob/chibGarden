@@ -13,7 +13,11 @@ script/source = "extends Node2D
 
 
 # Declare member variables here. Examples:
+<<<<<<< Updated upstream
 var names = \"God of chib\"
+=======
+var names
+>>>>>>> Stashed changes
 var hunger = 100
 var stamina = 50
 var strength = 55
@@ -29,6 +33,7 @@ var safearea
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+<<<<<<< Updated upstream
 	safearea = OS.get_window_safe_area()
 	print(safearea)
 	
@@ -38,13 +43,20 @@ func _ready():
 	get_node(\"happiness\").set_value(Happniess)
 
 	
+=======
+	get_node(\"ProgressBar\").set_value(stamina)
+>>>>>>> Stashed changes
 	var button = Button.new()
 	button.text = \"add\"
 	button.connect(\"pressed\", self, \"_button_pressed\")
 	add_child(button)
 func _button_pressed():
 	stamina = stamina +10
+<<<<<<< Updated upstream
 	get_node(\"stamina\").set_value(stamina)
+=======
+	get_node(\"ProgressBar\").set_value(stamina)
+>>>>>>> Stashed changes
 
 
 

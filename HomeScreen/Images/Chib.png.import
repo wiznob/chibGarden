@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ChibGarden.png-c3bede122f78d3756ae3784761233432.stex"
+path="res://.import/Chib.png-65106d9c936e52463650546283ef928a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/ChibGarden.png"
-dest_files=[ "res://.import/ChibGarden.png-c3bede122f78d3756ae3784761233432.stex" ]
+source_file="res://HomeScreen/Images/Chib.png"
+dest_files=[ "res://.import/Chib.png-65106d9c936e52463650546283ef928a.stex" ]
 
 [params]
 

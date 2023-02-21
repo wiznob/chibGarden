@@ -4,7 +4,7 @@
 [ext_resource path="res://HomeScreen/buttons/OptionsButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://HomeScreen/buttons/ContinueButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Images/Chib.png" type="Texture" id=4]
-[ext_resource path="res://Fade_in/FadeIn.tscn" type="PackedScene" id=5]
+[ext_resource path="res://HomeScreen/Fade_in/FadeIn.tscn" type="PackedScene" id=5]
 
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0

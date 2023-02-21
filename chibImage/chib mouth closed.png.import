@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/eyes 1.png-7cb7c58240fb54db4fe36b53ac0be5a3.stex"
+path="res://.import/chib mouth closed.png-5ee1118de047855f43d74004fff25841.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/eyes 1.png"
-dest_files=[ "res://.import/eyes 1.png-7cb7c58240fb54db4fe36b53ac0be5a3.stex" ]
+source_file="res://chibImage/chib mouth closed.png"
+dest_files=[ "res://.import/chib mouth closed.png-5ee1118de047855f43d74004fff25841.stex" ]
 
 [params]
 

@@ -1,27 +1,28 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://Images/chib body.png" type="Texture" id=1]
+[ext_resource path="res://chibImage/chib body.png" type="Texture" id=1]
 [ext_resource path="res://HomeScreen/Font/StatusFont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Bar.tres" type="Theme" id=3]
-[ext_resource path="res://Images/eyes 1.png" type="Texture" id=4]
-[ext_resource path="res://Images/chib arm.png" type="Texture" id=5]
-[ext_resource path="res://Images/chib leg.png" type="Texture" id=6]
-[ext_resource path="res://Images/Chib.png" type="Texture" id=7]
+[ext_resource path="res://chibImage/eyes 1.png" type="Texture" id=4]
+[ext_resource path="res://chibImage/chib arm.png" type="Texture" id=5]
+[ext_resource path="res://chibImage/chib leg.png" type="Texture" id=6]
+[ext_resource path="res://chibImage/Chib.png" type="Texture" id=7]
 [ext_resource path="res://RichTextLabel.gd" type="Script" id=8]
-[ext_resource path="res://Images/chib mouth neutral.png" type="Texture" id=9]
-[ext_resource path="res://Images/chib mouth closed.png" type="Texture" id=10]
-[ext_resource path="res://Images/chib mouth open.png" type="Texture" id=11]
+[ext_resource path="res://chibImage/chib mouth neutral.png" type="Texture" id=9]
+[ext_resource path="res://chibImage/chib mouth closed.png" type="Texture" id=10]
+[ext_resource path="res://chibImage/chib mouth open.png" type="Texture" id=11]
 
 [sub_resource type="GDScript" id=3]
 script/source = "extends Node2D
 
 
-# varabiles for chib
+# Declare member variables here. Examples:
+var names = \"God of chib\"
 var hunger = 100
 var stamina = 50
 var strength = 55
 var Happniess = 30
-var age = 7
+var age
 var eyes
 var Larm
 var Lleg
@@ -129,7 +130,6 @@ texture = ExtResource( 6 )
 position = Vector2( -7.60571, -679.05 )
 scale = Vector2( 0.922532, 0.876941 )
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
 [node name="ChibArm2" type="Sprite" parent="ChibBody"]

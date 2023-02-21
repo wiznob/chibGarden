@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/chib leg.png-0b0c460508d788ff7325dea0a385d533.stex"
+path="res://.import/chib mouth neutral.png-5bdde41f839349cae50642c7a8b188f3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/chib leg.png"
-dest_files=[ "res://.import/chib leg.png-0b0c460508d788ff7325dea0a385d533.stex" ]
+source_file="res://chibImage/chib mouth neutral.png"
+dest_files=[ "res://.import/chib mouth neutral.png-5bdde41f839349cae50642c7a8b188f3.stex" ]
 
 [params]
 

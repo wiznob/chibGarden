@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/chib mouth closed.png-d0a15054e86162a1e1ebf70f6191a224.stex"
+path="res://.import/ChibGarden.png-bfa6b82a47d454af6a319808e1b12329.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/chib mouth closed.png"
-dest_files=[ "res://.import/chib mouth closed.png-d0a15054e86162a1e1ebf70f6191a224.stex" ]
+source_file="res://chibImage/ChibGarden.png"
+dest_files=[ "res://.import/ChibGarden.png-bfa6b82a47d454af6a319808e1b12329.stex" ]
 
 [params]
 

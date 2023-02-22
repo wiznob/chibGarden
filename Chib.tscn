@@ -249,7 +249,7 @@ margin_bottom = 19.0
 rect_pivot_offset = Vector2( 28, 10 )
 text = "Hunger"
 
-[node name="Button" type="Button" parent="."]
+[node name="pauseButton" type="Button" parent="."]
 margin_left = -74.0
 margin_top = 413.0
 margin_right = 190.0
@@ -257,4 +257,4 @@ margin_bottom = 579.0
 text = "press"
 script = ExtResource( 2 )
 
-[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="pauseButton" to="pauseButton" method="_on_pauseButton_pressed"]

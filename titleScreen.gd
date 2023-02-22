@@ -23,5 +23,6 @@ func _on_playButton_pressed():
 
 
 
-func _on_Button_pressed():
+
+func _on_pauseButton_pressed():
 	get_tree().paused = true

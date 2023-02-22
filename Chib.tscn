@@ -1,7 +1,6 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://chibImage/chib body.png" type="Texture" id=1]
-[ext_resource path="res://HomeScreen/Font/StatusFont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Bar.tres" type="Theme" id=3]
 [ext_resource path="res://chibImage/eyes 1.png" type="Texture" id=4]
 [ext_resource path="res://chibImage/chib arm.png" type="Texture" id=5]
@@ -94,7 +93,6 @@ margin_left = -132.0
 margin_top = -256.0
 margin_right = -18.0
 margin_bottom = -216.0
-custom_fonts/normal_font = ExtResource( 2 )
 script = ExtResource( 8 )
 
 [node name="ChibBody" type="Sprite" parent="."]
@@ -130,7 +128,6 @@ texture = ExtResource( 6 )
 position = Vector2( -7.60571, -679.05 )
 scale = Vector2( 0.922532, 0.876941 )
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
 [node name="ChibArm2" type="Sprite" parent="ChibBody"]
@@ -165,7 +162,6 @@ margin_top = 0.00799942
 margin_right = -0.0908508
 margin_bottom = 19.008
 rect_pivot_offset = Vector2( 28, 10 )
-custom_fonts/normal_font = ExtResource( 2 )
 text = "Happniess"
 
 [node name="strength" type="ProgressBar" parent="."]
@@ -194,7 +190,6 @@ margin_top = 0.0159998
 margin_right = -0.167999
 margin_bottom = 19.016
 rect_pivot_offset = Vector2( 28, 10 )
-custom_fonts/normal_font = ExtResource( 2 )
 text = "Strength"
 
 [node name="stamina" type="ProgressBar" parent="."]
@@ -223,7 +218,6 @@ margin_top = 0.0159998
 margin_right = 0.184998
 margin_bottom = 19.016
 rect_pivot_offset = Vector2( 28, 10 )
-custom_fonts/normal_font = ExtResource( 2 )
 text = "Stamina"
 
 [node name="hunger" type="ProgressBar" parent="."]
@@ -251,5 +245,4 @@ margin_left = -84.188
 margin_right = -0.187988
 margin_bottom = 19.0
 rect_pivot_offset = Vector2( 28, 10 )
-custom_fonts/normal_font = ExtResource( 2 )
 text = "Hunger"

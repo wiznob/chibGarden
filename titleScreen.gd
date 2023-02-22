@@ -26,3 +26,11 @@ func _on_playButton_pressed():
 
 func _on_pauseButton_pressed():
 	get_tree().paused = true
+
+
+func _on_quitButton_pressed():
+	get_tree().quit()
+
+
+#func _on_optionButton_pressed():
+	#get_tree().change_scene(whatever option is called when done)

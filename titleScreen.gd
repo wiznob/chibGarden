@@ -18,3 +18,10 @@ func _ready():
 
 func _on_playButton_pressed():
 	get_tree().change_scene("res://Chib.tscn")
+	
+	
+
+
+
+func _on_Button_pressed():
+	get_tree().paused = true

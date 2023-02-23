@@ -11,32 +11,35 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
 
-[node name="storeBTN" type="Button" parent="."]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_top = -110.0
-margin_right = 297.0
-custom_fonts/font = ExtResource( 4 )
-text = "Store"
-
-[node name="feedBTN" type="Button" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -242.0
-margin_top = -110.0
-margin_right = 153.0
+margin_left = -537.0
+margin_top = -147.0
+margin_right = 537.0
+
+[node name="storeBTN" type="Button" parent="HBoxContainer"]
+margin_right = 355.0
+margin_bottom = 147.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 4 )
+text = "Store"
+
+[node name="feedBTN" type="Button" parent="HBoxContainer"]
+margin_left = 359.0
+margin_right = 714.0
+margin_bottom = 147.0
+size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 4 )
 text = "Feed"
 
-[node name="gamesBTN" type="Button" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -384.0
-margin_top = -110.0
+[node name="gamesBTN" type="Button" parent="HBoxContainer"]
+margin_left = 718.0
+margin_right = 1074.0
+margin_bottom = 147.0
+size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 4 )
 text = "Mini-Games"
 
@@ -57,5 +60,5 @@ expand_icon = true
 pause_mode = 1
 position = Vector2( 554, 777 )
 
-[connection signal="pressed" from="feedBTN" to="." method="_on_feedBTN_pressed"]
+[connection signal="pressed" from="HBoxContainer/feedBTN" to="." method="_on_feedBTN_pressed"]
 [connection signal="pressed" from="settingsBTN" to="." method="_on_settingsBTN_pressed"]

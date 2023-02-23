@@ -32,5 +32,11 @@ func _on_quitButton_pressed():
 	get_tree().quit()
 
 
+
 #func _on_optionButton_pressed():
 	#get_tree().change_scene(whatever option is called when done)
+
+
+func _on_LineEdit_text_entered(new_text):
+	
+	print(new_text)

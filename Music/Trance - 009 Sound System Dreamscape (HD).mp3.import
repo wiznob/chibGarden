@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Trance - 009 Sound System Dreamscape (HD).mp3-af4d28de3dc852ce08921378a3f78c7e.mp3str"
+
+[deps]
+
+source_file="res://Music/Trance - 009 Sound System Dreamscape (HD).mp3"
+dest_files=[ "res://.import/Trance - 009 Sound System Dreamscape (HD).mp3-af4d28de3dc852ce08921378a3f78c7e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

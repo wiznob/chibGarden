@@ -23,3 +23,23 @@ func _on_Back_pressed():
 
 func _on_Save_pressed():
 	pass # Replace with function body.
+
+#audio handeling
+var master_bus = AudioServer.get_bus_index("Master")
+var music_bus = AudioServer.get_bus_index("Music")
+
+func _on_SFXSlider_value_changed(value):
+	AudioServer.set_bus_volume_db(master_bus, value)
+	
+	if value == -30:
+		AudioServer.set_bus_mute(master_bus, true)
+	else:
+		AudioServer.set_bus_mute(master_bus, false)
+
+func _on_MusicSlider_value_changed(value):
+	AudioServer.set_bus_volume_db(music_bus, value)
+	
+	if value == -30:
+		AudioServer.set_bus_mute(music_bus, true)
+	else:
+		AudioServer.set_bus_mute(music_bus, false)

@@ -6,6 +6,7 @@
 [ext_resource path="res://fonts/monkeyFont.tres" type="DynamicFont" id=4]
 
 [node name="Menu" type="Control"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
@@ -53,6 +54,7 @@ flat = true
 expand_icon = true
 
 [node name="Chib" parent="." instance=ExtResource( 2 )]
+pause_mode = 1
 position = Vector2( 554, 777 )
 
 [connection signal="pressed" from="settingsBTN" to="." method="_on_settingsBTN_pressed"]

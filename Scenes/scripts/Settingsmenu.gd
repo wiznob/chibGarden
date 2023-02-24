@@ -10,9 +10,11 @@ func _on_quitButton_pressed():
 #func _process(delta):
 #	pass
 
+#We want to reuse this script so we also want the back button working here.
 func _on_backButton_pressed():
-	$Settingspopup.hide()
-	get_tree().paused = false
+	pass
+	#$Settingspopup.hide()
+	#get_tree().paused = false
 
 
 

@@ -13,7 +13,11 @@ func _ready():
 func _on_settingsBTN_pressed():
 	get_tree().paused = true
 	$Settingspopup.show()
-	
+
+#Tempoary hopfully 
+func _on_backsButton_pressed():
+		$Settingspopup.hide()
+		get_tree().paused = false
 	
 	
 #	 if get_tree().paused == false:

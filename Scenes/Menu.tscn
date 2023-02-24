@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/Chib.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/scripts/Menu.gd" type="Script" id=3]
 [ext_resource path="res://fonts/monkeyFont.tres" type="DynamicFont" id=4]
-[ext_resource path="res://Settingsmenu.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/scripts/Settingsmenu.gd" type="Script" id=5]
 
 [node name="Menu" type="Control"]
 pause_mode = 2
@@ -119,5 +119,6 @@ max_value = 0.0
 
 [connection signal="pressed" from="HBoxContainer/feedBTN" to="." method="_on_feedBTN_pressed"]
 [connection signal="pressed" from="settingsBTN" to="." method="_on_settingsBTN_pressed"]
+[connection signal="pressed" from="Settingspopup/VBoxContainer/backButton" to="." method="_on_backsButton_pressed"]
 [connection signal="pressed" from="Settingspopup/VBoxContainer/backButton" to="Settingspopup/VBoxContainer/backButton" method="_on_backButton_pressed"]
 [connection signal="pressed" from="Settingspopup/VBoxContainer/quitButton" to="Settingspopup/VBoxContainer/quitButton" method="_on_quitButton_pressed"]

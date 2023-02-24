@@ -1,11 +1,5 @@
 extends Control
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -16,9 +10,10 @@ func _on_quitButton_pressed():
 #func _process(delta):
 #	pass
 
+func _on_backButton_pressed():
+	$Settingspopup.hide()
+	get_tree().paused = false
 
-func _on_Back_pressed():
-	pass # Replace with function body.
 
 
 func _on_Save_pressed():
@@ -43,3 +38,6 @@ func _on_MusicSlider_value_changed(value):
 		AudioServer.set_bus_mute(music_bus, true)
 	else:
 		AudioServer.set_bus_mute(music_bus, false)
+
+
+

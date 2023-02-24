@@ -11,11 +11,16 @@ func _ready():
 	pass
 
 func _on_settingsBTN_pressed():
+	get_tree().paused = true
+	$Settingspopup.show()
+	
+	
+	
 #	 if get_tree().paused == false:
 #			get_tree().paused = true 
 #	 else:
 #			get_tree().paused = false
-	get_tree().change_scene("res://Scenes/SettingsGUI.tscn")
+	#get_tree().change_scene("res://Scenes/SettingsGUI.tscn")
 
 func _on_feedBTN_pressed():
 	get_parent().add_child(newFood)

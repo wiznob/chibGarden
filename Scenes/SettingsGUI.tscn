@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Scenes/scripts/Settingsmenu.gd" type="Script" id=1]
 
-
 [node name="SettingsGUI" type="CanvasLayer"]
 
 [node name="Settingsmenu" type="Control" parent="."]

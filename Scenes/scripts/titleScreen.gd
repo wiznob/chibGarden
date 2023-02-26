@@ -37,6 +37,9 @@ func _on_quitButton_pressed():
 	#get_tree().change_scene(whatever option is called when done)
 
 
+
+
+
 func _on_LineEdit_text_entered(new_text):
-	
-	print(new_text)
+	var chibName = new_text
+	print(chibName)

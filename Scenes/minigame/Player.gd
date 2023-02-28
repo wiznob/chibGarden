@@ -18,6 +18,6 @@ func _physics_process(_delta):
 
 
 func _on_CanvasLayer_use_move_vector(move_vector):
-	move_and_slide(move_vector * 128)
+	move_and_slide(move_vector * 500)
 	
 	

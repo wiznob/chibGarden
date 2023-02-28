@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cog.png-b8b38d529ca19385479e63210b607fd5.stex"
+path="res://.import/1413908.png-ac2adb372d30acb64e85a289ad0c5b14.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://chibImage/cog.png"
-dest_files=[ "res://.import/cog.png-b8b38d529ca19385479e63210b607fd5.stex" ]
+source_file="res://Images/1413908.png"
+dest_files=[ "res://.import/1413908.png-ac2adb372d30acb64e85a289ad0c5b14.stex" ]
 
 [params]
 

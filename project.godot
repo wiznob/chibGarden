@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "MyHitBox",
+"language": "GDScript",
+"path": "res://MyHitBox.gd"
+} ]
+_global_script_class_icons={
+"MyHitBox": ""
+}
+
 [application]
 
 config/name="chibGarden"

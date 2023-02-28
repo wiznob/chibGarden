@@ -12,7 +12,8 @@ func _on_quitButton_pressed():
 
 #We want to reuse this script so we also want the back button working here.
 func _on_backButton_pressed():
-	pass
+	$MiniGamesPopUp.hide()
+	get_tree().paused = false
 	#$Settingspopup.hide()
 	#get_tree().paused = false
 
@@ -43,3 +44,9 @@ func _on_MusicSlider_value_changed(value):
 
 
 
+
+
+func _on_Back_pressed():
+	$MiniGamesPopUp.hide()
+	get_tree().paused = false
+	#$Settingspopup.hide()

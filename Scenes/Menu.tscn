@@ -184,7 +184,57 @@ fit_content_height = true
 scroll_active = false
 script = ExtResource( 6 )
 
+[node name="MiniGamesPopUp" type="PopupPanel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.46
+anchor_right = 0.5
+anchor_bottom = 0.46
+margin_left = -405.0
+margin_top = -608.2
+margin_right = -346.0
+margin_bottom = -444.2
+rect_scale = Vector2( 14.2704, 7.4162 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MiniGamesPopUp"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -34.0
+margin_top = -90.0
+margin_right = 34.0
+margin_bottom = 90.0
+custom_constants/separation = 10
+
+[node name="ChibRacing" type="Button" parent="MiniGamesPopUp/VBoxContainer"]
+margin_right = 68.0
+margin_bottom = 20.0
+text = "RACONG"
+script = ExtResource( 5 )
+
+[node name="ChibSearch" type="Button" parent="MiniGamesPopUp/VBoxContainer"]
+margin_top = 30.0
+margin_right = 68.0
+margin_bottom = 50.0
+text = "SEARCH"
+script = ExtResource( 5 )
+
+[node name="ChibKarate" type="Button" parent="MiniGamesPopUp/VBoxContainer"]
+margin_top = 60.0
+margin_right = 68.0
+margin_bottom = 80.0
+text = "FIGHT"
+script = ExtResource( 5 )
+
+[node name="ChibWack" type="Button" parent="MiniGamesPopUp/VBoxContainer"]
+margin_top = 90.0
+margin_right = 68.0
+margin_bottom = 110.0
+text = "WACK"
+script = ExtResource( 5 )
+
 [connection signal="pressed" from="HBoxContainer/feedBTN" to="." method="_on_feedBTN_pressed"]
+[connection signal="pressed" from="HBoxContainer/gamesBTN" to="." method="_on_gamesBTN_pressed"]
 [connection signal="pressed" from="settingsBTN" to="." method="_on_settingsBTN_pressed"]
 [connection signal="pressed" from="Settingspopup/VBoxContainer/backButton" to="." method="_on_backsButton_pressed"]
 [connection signal="pressed" from="Settingspopup/VBoxContainer/backButton" to="Settingspopup/VBoxContainer/backButton" method="_on_backButton_pressed"]

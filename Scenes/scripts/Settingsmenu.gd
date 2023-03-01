@@ -50,3 +50,5 @@ func _on_Back_pressed():
 	$MiniGamesPopUp.hide()
 	get_tree().paused = false
 	#$Settingspopup.hide()
+
+

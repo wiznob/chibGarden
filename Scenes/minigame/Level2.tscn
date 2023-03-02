@@ -86,7 +86,7 @@ anims/SlideUp = SubResource( 3 )
 position = Vector2( 172, 415 )
 
 [node name="Switch" parent="." instance=ExtResource( 5 )]
-position = Vector2( 224, 463 )
+position = Vector2( 219, 1010 )
 
 [node name="Coin" parent="." instance=ExtResource( 4 )]
 position = Vector2( 353, 842 )
@@ -135,27 +135,27 @@ margin_top = 1762.0
 margin_right = 1076.0
 margin_bottom = 1914.0
 
-[node name="feedBTN" type="Button" parent="HBoxContainer"]
-margin_right = 354.0
-margin_bottom = 152.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 3 )
-text = "Feed"
-
 [node name="gamesBTN" type="Button" parent="HBoxContainer"]
-margin_left = 358.0
-margin_right = 712.0
+margin_right = 533.0
 margin_bottom = 152.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
 text = "Mini-Games"
 
 [node name="graveBTN" type="Button" parent="HBoxContainer"]
-margin_left = 716.0
+margin_left = 537.0
 margin_right = 1071.0
 margin_bottom = 152.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
 text = "Grave yard"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 445.0
+margin_top = 283.0
+margin_right = 602.0
+margin_bottom = 305.0
+custom_fonts/font = ExtResource( 3 )
+text = "Chib Search - Level 2"
 
 [connection signal="body_entered" from="Switch" to="." method="_on_Switch_body_entered"]

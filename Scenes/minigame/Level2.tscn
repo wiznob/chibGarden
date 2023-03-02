@@ -1,18 +1,161 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/minigame/walls.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/minigame/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://fonts/monkeyFont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scenes/minigame/Coin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/minigame/Switch.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/minigame/MobileJoystick.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Images/background.webp" type="Texture" id=7]
+[ext_resource path="res://Scenes/minigame/stone.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/minigame/HUD.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/minigame/Level2.gd" type="Script" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32.5, 31.5 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 927, 417 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "SlideUp"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 927, 417 ), Vector2( 927, 353 ) ]
+}
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 0.294118 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
 
 [node name="Level2" type="Node2D"]
+script = ExtResource( 10 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 541.5, 1139.5 )
+scale = Vector2( 3.18047, 3.80167 )
+texture = ExtResource( 7 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 format = 1
-tile_data = PoolIntArray( 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 393230, 0, 0, 458754, 0, 0, 458766, 0, 0, 524290, 0, 0, 524302, 0, 0, 589826, 0, 0, 589838, 0, 0, 655362, 0, 0, 655374, 0, 0, 720898, 0, 0, 720910, 0, 0, 786434, 0, 0, 786446, 0, 0, 851970, 0, 0, 851982, 0, 0, 917506, 0, 0, 917518, 0, 0, 983042, 0, 0, 983054, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0 )
+tile_data = PoolIntArray( 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 393220, 0, 0, 458754, 0, 0, 458756, 0, 0, 458758, 0, 0, 458764, 0, 0, 458766, 0, 0, 524290, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524302, 0, 0, 589826, 0, 0, 589829, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589838, 0, 0, 655362, 0, 0, 655365, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655374, 0, 0, 720898, 0, 0, 720900, 0, 0, 720901, 0, 0, 720908, 0, 0, 720910, 0, 0, 786434, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786444, 0, 0, 786446, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851974, 0, 0, 851976, 0, 0, 851978, 0, 0, 851980, 0, 0, 851982, 0, 0, 917506, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917512, 0, 0, 917514, 0, 0, 917515, 0, 0, 917516, 0, 0, 917518, 0, 0, 983042, 0, 0, 983048, 0, 0, 983054, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0 )
+
+[node name="Door" type="StaticBody2D" parent="."]
+position = Vector2( 927, 417 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Door"]
+modulate = Color( 0.282353, 0.2, 0.2, 1 )
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2( -0.5, -0.5 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Door"]
+anims/RESET = SubResource( 2 )
+anims/SlideUp = SubResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 227, 414 )
+position = Vector2( 172, 415 )
 
-[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+[node name="Switch" parent="." instance=ExtResource( 5 )]
+position = Vector2( 224, 463 )
 
-[connection signal="viewport_exited" from="VisibilityNotifier2D" to="Player" method="_on_Player_exited"]
+[node name="Coin" parent="." instance=ExtResource( 4 )]
+position = Vector2( 353, 842 )
+
+[node name="Coin2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 351, 473 )
+
+[node name="Coin3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 736, 849 )
+
+[node name="Coin4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 612, 859 )
+
+[node name="Coin5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 739, 600 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 6 )]
+
+[node name="HUD" type="Control" parent="."]
+margin_left = 156.0
+margin_top = 345.0
+margin_right = 258.0
+margin_bottom = 404.0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Panel" type="Panel" parent="HUD"]
+margin_top = -1.0
+margin_right = 116.0
+margin_bottom = 58.0
+custom_styles/panel = SubResource( 4 )
+
+[node name="Label" type="Label" parent="HUD"]
+margin_left = 5.0
+margin_top = 17.0
+margin_right = 70.0
+margin_bottom = 44.0
+custom_fonts/font = ExtResource( 3 )
+text = "SCORE:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 5.0
+margin_top = 1762.0
+margin_right = 1076.0
+margin_bottom = 1914.0
+
+[node name="feedBTN" type="Button" parent="HBoxContainer"]
+margin_right = 354.0
+margin_bottom = 152.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Feed"
+
+[node name="gamesBTN" type="Button" parent="HBoxContainer"]
+margin_left = 358.0
+margin_right = 712.0
+margin_bottom = 152.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Mini-Games"
+
+[node name="graveBTN" type="Button" parent="HBoxContainer"]
+margin_left = 716.0
+margin_right = 1071.0
+margin_bottom = 152.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Grave yard"
+
+[connection signal="body_entered" from="Switch" to="." method="_on_Switch_body_entered"]

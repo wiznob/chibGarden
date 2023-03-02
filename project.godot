@@ -9,12 +9,30 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "LineEdit",
+"class": "BaseInput",
+"language": "GDScript",
+"path": "res://addons/GGS/src/base_classes/base_input.gd"
+}, {
+"base": "Node",
+"class": "GGSUtils",
+"language": "GDScript",
+"path": "res://addons/GGS/src/utils.gd"
+}, {
+"base": "Reference",
+"class": "JSONBeautifier",
+"language": "GDScript",
+"path": "res://addons/GGS/_depedencies/json_beautifier/json_beautifier.gd"
+}, {
 "base": "Area2D",
 "class": "MyHitBox",
 "language": "GDScript",
 "path": "res://MyHitBox.gd"
 } ]
 _global_script_class_icons={
+"BaseInput": "",
+"GGSUtils": "",
+"JSONBeautifier": "",
 "MyHitBox": ""
 }
 
@@ -31,6 +49,7 @@ default_bus_layout=""
 [autoload]
 
 Global="*res://Scenes/minigame/Level1.gd"
+ggsManager="*res://addons/GGS/src/ggs_manager.gd"
 
 [display]
 

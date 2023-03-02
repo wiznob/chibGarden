@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
+[ext_resource path="res://foodImg/backorange.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/scripts/Settingsmenu.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/MiniGamePop.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/chibName.gd" type="Script" id=4]
@@ -8,6 +9,10 @@
 [ext_resource path="res://Images/cog.png" type="Texture" id=7]
 [ext_resource path="res://fonts/monkeyFont.tres" type="DynamicFont" id=8]
 [ext_resource path="res://Scenes/Chib.tscn" type="PackedScene" id=9]
+[ext_resource path="res://foodImg/backlemon.png" type="Texture" id=10]
+[ext_resource path="res://foodImg/backbanana.png" type="Texture" id=11]
+[ext_resource path="res://foodImg/backmango.png" type="Texture" id=12]
+[ext_resource path="res://foodImg/backapple.png" type="Texture" id=13]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.788235, 0.698039, 0.698039, 1 )
@@ -230,9 +235,45 @@ margin_bottom = 110.0
 text = "WACK"
 
 [node name="TempFoodHolder" type="HBoxContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 11.0
+margin_top = 1559.0
+margin_right = 5487.0
+margin_bottom = 2645.0
+
+[node name="applebtn" type="Button" parent="TempFoodHolder"]
+margin_right = 1092.0
+margin_bottom = 1086.0
+icon = ExtResource( 13 )
+
+[node name="bananabtn" type="Button" parent="TempFoodHolder"]
+margin_left = 1096.0
+margin_right = 2188.0
+margin_bottom = 1086.0
+icon = ExtResource( 11 )
+
+[node name="lemonbtn" type="Button" parent="TempFoodHolder"]
+margin_left = 2192.0
+margin_right = 3284.0
+margin_bottom = 1086.0
+icon = ExtResource( 10 )
+
+[node name="mangobtn" type="Button" parent="TempFoodHolder"]
+margin_left = 3288.0
+margin_right = 4380.0
+margin_bottom = 1086.0
+icon = ExtResource( 12 )
+
+[node name="orangebtn" type="Button" parent="TempFoodHolder"]
+margin_left = 4384.0
+margin_right = 5476.0
+margin_bottom = 1086.0
+icon = ExtResource( 1 )
 
 [connection signal="pressed" from="Settingspopup/VBoxContainer/backButton" to="Settingspopup/VBoxContainer/backButton" method="_on_backButton_pressed"]
 [connection signal="pressed" from="Settingspopup/VBoxContainer/quitButton" to="Settingspopup/VBoxContainer/quitButton" method="_on_quitButton_pressed"]
 [connection signal="pressed" from="MiniGamesPopUp/VBoxContainer/ChibSearch" to="MiniGamesPopUp/VBoxContainer/ChibSearch" method="_on_ChibSearch_pressed"]
+[connection signal="pressed" from="TempFoodHolder/applebtn" to="Chib" method="_on_applebtn_pressed"]
+[connection signal="pressed" from="TempFoodHolder/bananabtn" to="Chib" method="_on_bananabtn_pressed"]
+[connection signal="pressed" from="TempFoodHolder/lemonbtn" to="Chib" method="_on_lemonbtn_pressed"]
+[connection signal="pressed" from="TempFoodHolder/mangobtn" to="Chib" method="_on_mangobtn_pressed"]
+[connection signal="pressed" from="TempFoodHolder/orangebtn" to="Chib" method="_on_orangebtn_pressed"]

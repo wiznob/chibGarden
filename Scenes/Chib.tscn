@@ -53,6 +53,26 @@ func _button_pressed():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_applebtn_pressed():
+	pass # Replace with function body.
+
+
+func _on_bananabtn_pressed():
+	pass # Replace with function body.
+
+
+func _on_lemonbtn_pressed():
+	pass # Replace with function body.
+
+
+func _on_mangobtn_pressed():
+	pass # Replace with function body.
+
+
+func _on_orangebtn_pressed():
+	pass # Replace with function body.
 "
 
 [sub_resource type="SpriteFrames" id=4]
@@ -129,7 +149,6 @@ texture = ExtResource( 6 )
 position = Vector2( -7.60571, -679.05 )
 scale = Vector2( 0.922532, 0.876941 )
 frames = SubResource( 4 )
-frame = 2
 playing = true
 
 [node name="ChibArm2" type="Sprite" parent="ChibBody"]

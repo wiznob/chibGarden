@@ -27,5 +27,4 @@ func _on_backButton_pressed():
 	
 
 
-func _on_quitButton_pressed():
-	get_tree().quit()
+

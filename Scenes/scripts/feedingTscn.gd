@@ -1,6 +1,14 @@
 extends Control
 var food = load("res://Scenes/Food.tscn")
+var apple = load("res://Scenes/apple.tscn")
+var lemon = load("res://Scenes/lemon.tscn")
+var mango = load("res://Scenes/mango.tscn")
+var orange = load("res://Scenes/orange.tscn")
 var newFood = food.instance()
+var newApple = apple.instance()
+var newLemon = lemon.instance()
+var newMango = mango.instance()
+var newOrange = orange.instance()
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -36,19 +44,19 @@ func _on_gamesBTN_pressed():
 
 
 func _on_applebtn_pressed():
-	pass # Replace with function body.
+	get_parent().add_child(newApple)
 
 
 func _on_lemonbtn_pressed():
-	pass # Replace with function body.
+	get_parent().add_child(newLemon)
 
 
 func _on_mangobtn_pressed():
-	pass # Replace with function body.
+	get_parent().add_child(newMango)
 
 
 func _on_orangebtn_pressed():
-	pass # Replace with function body.
+	get_parent().add_child(newOrange)
 
 
 func _on_bananabtn_pressed():

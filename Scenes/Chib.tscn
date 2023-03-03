@@ -53,6 +53,26 @@ func _button_pressed():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_applebtn_pressed():
+	pass # Replace with function body.
+
+
+func _on_bananabtn_pressed():
+	pass # Replace with function body.
+
+
+func _on_lemonbtn_pressed():
+	pass # Replace with function body.
+
+
+func _on_mangobtn_pressed():
+	pass # Replace with function body.
+
+
+func _on_orangebtn_pressed():
+	pass # Replace with function body.
 "
 
 [sub_resource type="SpriteFrames" id=4]
@@ -86,7 +106,7 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [node name="Chib" type="Node2D"]
-position = Vector2( 521, 272 )
+position = Vector2( 505, 280 )
 script = SubResource( 3 )
 
 [node name="name" type="RichTextLabel" parent="."]
@@ -97,8 +117,8 @@ margin_bottom = -216.0
 script = ExtResource( 8 )
 
 [node name="ChibBody" type="Sprite" parent="."]
-position = Vector2( -76, 9 )
-scale = Vector2( 0.131482, 0.111921 )
+position = Vector2( 7, 710 )
+scale = Vector2( 0.36576, 0.310372 )
 texture = ExtResource( 1 )
 
 [node name="Chib" type="Sprite" parent="ChibBody"]
@@ -142,10 +162,10 @@ anchor_left = 9.562
 anchor_top = -1.844
 anchor_right = 9.562
 anchor_bottom = -1.844
-margin_left = 50.0
-margin_top = -91.0
-margin_right = 501.0
-margin_bottom = -43.0
+margin_left = -201.0
+margin_top = -83.0
+margin_right = 250.0
+margin_bottom = -35.0
 rect_pivot_offset = Vector2( 226, 24 )
 theme = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -170,10 +190,10 @@ anchor_left = 9.562
 anchor_top = -2.734
 anchor_right = 9.562
 anchor_bottom = -2.734
-margin_left = 50.0
-margin_top = -148.0
-margin_right = 501.0
-margin_bottom = -100.0
+margin_left = -201.0
+margin_top = -140.0
+margin_right = 250.0
+margin_bottom = -92.0
 rect_pivot_offset = Vector2( 248, 24 )
 theme = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -198,10 +218,10 @@ anchor_left = 9.578
 anchor_top = -3.641
 anchor_right = 9.578
 anchor_bottom = -3.641
-margin_left = 51.0
-margin_top = -206.0
-margin_right = 502.0
-margin_bottom = -158.0
+margin_left = -200.0
+margin_top = -198.0
+margin_right = 251.0
+margin_bottom = -150.0
 rect_pivot_offset = Vector2( 248, 24 )
 theme = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -226,10 +246,10 @@ anchor_left = 9.578
 anchor_top = -4.609
 anchor_right = 9.578
 anchor_bottom = -4.609
-margin_left = 51.0
-margin_top = -268.0
-margin_right = 502.0
-margin_bottom = -220.0
+margin_left = -200.0
+margin_top = -260.0
+margin_right = 251.0
+margin_bottom = -212.0
 rect_pivot_offset = Vector2( 248, 24 )
 theme = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )

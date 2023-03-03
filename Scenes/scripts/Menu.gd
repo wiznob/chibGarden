@@ -19,16 +19,16 @@ func _on_backsButton_pressed():
 		$Settingspopup.hide()
 		get_tree().paused = false
 	
-	
 #	 if get_tree().paused == false:
 #			get_tree().paused = true 
 #	 else:
 #			get_tree().paused = false
 	#get_tree().change_scene("res://Scenes/SettingsGUI.tscn")
 
+#func _on_feedBTN_pressed():
+#	get_parent().add_child(newFood)
 func _on_feedBTN_pressed():
-	get_parent().add_child(newFood)
-
+	get_tree().change_scene("res://Scenes/feeding.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

@@ -105,7 +105,9 @@ position = Vector2( 739, 600 )
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 6 )]
 
-[node name="HUD" type="Control" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="Control" parent="UI"]
 margin_left = 156.0
 margin_top = 345.0
 margin_right = 258.0
@@ -115,13 +117,13 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Panel" type="Panel" parent="HUD"]
+[node name="Panel" type="Panel" parent="UI/HUD"]
 margin_top = -1.0
 margin_right = 116.0
 margin_bottom = 58.0
 custom_styles/panel = SubResource( 4 )
 
-[node name="Label" type="Label" parent="HUD"]
+[node name="Label" type="Label" parent="UI/HUD"]
 margin_left = 5.0
 margin_top = 17.0
 margin_right = 70.0
@@ -129,20 +131,23 @@ margin_bottom = 44.0
 custom_fonts/font = ExtResource( 3 )
 text = "SCORE:"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_left = 5.0
-margin_top = 1762.0
-margin_right = 1076.0
-margin_bottom = 1914.0
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -535.5
+margin_top = -152.0
+margin_right = 535.5
 
-[node name="gamesBTN" type="Button" parent="HBoxContainer"]
+[node name="gamesBTN" type="Button" parent="UI/HBoxContainer"]
 margin_right = 533.0
 margin_bottom = 152.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
 text = "Mini-Games"
 
-[node name="graveBTN" type="Button" parent="HBoxContainer"]
+[node name="graveBTN" type="Button" parent="UI/HBoxContainer"]
 margin_left = 537.0
 margin_right = 1071.0
 margin_bottom = 152.0
@@ -150,10 +155,10 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
 text = "Grave yard"
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="UI"]
 margin_left = 445.0
 margin_top = 283.0
-margin_right = 602.0
+margin_right = 603.0
 margin_bottom = 305.0
 custom_fonts/font = ExtResource( 3 )
 text = "Chib Search - Level 2"

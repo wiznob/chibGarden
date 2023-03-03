@@ -61,8 +61,8 @@ position = Vector2( -2, 0 )
 script = ExtResource( 5 )
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 540, 1141 )
-scale = Vector2( 3.18047, 3.80167 )
+position = Vector2( 538, 1338.45 )
+scale = Vector2( 3.249, 4.468 )
 texture = ExtResource( 11 )
 
 [node name="Settingspopup" type="PopupPanel" parent="."]
@@ -147,30 +147,6 @@ tile_set = ExtResource( 1 )
 format = 1
 tile_data = PoolIntArray( 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 393218, 0, 0, 458754, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458764, 0, 0, 458766, 0, 0, 524290, 0, 0, 524298, 0, 0, 524300, 0, 0, 524302, 0, 0, 589826, 0, 0, 589834, 0, 0, 589836, 0, 0, 589838, 0, 0, 655362, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655370, 0, 0, 655372, 0, 0, 655374, 0, 0, 720898, 0, 0, 720900, 0, 0, 720904, 0, 0, 720906, 0, 0, 720908, 0, 0, 720910, 0, 0, 786434, 0, 0, 786436, 0, 0, 786438, 0, 0, 786440, 0, 0, 786442, 0, 0, 786444, 0, 0, 786446, 0, 0, 851970, 0, 0, 851972, 0, 0, 851974, 0, 0, 851976, 0, 0, 851978, 0, 0, 851980, 0, 0, 851982, 0, 0, 917506, 0, 0, 917508, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917514, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 983042, 0, 0, 983044, 0, 0, 983050, 0, 0, 983054, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0 )
 
-[node name="settingsBTN" type="Button" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = 977.0
-margin_top = 19.0
-margin_right = 1065.0
-margin_bottom = 108.0
-icon = ExtResource( 12 )
-flat = true
-expand_icon = true
-
-[node name="shopBTN" type="Button" parent="."]
-anchor_left = 0.09
-anchor_top = 0.051
-anchor_right = 0.09
-anchor_bottom = 0.051
-margin_left = 20.0
-margin_top = 14.0
-margin_right = 107.0
-margin_bottom = 100.0
-icon = ExtResource( 15 )
-flat = true
-expand_icon = true
-
 [node name="Door" type="StaticBody2D" parent="."]
 position = Vector2( 927, 417 )
 __meta__ = {
@@ -213,23 +189,25 @@ position = Vector2( 483, 851 )
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 7 )]
 
-[node name="HUD" type="Control" parent="."]
-margin_left = 156.0
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="Control" parent="UI"]
+margin_left = 154.0
 margin_top = 345.0
-margin_right = 258.0
+margin_right = 256.0
 margin_bottom = 404.0
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Panel" type="Panel" parent="HUD"]
+[node name="Panel" type="Panel" parent="UI/HUD"]
 margin_top = -1.0
 margin_right = 116.0
 margin_bottom = 58.0
 custom_styles/panel = SubResource( 4 )
 
-[node name="Label" type="Label" parent="HUD"]
+[node name="Label" type="Label" parent="UI/HUD"]
 margin_left = 5.0
 margin_top = 17.0
 margin_right = 70.0
@@ -237,28 +215,23 @@ margin_bottom = 44.0
 custom_fonts/font = ExtResource( 9 )
 text = "SCORE:"
 
-[node name="Label" type="Label" parent="."]
-margin_left = 445.0
-margin_top = 283.0
-margin_right = 602.0
-margin_bottom = 305.0
-custom_fonts/font = ExtResource( 9 )
-text = "Chib Search - Level 1"
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -535.5
+margin_top = -152.0
+margin_right = 535.5
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_left = 5.0
-margin_top = 1762.0
-margin_right = 1076.0
-margin_bottom = 1914.0
-
-[node name="gamesBTN" type="Button" parent="HBoxContainer"]
+[node name="gamesBTN" type="Button" parent="UI/HBoxContainer"]
 margin_right = 533.0
 margin_bottom = 152.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 9 )
 text = "Mini-Games"
 
-[node name="graveBTN" type="Button" parent="HBoxContainer"]
+[node name="graveBTN" type="Button" parent="UI/HBoxContainer"]
 margin_left = 537.0
 margin_right = 1071.0
 margin_bottom = 152.0
@@ -266,13 +239,47 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 9 )
 text = "Grave yard"
 
+[node name="Label" type="Label" parent="UI"]
+margin_left = 443.0
+margin_top = 283.0
+margin_right = 600.0
+margin_bottom = 305.0
+custom_fonts/font = ExtResource( 9 )
+text = "Chib Search - Level 1"
+
+[node name="shopBTN" type="Button" parent="UI"]
+anchor_left = 0.09
+anchor_top = 0.051
+anchor_right = 0.09
+anchor_bottom = 0.051
+margin_left = -79.2
+margin_top = -83.92
+margin_right = 7.8
+margin_bottom = 2.08
+icon = ExtResource( 15 )
+flat = true
+expand_icon = true
+
+[node name="settingsBTN" type="Button" parent="UI"]
+anchor_left = 0.903
+anchor_top = 0.056
+anchor_right = 0.903
+anchor_bottom = 0.056
+margin_left = -0.240051
+margin_top = -88.52
+margin_right = 87.7599
+margin_bottom = 0.479996
+icon = ExtResource( 12 )
+flat = true
+expand_icon = true
+
 [connection signal="pressed" from="Settingspopup/VBoxContainer/backButton" to="Settingspopup/VBoxContainer/backButton" method="_on_backButton_pressed"]
 [connection signal="pressed" from="Settingspopup/VBoxContainer/quitButton" to="Settingspopup/VBoxContainer/quitButton" method="_on_quitButton_pressed"]
-[connection signal="pressed" from="settingsBTN" to="." method="_on_settingsBTN_pressed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Switch" to="." method="_on_Switch_body_entered"]
-[connection signal="coin_collected" from="Coin" to="HUD" method="_on_Coin_collected"]
-[connection signal="coin_collected" from="Coin2" to="HUD" method="_on_Coin_collected"]
-[connection signal="coin_collected" from="Coin3" to="HUD" method="_on_Coin_collected"]
+[connection signal="coin_collected" from="Coin" to="UI/HUD" method="_on_Coin_collected"]
+[connection signal="coin_collected" from="Coin2" to="UI/HUD" method="_on_Coin_collected"]
+[connection signal="coin_collected" from="Coin3" to="UI/HUD" method="_on_Coin_collected"]
 [connection signal="use_move_vector" from="CanvasLayer" to="Player" method="_on_CanvasLayer_use_move_vector"]
+[connection signal="pressed" from="UI/settingsBTN" to="." method="_on_settingsBTN_pressed"]

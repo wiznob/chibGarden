@@ -8,7 +8,7 @@
 extents = Vector2( 39.5, 33 )
 
 [node name="Banana" type="Node2D"]
-position = Vector2( 243, 530 )
+position = Vector2( 586, 1613 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 input_pickable = true
@@ -24,6 +24,7 @@ scale = Vector2( 0.126852, 0.14537 )
 texture = ExtResource( 1 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="KinematicBody2D/CollisionShape2D/Sprite"]
+position = Vector2( 2703.94, 7449.95 )
 stream = ExtResource( 3 )
 autoplay = true
 

@@ -1,18 +1,19 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://foodImg/backorange.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/scripts/Settingsmenu.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/MiniGamePop.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/chibName.gd" type="Script" id=4]
-[ext_resource path="res://Images/background.webp" type="Texture" id=5]
-[ext_resource path="res://Images/1413908.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Chib.tscn" type="PackedScene" id=1]
+[ext_resource path="res://fonts/monkeyFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scenes/chibName.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/scripts/feedingTscn.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/scripts/Settingsmenu.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/MiniGamePop.gd" type="Script" id=6]
 [ext_resource path="res://Images/cog.png" type="Texture" id=7]
-[ext_resource path="res://fonts/monkeyFont.tres" type="DynamicFont" id=8]
-[ext_resource path="res://Scenes/Chib.tscn" type="PackedScene" id=9]
-[ext_resource path="res://foodImg/backlemon.png" type="Texture" id=10]
-[ext_resource path="res://foodImg/backbanana.png" type="Texture" id=11]
-[ext_resource path="res://foodImg/backmango.png" type="Texture" id=12]
-[ext_resource path="res://foodImg/backapple.png" type="Texture" id=13]
+[ext_resource path="res://Images/1413908.png" type="Texture" id=8]
+[ext_resource path="res://Images/background.webp" type="Texture" id=9]
+[ext_resource path="res://foodImg/smallbackbanana.png" type="Texture" id=10]
+[ext_resource path="res://foodImg/smallbacklemon.png" type="Texture" id=11]
+[ext_resource path="res://foodImg/smallbackorange.png" type="Texture" id=12]
+[ext_resource path="res://foodImg/smallbackapple.png" type="Texture" id=13]
+[ext_resource path="res://foodImg/smallbackmango.png" type="Texture" id=14]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.788235, 0.698039, 0.698039, 1 )
@@ -31,11 +32,12 @@ corner_radius_bottom_left = 5
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( -3281, -442 )
+script = ExtResource( 4 )
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 538, 1338.45 )
 scale = Vector2( 3.249, 4.46817 )
-texture = ExtResource( 5 )
+texture = ExtResource( 9 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_left = 0.5
@@ -50,7 +52,7 @@ margin_right = 537.0
 margin_right = 355.0
 margin_bottom = 147.0
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 8 )
+custom_fonts/font = ExtResource( 2 )
 text = "Feed"
 
 [node name="gamesBTN" type="Button" parent="HBoxContainer"]
@@ -58,7 +60,7 @@ margin_left = 359.0
 margin_right = 714.0
 margin_bottom = 147.0
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 8 )
+custom_fonts/font = ExtResource( 2 )
 text = "Mini-Games"
 
 [node name="graveBTN" type="Button" parent="HBoxContainer"]
@@ -66,7 +68,7 @@ margin_left = 718.0
 margin_right = 1074.0
 margin_bottom = 147.0
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 8 )
+custom_fonts/font = ExtResource( 2 )
 text = "Grave yard"
 
 [node name="settingsBTN" type="Button" parent="."]
@@ -91,11 +93,11 @@ margin_left = -87.2
 margin_top = -85.92
 margin_right = -0.200005
 margin_bottom = 0.0799942
-icon = ExtResource( 6 )
+icon = ExtResource( 8 )
 flat = true
 expand_icon = true
 
-[node name="Chib" parent="." instance=ExtResource( 9 )]
+[node name="Chib" parent="." instance=ExtResource( 1 )]
 pause_mode = 1
 position = Vector2( 554, 777 )
 
@@ -125,21 +127,21 @@ custom_constants/separation = 10
 margin_right = 51.0
 margin_bottom = 20.0
 text = "SAVE"
-script = ExtResource( 2 )
+script = ExtResource( 5 )
 
 [node name="backButton" type="Button" parent="Settingspopup/VBoxContainer"]
 margin_top = 30.0
 margin_right = 51.0
 margin_bottom = 50.0
 text = "BACK"
-script = ExtResource( 2 )
+script = ExtResource( 5 )
 
 [node name="quitButton" type="Button" parent="Settingspopup/VBoxContainer"]
 margin_top = 60.0
 margin_right = 51.0
 margin_bottom = 80.0
 text = "QUIT"
-script = ExtResource( 2 )
+script = ExtResource( 5 )
 
 [node name="SFXLbl" type="Label" parent="Settingspopup/VBoxContainer"]
 margin_top = 90.0
@@ -181,12 +183,12 @@ margin_right = 514.0
 margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/normal_font = ExtResource( 8 )
+custom_fonts/normal_font = ExtResource( 2 )
 custom_styles/normal = SubResource( 1 )
 bbcode_enabled = true
 fit_content_height = true
 scroll_active = false
-script = ExtResource( 4 )
+script = ExtResource( 3 )
 
 [node name="MiniGamesPopUp" type="PopupPanel" parent="."]
 anchor_left = 0.5
@@ -220,7 +222,7 @@ margin_top = 30.0
 margin_right = 68.0
 margin_bottom = 50.0
 text = "SEARCH"
-script = ExtResource( 3 )
+script = ExtResource( 6 )
 
 [node name="ChibKarate" type="Button" parent="MiniGamesPopUp/VBoxContainer"]
 margin_top = 60.0
@@ -237,43 +239,43 @@ text = "WACK"
 [node name="TempFoodHolder" type="HBoxContainer" parent="."]
 margin_left = 11.0
 margin_top = 1559.0
-margin_right = 5487.0
-margin_bottom = 2645.0
+margin_right = 937.0
+margin_bottom = 1751.0
 
 [node name="applebtn" type="Button" parent="TempFoodHolder"]
-margin_right = 1092.0
-margin_bottom = 1086.0
+margin_right = 182.0
+margin_bottom = 192.0
 icon = ExtResource( 13 )
 
 [node name="bananabtn" type="Button" parent="TempFoodHolder"]
-margin_left = 1096.0
-margin_right = 2188.0
-margin_bottom = 1086.0
-icon = ExtResource( 11 )
-
-[node name="lemonbtn" type="Button" parent="TempFoodHolder"]
-margin_left = 2192.0
-margin_right = 3284.0
-margin_bottom = 1086.0
+margin_left = 186.0
+margin_right = 368.0
+margin_bottom = 192.0
 icon = ExtResource( 10 )
 
+[node name="lemonbtn" type="Button" parent="TempFoodHolder"]
+margin_left = 372.0
+margin_right = 554.0
+margin_bottom = 192.0
+icon = ExtResource( 11 )
+
 [node name="mangobtn" type="Button" parent="TempFoodHolder"]
-margin_left = 3288.0
-margin_right = 4380.0
-margin_bottom = 1086.0
-icon = ExtResource( 12 )
+margin_left = 558.0
+margin_right = 740.0
+margin_bottom = 192.0
+icon = ExtResource( 14 )
 
 [node name="orangebtn" type="Button" parent="TempFoodHolder"]
-margin_left = 4384.0
-margin_right = 5476.0
-margin_bottom = 1086.0
-icon = ExtResource( 1 )
+margin_left = 744.0
+margin_right = 926.0
+margin_bottom = 192.0
+icon = ExtResource( 12 )
 
 [connection signal="pressed" from="Settingspopup/VBoxContainer/backButton" to="Settingspopup/VBoxContainer/backButton" method="_on_backButton_pressed"]
 [connection signal="pressed" from="Settingspopup/VBoxContainer/quitButton" to="Settingspopup/VBoxContainer/quitButton" method="_on_quitButton_pressed"]
 [connection signal="pressed" from="MiniGamesPopUp/VBoxContainer/ChibSearch" to="MiniGamesPopUp/VBoxContainer/ChibSearch" method="_on_ChibSearch_pressed"]
-[connection signal="pressed" from="TempFoodHolder/applebtn" to="Chib" method="_on_applebtn_pressed"]
-[connection signal="pressed" from="TempFoodHolder/bananabtn" to="Chib" method="_on_bananabtn_pressed"]
-[connection signal="pressed" from="TempFoodHolder/lemonbtn" to="Chib" method="_on_lemonbtn_pressed"]
-[connection signal="pressed" from="TempFoodHolder/mangobtn" to="Chib" method="_on_mangobtn_pressed"]
-[connection signal="pressed" from="TempFoodHolder/orangebtn" to="Chib" method="_on_orangebtn_pressed"]
+[connection signal="pressed" from="TempFoodHolder/applebtn" to="." method="_on_applebtn_pressed"]
+[connection signal="pressed" from="TempFoodHolder/bananabtn" to="." method="_on_bananabtn_pressed"]
+[connection signal="pressed" from="TempFoodHolder/lemonbtn" to="." method="_on_lemonbtn_pressed"]
+[connection signal="pressed" from="TempFoodHolder/mangobtn" to="." method="_on_mangobtn_pressed"]
+[connection signal="pressed" from="TempFoodHolder/orangebtn" to="." method="_on_orangebtn_pressed"]

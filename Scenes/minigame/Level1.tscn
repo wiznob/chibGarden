@@ -193,7 +193,7 @@ anims/SlideUp = SubResource( 3 )
 position = Vector2( 1023, 415 )
 
 [node name="Switch" parent="." instance=ExtResource( 4 )]
-position = Vector2( 848, 999 )
+position = Vector2( 845, 1010 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 232, 978 )
@@ -203,13 +203,13 @@ __meta__ = {
 }
 
 [node name="Coin" parent="." instance=ExtResource( 3 )]
-position = Vector2( 856, 895 )
+position = Vector2( 868, 848 )
 
 [node name="Coin2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 231, 560 )
 
 [node name="Coin3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 477, 847 )
+position = Vector2( 483, 851 )
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 7 )]
 

@@ -34,16 +34,16 @@ margin_right = 98.5
 margin_bottom = 64.5
 
 [node name="LineEdit" type="LineEdit" parent="HBoxContainer"]
-margin_right = 298.0
+margin_right = 193.0
 margin_bottom = 129.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
 script = ExtResource( 2 )
 
 [node name="displayText" type="Label" parent="HBoxContainer"]
-margin_left = 302.0
+margin_left = 197.0
 margin_top = 57.0
-margin_right = 302.0
+margin_right = 197.0
 margin_bottom = 71.0
 
 [connection signal="text_entered" from="HBoxContainer/LineEdit" to="HBoxContainer/LineEdit" method="_on_LineEdit_text_entered"]

@@ -94,7 +94,7 @@ expand_icon = true
 
 [node name="Chib" parent="." instance=ExtResource( 2 )]
 pause_mode = 1
-position = Vector2( 554, 777 )
+position = Vector2( 531, 513 )
 
 [node name="Settingspopup" type="PopupPanel" parent="."]
 anchor_left = 0.5

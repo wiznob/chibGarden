@@ -37,3 +37,16 @@ func _on_feedBTN_pressed():
 func _on_gamesBTN_pressed():
 	get_tree().paused = true
 	$MiniGamesPopUp.show()
+
+
+func _on_shopBTN_pressed():
+	if(get_tree().paused == true):
+		get_tree().paused = false
+		$shopPopUP.hide()
+	else:
+		get_tree().paused = true
+		$shopPopUP.show()
+
+
+func _on_item1_pressed():
+	print("green pressed") # Replace with function body.

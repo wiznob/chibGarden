@@ -3,5 +3,5 @@
 [ext_resource path="res://fonts/DkTrainedMonkeyRegular-KKV7.otf" type="DynamicFontData" id=1]
 
 [resource]
-size = 18
+size = 60
 font_data = ExtResource( 1 )

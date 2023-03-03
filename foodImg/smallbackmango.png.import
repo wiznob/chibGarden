@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/backbanana.png-d5486f57b3e3cb08bb12d1811c9259c0.stex"
+path="res://.import/smallbackmango.png-c9ed6c5e9f2fd189f2e589d159afd9b9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://foodImg/backbanana.png"
-dest_files=[ "res://.import/backbanana.png-d5486f57b3e3cb08bb12d1811c9259c0.stex" ]
+source_file="res://foodImg/smallbackmango.png"
+dest_files=[ "res://.import/smallbackmango.png-c9ed6c5e9f2fd189f2e589d159afd9b9.stex" ]
 
 [params]
 

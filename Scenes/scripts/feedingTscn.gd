@@ -1,15 +1,15 @@
 extends Control
+var food = load("res://Scenes/Food.tscn")
+var newFood = food.instance()
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var food = load("res://Scenes/Food.tscn")
-var newFood = food.instance()
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-
+	pass # Replace with function body.
 func _on_settingsBTN_pressed():
 	get_tree().paused = true
 	$Settingspopup.show()
@@ -18,22 +18,38 @@ func _on_settingsBTN_pressed():
 func _on_backsButton_pressed():
 		$Settingspopup.hide()
 		get_tree().paused = false
-	
-#	 if get_tree().paused == false:
-#			get_tree().paused = true 
-#	 else:
-#			get_tree().paused = false
-	#get_tree().change_scene("res://Scenes/SettingsGUI.tscn")
 
-#func _on_feedBTN_pressed():
-#	get_parent().add_child(newFood)
-func _on_feedBTN_pressed():
-	get_tree().change_scene("res://Scenes/feeding.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+func _on_feedBTN_pressed():
+	get_tree().change_scene("res://Scenes/feedingTscn.tscn.tscn")
+
+
+	
+
 
 
 func _on_gamesBTN_pressed():
 	get_tree().paused = true
 	$MiniGamesPopUp.show()
+
+
+func _on_applebtn_pressed():
+	pass # Replace with function body.
+
+
+func _on_lemonbtn_pressed():
+	pass # Replace with function body.
+
+
+func _on_mangobtn_pressed():
+	pass # Replace with function body.
+
+
+func _on_orangebtn_pressed():
+	pass # Replace with function body.
+
+
+func _on_bananabtn_pressed():
+	get_parent().add_child(newFood)

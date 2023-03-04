@@ -1,4 +1,5 @@
 extends Control
+var hunger = 5
 var food = load("res://Scenes/Food.tscn")
 var apple = load("res://Scenes/apple.tscn")
 var lemon = load("res://Scenes/lemon.tscn")
@@ -70,7 +71,6 @@ func _on_bananabtn_pressed():
 	
 	
 	#temporary code for food faking, it will make it so that the fake hunger bar will increase after 3 seconds
-var hunger = 5
 
 
 

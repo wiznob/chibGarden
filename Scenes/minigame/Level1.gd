@@ -12,8 +12,13 @@ func _on_Switch_body_entered(body):
 
 
 func _on_settingsBTN_pressed():
-	get_tree().paused = true
-	$Settingspopup.show()
+	if(get_tree().paused == true):
+		get_tree().paused = false
+		$UI/Settingspopup.hide()
+#Players can still unpause
+	else:
+		get_tree().paused = true
+		$UI/Settingspopup.show()
 
 
 func _on_Area2D_body_exited(body):
@@ -25,6 +30,3 @@ func _on_backButton_pressed():
 		$Settingspopup.hide()
 		get_tree().paused = false
 	
-
-
-

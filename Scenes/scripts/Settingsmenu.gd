@@ -13,8 +13,8 @@ func _on_quitButton_pressed():
 #We want to reuse this script so we also want the back button working here.
 func _on_backButton_pressed():
 	pass
-	#get_tree().paused = true
-	#$Settingspopup.show()
+	get_tree().paused = false
+	get_tree().change_scene("res://Scenes/Menu.tscn")
 
 	#$MiniGamesPopUp.hide()
 	#get_tree().paused = false

@@ -19,3 +19,19 @@ func _physics_process(delta):
 
 func _on_KinematicBody2D_mouse_entered():
 	print("Assulted")
+
+#timer attempt 
+var timer = Timer.new()
+
+func _ready():
+	timer.connect("timeout",self,"do_this")
+	timer.wait_time = 3
+	timer.one_shot = true
+	add_child(timer)
+	timer.start()
+
+func do_this():
+	self.queue_free()
+	
+	
+	

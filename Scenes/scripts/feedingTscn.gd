@@ -45,6 +45,7 @@ func _on_gamesBTN_pressed():
 
 func _on_applebtn_pressed():
 	get_parent().add_child(newApple)
+	
 
 
 func _on_lemonbtn_pressed():

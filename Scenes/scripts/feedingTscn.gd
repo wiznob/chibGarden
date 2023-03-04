@@ -17,6 +17,9 @@ var newOrange = orange.instance()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#revove bellow line after the video and demonstration
+	get_node("hunger").set_value(hunger)
+	
 	pass # Replace with function body.
 func _on_settingsBTN_pressed():
 	get_tree().paused = true
@@ -62,3 +65,24 @@ func _on_orangebtn_pressed():
 
 func _on_bananabtn_pressed():
 	get_parent().add_child(newFood)
+	
+	
+	
+	
+	#temporary code for food faking, it will make it so that the fake hunger bar will increase after 3 seconds
+var hunger = 5
+
+
+
+
+var timer = Timer.new()
+func _on_TempFoodHolder_gui_input(event):
+	timer.connect("timeout",self,"do_this")
+	timer.wait_time = 3
+	timer.one_shot = true
+	add_child(timer)
+	timer.start()
+
+func do_this():
+	hunger = hunger +10
+	get_node("hunger").set_value(hunger)

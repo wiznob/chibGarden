@@ -147,7 +147,7 @@ texture = ExtResource( 6 )
 position = Vector2( -7.60571, -679.05 )
 scale = Vector2( 0.922532, 0.876941 )
 frames = SubResource( 4 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="ChibArm2" type="Sprite" parent="ChibBody"]
@@ -229,6 +229,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "Stamina"
 
 [node name="hunger" type="ProgressBar" parent="."]
+visible = false
 anchor_left = 9.578
 anchor_top = -4.609
 anchor_right = 9.578
@@ -245,6 +246,7 @@ custom_styles/bg = SubResource( 2 )
 percent_visible = false
 
 [node name="hungerLBL" type="Label" parent="hunger"]
+visible = false
 margin_left = 188.0
 margin_top = 10.0
 margin_right = 247.0

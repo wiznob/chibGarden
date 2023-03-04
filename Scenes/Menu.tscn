@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/scripts/MiniGamePop.gd" type="Script" id=3]
 [ext_resource path="res://fonts/monkeyFont.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Scenes/scripts/Settingsmenu.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/scripts/chibName.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/nameDisplay.gd" type="Script" id=6]
 [ext_resource path="res://Images/background.webp" type="Texture" id=7]
 [ext_resource path="res://Images/1413908.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/scripts/Menu.gd" type="Script" id=9]
@@ -101,7 +101,6 @@ pause_mode = 1
 position = Vector2( 531, 513 )
 
 [node name="shopPopUP" type="PopupPanel" parent="."]
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -111,55 +110,72 @@ margin_top = -533.0
 margin_right = 516.0
 margin_bottom = 533.0
 
-[node name="price1" type="Label" parent="shopPopUP"]
-margin_left = 81.0
-margin_top = 681.0
-margin_right = 227.0
-margin_bottom = 752.0
+[node name="labelContainer" type="HBoxContainer" parent="shopPopUP"]
+anchor_left = 0.484
+anchor_top = 0.69
+anchor_right = 0.484
+anchor_bottom = 0.69
+margin_left = -495.488
+margin_top = -731.54
+margin_right = 528.512
+margin_bottom = 326.46
+
+[node name="price1" type="Label" parent="shopPopUP/labelContainer"]
+margin_top = 11.0
+margin_right = 257.0
+margin_bottom = 82.0
+size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 4 )
 text = "20"
-align = 1
+align = 2
+valign = 2
 
-[node name="price2" type="Label" parent="shopPopUP"]
-margin_left = 333.0
-margin_top = 675.0
-margin_right = 479.0
-margin_bottom = 746.0
+[node name="price2" type="Label" parent="shopPopUP/labelContainer"]
+margin_left = 261.0
+margin_top = 11.0
+margin_right = 519.0
+margin_bottom = 82.0
+size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 4 )
 text = "30"
-align = 1
+align = 2
 
-[node name="price3" type="Label" parent="shopPopUP"]
-margin_left = 579.0
-margin_top = 679.0
-margin_right = 725.0
-margin_bottom = 750.0
+[node name="price3" type="Label" parent="shopPopUP/labelContainer"]
+margin_left = 523.0
+margin_top = 11.0
+margin_right = 781.0
+margin_bottom = 82.0
+size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 4 )
 text = "60"
-align = 1
+align = 2
 
-[node name="price4" type="Label" parent="shopPopUP"]
-margin_left = 822.0
-margin_top = 679.0
-margin_right = 968.0
-margin_bottom = 750.0
+[node name="price4" type="Label" parent="shopPopUP/labelContainer"]
+margin_left = 785.0
+margin_top = 11.0
+margin_right = 1043.0
+margin_bottom = 82.0
+size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 4 )
 text = "70"
-align = 1
+align = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="shopPopUP"]
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
+anchor_bottom = 0.5
 margin_left = -512.0
-margin_top = 4.0
+margin_top = -529.0
 margin_right = 512.0
-margin_bottom = 1062.0
+margin_bottom = 529.0
 
 [node name="shopLBL" type="Label" parent="shopPopUP/VBoxContainer"]
 margin_right = 1024.0
 margin_bottom = 71.0
 custom_fonts/font = ExtResource( 4 )
 text = "Welcome to the shop"
+align = 1
 
 [node name="textLBL" type="Label" parent="shopPopUP/VBoxContainer"]
 margin_top = 75.0
@@ -167,21 +183,22 @@ margin_right = 1024.0
 margin_bottom = 220.0
 custom_fonts/font = ExtResource( 4 )
 text = "Here you can buy boosters to speed up your chib's Progression"
+align = 1
 autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="shopPopUP"]
-anchor_left = 0.489
-anchor_top = 0.276
-anchor_right = 0.489
-anchor_bottom = 0.276
-margin_left = -500.648
-margin_top = -290.216
-margin_right = 523.352
-margin_bottom = 767.784
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -529.0
+margin_right = 512.0
+margin_bottom = 529.0
 
 [node name="item1" type="Button" parent="shopPopUP/HBoxContainer"]
 margin_right = 253.0
-margin_bottom = 1058.0
+margin_bottom = 255.0
 size_flags_horizontal = 3
 icon = ExtResource( 10 )
 flat = true
@@ -190,7 +207,7 @@ expand_icon = true
 [node name="item2" type="Button" parent="shopPopUP/HBoxContainer"]
 margin_left = 257.0
 margin_right = 510.0
-margin_bottom = 1058.0
+margin_bottom = 255.0
 size_flags_horizontal = 3
 icon = ExtResource( 12 )
 flat = true
@@ -199,7 +216,7 @@ expand_icon = true
 [node name="item3" type="Button" parent="shopPopUP/HBoxContainer"]
 margin_left = 514.0
 margin_right = 767.0
-margin_bottom = 1058.0
+margin_bottom = 255.0
 size_flags_horizontal = 3
 icon = ExtResource( 11 )
 flat = true
@@ -208,7 +225,7 @@ expand_icon = true
 [node name="item4" type="Button" parent="shopPopUP/HBoxContainer"]
 margin_left = 771.0
 margin_right = 1024.0
-margin_bottom = 1058.0
+margin_bottom = 255.0
 size_flags_horizontal = 3
 icon = ExtResource( 13 )
 flat = true
@@ -224,6 +241,7 @@ margin_top = -608.2
 margin_right = -346.0
 margin_bottom = -444.2
 rect_scale = Vector2( 14.2704, 7.4162 )
+popup_exclusive = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Settingspopup"]
 anchor_left = 0.5

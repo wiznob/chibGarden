@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/minigame/walls.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/minigame/Player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,10 @@
 [ext_resource path="res://Scenes/minigame/stone.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/minigame/HUD.gd" type="Script" id=9]
 [ext_resource path="res://Scenes/minigame/Level2.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/minigame/quitButton.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/scripts/Settingsmenu.gd" type="Script" id=12]
+[ext_resource path="res://Images/cog.png" type="Texture" id=13]
+[ext_resource path="res://Images/1413908.png" type="Texture" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.5, 31.5 )
@@ -106,6 +110,7 @@ position = Vector2( 739, 600 )
 [node name="CanvasLayer" parent="." instance=ExtResource( 6 )]
 
 [node name="UI" type="CanvasLayer" parent="."]
+pause_mode = 2
 
 [node name="HUD" type="Control" parent="UI"]
 margin_left = 156.0
@@ -163,4 +168,102 @@ margin_bottom = 305.0
 custom_fonts/font = ExtResource( 3 )
 text = "Chib Search - Level 2"
 
+[node name="Settingspopup" type="PopupPanel" parent="UI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -421.0
+margin_top = -856.0
+margin_right = -362.0
+margin_bottom = -668.0
+rect_scale = Vector2( 14.2704, 7.4162 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Settingspopup"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -25.5
+margin_top = -90.0
+margin_right = 25.5
+margin_bottom = 90.0
+custom_constants/separation = 10
+
+[node name="saveButton" type="Button" parent="UI/Settingspopup/VBoxContainer"]
+margin_right = 51.0
+margin_bottom = 20.0
+text = "SAVE"
+
+[node name="backButton" type="Button" parent="UI/Settingspopup/VBoxContainer"]
+margin_top = 30.0
+margin_right = 51.0
+margin_bottom = 50.0
+text = "BACK"
+script = ExtResource( 12 )
+
+[node name="quitButton" type="Button" parent="UI/Settingspopup/VBoxContainer"]
+margin_top = 60.0
+margin_right = 51.0
+margin_bottom = 80.0
+text = "QUIT"
+script = ExtResource( 11 )
+
+[node name="SFXLbl" type="Label" parent="UI/Settingspopup/VBoxContainer"]
+margin_top = 90.0
+margin_right = 51.0
+margin_bottom = 104.0
+text = "SFX"
+
+[node name="SFXSlider" type="HSlider" parent="UI/Settingspopup/VBoxContainer"]
+margin_top = 114.0
+margin_right = 51.0
+margin_bottom = 130.0
+min_value = -30.0
+max_value = 0.0
+
+[node name="musicLbl" type="Label" parent="UI/Settingspopup/VBoxContainer"]
+margin_top = 140.0
+margin_right = 51.0
+margin_bottom = 154.0
+text = "MUSIC"
+align = 1
+valign = 1
+
+[node name="MusicSlider" type="HSlider" parent="UI/Settingspopup/VBoxContainer"]
+margin_top = 164.0
+margin_right = 51.0
+margin_bottom = 180.0
+min_value = -30.0
+max_value = 0.0
+
+[node name="shopBTN" type="Button" parent="UI"]
+anchor_left = 0.09
+anchor_top = 0.051
+anchor_right = 0.09
+anchor_bottom = 0.051
+margin_left = -81.2
+margin_top = -84.92
+margin_right = 5.79999
+margin_bottom = 1.08
+icon = ExtResource( 14 )
+flat = true
+expand_icon = true
+
+[node name="settingsBTN" type="Button" parent="UI"]
+anchor_left = 0.903
+anchor_top = 0.056
+anchor_right = 0.903
+anchor_bottom = 0.056
+margin_left = -0.240051
+margin_top = -88.52
+margin_right = 87.7599
+margin_bottom = 0.479996
+icon = ExtResource( 13 )
+flat = true
+expand_icon = true
+
 [connection signal="body_entered" from="Switch" to="." method="_on_Switch_body_entered"]
+[connection signal="pressed" from="UI/Settingspopup/VBoxContainer/backButton" to="UI/Settingspopup/VBoxContainer/backButton" method="_on_backButton_pressed"]
+[connection signal="pressed" from="UI/Settingspopup/VBoxContainer/quitButton" to="UI/Settingspopup/VBoxContainer/quitButton" method="_on_quitButton_pressed"]
+[connection signal="pressed" from="UI/settingsBTN" to="." method="_on_settingsBTN_pressed"]

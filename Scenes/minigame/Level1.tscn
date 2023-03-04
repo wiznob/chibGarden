@@ -65,75 +65,6 @@ position = Vector2( 538, 1338.45 )
 scale = Vector2( 3.249, 4.468 )
 texture = ExtResource( 11 )
 
-[node name="Settingspopup" type="PopupPanel" parent="."]
-anchor_left = 0.5
-anchor_top = 0.46
-anchor_right = 0.5
-anchor_bottom = 0.46
-margin_left = -405.0
-margin_top = -608.2
-margin_right = -346.0
-margin_bottom = -420.2
-rect_scale = Vector2( 14.2704, 7.4162 )
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Settingspopup"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -25.5
-margin_top = -90.0
-margin_right = 25.5
-margin_bottom = 90.0
-custom_constants/separation = 10
-
-[node name="saveButton" type="Button" parent="Settingspopup/VBoxContainer"]
-margin_right = 51.0
-margin_bottom = 20.0
-text = "SAVE"
-
-[node name="backButton" type="Button" parent="Settingspopup/VBoxContainer"]
-margin_top = 30.0
-margin_right = 51.0
-margin_bottom = 50.0
-text = "BACK"
-script = ExtResource( 13 )
-
-[node name="quitButton" type="Button" parent="Settingspopup/VBoxContainer"]
-margin_top = 60.0
-margin_right = 51.0
-margin_bottom = 80.0
-text = "QUIT"
-script = ExtResource( 14 )
-
-[node name="SFXLbl" type="Label" parent="Settingspopup/VBoxContainer"]
-margin_top = 90.0
-margin_right = 51.0
-margin_bottom = 104.0
-text = "SFX"
-
-[node name="SFXSlider" type="HSlider" parent="Settingspopup/VBoxContainer"]
-margin_top = 114.0
-margin_right = 51.0
-margin_bottom = 130.0
-min_value = -30.0
-max_value = 0.0
-
-[node name="musicLbl" type="Label" parent="Settingspopup/VBoxContainer"]
-margin_top = 140.0
-margin_right = 51.0
-margin_bottom = 154.0
-text = "MUSIC"
-align = 1
-valign = 1
-
-[node name="MusicSlider" type="HSlider" parent="Settingspopup/VBoxContainer"]
-margin_top = 164.0
-margin_right = 51.0
-margin_bottom = 180.0
-min_value = -30.0
-max_value = 0.0
-
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
 margin_left = 5.0
 margin_top = 1762.0
@@ -190,6 +121,76 @@ position = Vector2( 483, 851 )
 [node name="CanvasLayer" parent="." instance=ExtResource( 7 )]
 
 [node name="UI" type="CanvasLayer" parent="."]
+pause_mode = 2
+
+[node name="Settingspopup" type="PopupPanel" parent="UI"]
+anchor_left = 0.5
+anchor_top = 0.46
+anchor_right = 0.5
+anchor_bottom = 0.46
+margin_left = -410.0
+margin_top = -801.2
+margin_right = -351.0
+margin_bottom = -613.2
+rect_scale = Vector2( 14.2704, 7.4162 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Settingspopup"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -25.5
+margin_top = -90.0
+margin_right = 25.5
+margin_bottom = 90.0
+custom_constants/separation = 10
+
+[node name="saveButton" type="Button" parent="UI/Settingspopup/VBoxContainer"]
+margin_right = 51.0
+margin_bottom = 20.0
+text = "SAVE"
+
+[node name="backButton" type="Button" parent="UI/Settingspopup/VBoxContainer"]
+margin_top = 30.0
+margin_right = 51.0
+margin_bottom = 50.0
+text = "BACK"
+script = ExtResource( 13 )
+
+[node name="quitButton" type="Button" parent="UI/Settingspopup/VBoxContainer"]
+margin_top = 60.0
+margin_right = 51.0
+margin_bottom = 80.0
+text = "QUIT"
+script = ExtResource( 14 )
+
+[node name="SFXLbl" type="Label" parent="UI/Settingspopup/VBoxContainer"]
+margin_top = 90.0
+margin_right = 51.0
+margin_bottom = 104.0
+text = "SFX"
+
+[node name="SFXSlider" type="HSlider" parent="UI/Settingspopup/VBoxContainer"]
+margin_top = 114.0
+margin_right = 51.0
+margin_bottom = 130.0
+min_value = -30.0
+max_value = 0.0
+
+[node name="musicLbl" type="Label" parent="UI/Settingspopup/VBoxContainer"]
+margin_top = 140.0
+margin_right = 51.0
+margin_bottom = 154.0
+text = "MUSIC"
+align = 1
+valign = 1
+
+[node name="MusicSlider" type="HSlider" parent="UI/Settingspopup/VBoxContainer"]
+margin_top = 164.0
+margin_right = 51.0
+margin_bottom = 180.0
+min_value = -30.0
+max_value = 0.0
 
 [node name="HUD" type="Control" parent="UI"]
 margin_left = 154.0
@@ -273,8 +274,6 @@ icon = ExtResource( 12 )
 flat = true
 expand_icon = true
 
-[connection signal="pressed" from="Settingspopup/VBoxContainer/backButton" to="Settingspopup/VBoxContainer/backButton" method="_on_backButton_pressed"]
-[connection signal="pressed" from="Settingspopup/VBoxContainer/quitButton" to="Settingspopup/VBoxContainer/quitButton" method="_on_quitButton_pressed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Switch" to="." method="_on_Switch_body_entered"]
@@ -282,4 +281,6 @@ expand_icon = true
 [connection signal="coin_collected" from="Coin2" to="UI/HUD" method="_on_Coin_collected"]
 [connection signal="coin_collected" from="Coin3" to="UI/HUD" method="_on_Coin_collected"]
 [connection signal="use_move_vector" from="CanvasLayer" to="Player" method="_on_CanvasLayer_use_move_vector"]
+[connection signal="pressed" from="UI/Settingspopup/VBoxContainer/backButton" to="UI/Settingspopup/VBoxContainer/backButton" method="_on_backButton_pressed"]
+[connection signal="pressed" from="UI/Settingspopup/VBoxContainer/quitButton" to="UI/Settingspopup/VBoxContainer/quitButton" method="_on_quitButton_pressed"]
 [connection signal="pressed" from="UI/settingsBTN" to="." method="_on_settingsBTN_pressed"]

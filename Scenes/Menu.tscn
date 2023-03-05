@@ -346,7 +346,7 @@ custom_constants/separation = 10
 [node name="ChibRacing" type="Button" parent="MiniGamesPopUp/VBoxContainer"]
 margin_right = 68.0
 margin_bottom = 20.0
-text = "RACONG"
+text = "RACING"
 
 [node name="ChibSearch" type="Button" parent="MiniGamesPopUp/VBoxContainer"]
 margin_top = 30.0

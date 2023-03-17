@@ -60,6 +60,7 @@ default_bus_layout=""
 
 [autoload]
 
+SaveData="*res://Scenes/scripts/saveData.gd"
 Global="*res://Scenes/minigame/Level1.gd"
 ggsManager="*res://addons/GGS/src/ggs_manager.gd"
 

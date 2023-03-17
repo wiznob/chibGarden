@@ -13,11 +13,11 @@
 
 [sub_resource type="GDScript" id=3]
 script/source = "extends Node2D
-
+onready var save_file = SaveData.gameData
 
 # Declare member variables here. Examples:
 var hunger = 5
-var stamina = 50
+var stamina = 0
 var strength = 55
 var Happniess = 30
 var age
@@ -45,34 +45,15 @@ func _ready():
 	button.connect(\"pressed\", self, \"_button_pressed\")
 	add_child(button)
 func _button_pressed():
-	stamina = stamina +10
+	stamina += 10
 	get_node(\"stamina\").set_value(stamina)
-
-
+	save_file.save1 = stamina
+	stamina = [save_file.save1]
+	SaveData.save_data()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_applebtn_pressed():
-	pass # Replace with function body.
-
-
-func _on_bananabtn_pressed():
-	pass # Replace with function body.
-
-
-func _on_lemonbtn_pressed():
-	pass # Replace with function body.
-
-
-func _on_mangobtn_pressed():
-	pass # Replace with function body.
-
-
-func _on_orangebtn_pressed():
-	pass # Replace with function body.
 "
 
 [sub_resource type="SpriteFrames" id=4]
@@ -147,7 +128,6 @@ texture = ExtResource( 6 )
 position = Vector2( -7.60571, -679.05 )
 scale = Vector2( 0.922532, 0.876941 )
 frames = SubResource( 4 )
-frame = 2
 playing = true
 
 [node name="ChibArm2" type="Sprite" parent="ChibBody"]
@@ -220,7 +200,7 @@ custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
 percent_visible = false
 
-[node name="Stamina" type="Label" parent="stamina"]
+[node name="StaminaLBL" type="Label" parent="stamina"]
 margin_left = 181.0
 margin_top = 12.0
 margin_right = 252.0
@@ -229,7 +209,6 @@ custom_fonts/font = ExtResource( 2 )
 text = "Stamina"
 
 [node name="hunger" type="ProgressBar" parent="."]
-visible = false
 anchor_left = 9.578
 anchor_top = -4.609
 anchor_right = 9.578
@@ -246,7 +225,6 @@ custom_styles/bg = SubResource( 2 )
 percent_visible = false
 
 [node name="hungerLBL" type="Label" parent="hunger"]
-visible = false
 margin_left = 188.0
 margin_top = 10.0
 margin_right = 247.0

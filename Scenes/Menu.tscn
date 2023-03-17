@@ -372,6 +372,7 @@ text = "WACK"
 [connection signal="pressed" from="settingsBTN" to="." method="_on_settingsBTN_pressed"]
 [connection signal="pressed" from="shopBTN" to="." method="_on_shopBTN_pressed"]
 [connection signal="pressed" from="shopPopUP/HBoxContainer/item1" to="." method="_on_item1_pressed"]
+[connection signal="pressed" from="Settingspopup/VBoxContainer/saveButton" to="Settingspopup/VBoxContainer/saveButton" method="_on_saveButton_pressed"]
 [connection signal="pressed" from="Settingspopup/VBoxContainer/backButton" to="." method="_on_backsButton_pressed"]
 [connection signal="pressed" from="Settingspopup/VBoxContainer/backButton" to="Settingspopup/VBoxContainer/backButton" method="_on_backButton_pressed"]
 [connection signal="pressed" from="Settingspopup/VBoxContainer/quitButton" to="Settingspopup/VBoxContainer/quitButton" method="_on_quitButton_pressed"]

@@ -30,3 +30,13 @@ func _on_backButton_pressed():
 		$Settingspopup.hide()
 		get_tree().paused = false
 	
+
+
+func _on_Bird_enemy(body):
+	if body.name == "Player":
+		$EndPopUp.show()
+
+
+func _on_Bird_child_exiting_tree(body):
+	if body.name == "Player":
+		$EndPopUp.show()

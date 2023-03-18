@@ -7,3 +7,5 @@ func _on_Coin_body_entered(body):
 		Global.score +=1
 		emit_signal("coin_collected")
 		queue_free()
+
+

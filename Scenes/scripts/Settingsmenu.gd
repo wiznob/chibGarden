@@ -1,4 +1,5 @@
 extends Control
+onready var save_file = SaveData.gameData
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,8 +24,6 @@ func _on_backButton_pressed():
 
 
 
-func _on_Save_pressed():
-	pass # Replace with function body.
 
 #audio handeling
 var master_bus = AudioServer.get_bus_index("Master")
@@ -55,4 +54,5 @@ func _on_Back_pressed():
 	get_tree().paused = false
 	#$Settingspopup.hide()
 
-
+func _on_saveButton_pressed():
+	SaveData.save_data()

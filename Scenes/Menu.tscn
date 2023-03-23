@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/scripts/MiniGamePop.gd" type="Script" id=3]
 [ext_resource path="res://fonts/monkeyFont.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Scenes/scripts/Settingsmenu.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/nameDisplay.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/scripts/nameDisplay.gd" type="Script" id=6]
 [ext_resource path="res://Images/background.webp" type="Texture" id=7]
 [ext_resource path="res://Images/1413908.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/scripts/Menu.gd" type="Script" id=9]
@@ -347,6 +347,7 @@ custom_constants/separation = 10
 margin_right = 68.0
 margin_bottom = 20.0
 text = "RACING"
+script = ExtResource( 3 )
 
 [node name="ChibSearch" type="Button" parent="MiniGamesPopUp/VBoxContainer"]
 margin_top = 30.0
@@ -360,12 +361,14 @@ margin_top = 60.0
 margin_right = 68.0
 margin_bottom = 80.0
 text = "FIGHT"
+script = ExtResource( 3 )
 
 [node name="ChibWack" type="Button" parent="MiniGamesPopUp/VBoxContainer"]
 margin_top = 90.0
 margin_right = 68.0
 margin_bottom = 110.0
 text = "WACK"
+script = ExtResource( 3 )
 
 [connection signal="pressed" from="HBoxContainer/feedBTN" to="." method="_on_feedBTN_pressed"]
 [connection signal="pressed" from="HBoxContainer/gamesBTN" to="." method="_on_gamesBTN_pressed"]
@@ -376,4 +379,5 @@ text = "WACK"
 [connection signal="pressed" from="Settingspopup/VBoxContainer/backButton" to="." method="_on_backsButton_pressed"]
 [connection signal="pressed" from="Settingspopup/VBoxContainer/backButton" to="Settingspopup/VBoxContainer/backButton" method="_on_backButton_pressed"]
 [connection signal="pressed" from="Settingspopup/VBoxContainer/quitButton" to="Settingspopup/VBoxContainer/quitButton" method="_on_quitButton_pressed"]
+[connection signal="pressed" from="MiniGamesPopUp/VBoxContainer/ChibRacing" to="MiniGamesPopUp/VBoxContainer/ChibRacing" method="_on_ChibRacing_pressed"]
 [connection signal="pressed" from="MiniGamesPopUp/VBoxContainer/ChibSearch" to="MiniGamesPopUp/VBoxContainer/ChibSearch" method="_on_ChibSearch_pressed"]

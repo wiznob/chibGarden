@@ -2,7 +2,7 @@
 
 [ext_resource path="res://chibImage/chib body.png" type="Texture" id=1]
 [ext_resource path="res://fonts/monkeyFont.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Scenes/names.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/scripts/names.gd" type="Script" id=3]
 [ext_resource path="res://chibImage/eyes 1.png" type="Texture" id=4]
 [ext_resource path="res://chibImage/chib arm.png" type="Texture" id=5]
 [ext_resource path="res://chibImage/chib leg.png" type="Texture" id=6]
@@ -45,7 +45,6 @@ func _ready():
 	button.connect(\"pressed\", self, \"_button_pressed\")
 	add_child(button)
 func _button_pressed():
-	stamina += 10
 	get_node(\"stamina\").set_value(stamina)
 	save_file.save1 = stamina
 	stamina = [save_file.save1]
@@ -88,6 +87,7 @@ corner_radius_bottom_left = 8
 
 [node name="Chib" type="Node2D"]
 position = Vector2( 505, 280 )
+scale = Vector2( 1.09218, 0.725755 )
 script = SubResource( 3 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]

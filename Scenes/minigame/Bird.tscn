@@ -4,7 +4,7 @@
 [ext_resource path="res://Images/BirdS_0000_Capa-1.png" type="Texture" id=2]
 [ext_resource path="res://Images/BirdS_0001_Capa-2.png" type="Texture" id=3]
 [ext_resource path="res://Images/BirdS_0002_Capa-3.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/minigame/Bird.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/scripts/MiniGame_Script/Bird.gd" type="Script" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -25,9 +25,11 @@ script = ExtResource( 5 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -3, 1 )
 shape = SubResource( 2 )
+
+[connection signal="child_entered_tree" from="." to="." method="_on_Bird__entered"]

@@ -1,10 +1,10 @@
 extends Control
 var hunger = 5
-var food = load("res://Scenes/Food.tscn")
-var apple = load("res://Scenes/apple.tscn")
-var lemon = load("res://Scenes/lemon.tscn")
-var mango = load("res://Scenes/mango.tscn")
-var orange = load("res://Scenes/orange.tscn")
+var food = load("res://Scenes/Food_Scene/Food.tscn")
+var apple = load("res://Scenes/Food_Scene/apple.tscn")
+var lemon = load("res://Scenes/Food_Scene/lemon.tscn")
+var mango = load("res://Scenes/Food_Scene/mango.tscn")
+var orange = load("res://Scenes/Food_Scene/orange.tscn")
 var newFood = food.instance()
 var newApple = apple.instance()
 var newLemon = lemon.instance()

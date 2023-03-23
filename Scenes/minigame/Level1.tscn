@@ -1,21 +1,20 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scenes/minigame/walls.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/minigame/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/minigame/Coin.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/minigame/Switch.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/minigame/Level1.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/minigame/stone.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/scripts/MiniGame_Script/Level1.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/minigame/images_Minigame/stone.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/minigame/MobileJoystick.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/minigame/HUD.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/scripts/MiniGame_Script/HUD.gd" type="Script" id=8]
 [ext_resource path="res://fonts/monkeyFont.tres" type="DynamicFont" id=9]
 [ext_resource path="res://Scenes/minigame/ban.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Images/background.webp" type="Texture" id=11]
 [ext_resource path="res://Images/cog.png" type="Texture" id=12]
 [ext_resource path="res://Scenes/scripts/Settingsmenu.gd" type="Script" id=13]
-[ext_resource path="res://Scenes/minigame/quitButton.gd" type="Script" id=14]
+[ext_resource path="res://Scenes/scripts/MiniGame_Script/quitButton.gd" type="Script" id=14]
 [ext_resource path="res://Images/1413908.png" type="Texture" id=15]
-[ext_resource path="res://Scenes/minigame/Bird.tscn" type="PackedScene" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.5, 31.5 )
@@ -275,9 +274,6 @@ icon = ExtResource( 12 )
 flat = true
 expand_icon = true
 
-[node name="Bird" parent="." instance=ExtResource( 16 )]
-position = Vector2( 535, 576 )
-
 [node name="EndPopUp" type="PopupPanel" parent="."]
 anchor_left = 0.5
 anchor_top = 0.46
@@ -331,6 +327,5 @@ lost. ;)"
 [connection signal="pressed" from="UI/Settingspopup/VBoxContainer/backButton" to="UI/Settingspopup/VBoxContainer/backButton" method="_on_backButton_pressed"]
 [connection signal="pressed" from="UI/Settingspopup/VBoxContainer/quitButton" to="UI/Settingspopup/VBoxContainer/quitButton" method="_on_quitButton_pressed"]
 [connection signal="pressed" from="UI/settingsBTN" to="." method="_on_settingsBTN_pressed"]
-[connection signal="child_exiting_tree" from="Bird" to="." method="_on_Bird_child_exiting_tree"]
 [connection signal="pressed" from="EndPopUp/VBoxContainer/backButton" to="EndPopUp/VBoxContainer/backButton" method="_on_backButton_pressed"]
 [connection signal="pressed" from="EndPopUp/VBoxContainer/quitButton" to="EndPopUp/VBoxContainer/quitButton" method="_on_quitButton_pressed"]

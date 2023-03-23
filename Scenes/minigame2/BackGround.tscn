@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Images/background.webp" type="Texture" id=1]
+[ext_resource path="res://Scenes/minigame2/ScrollingBackground.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float scroll_speed;
+
+void fragment() {
+	vec2 u = UV;
+	u.x += scroll_speed * TIME;
+	vec4 col = texture(TEXTURE, u);
+	COLOR = col;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+render_priority = 1
+shader = SubResource( 1 )
+shader_param/scroll_speed = 0.0
+
+[node name="BackGround" type="Node2D"]
+
+[node name="ScrollingBackground" parent="." instance=ExtResource( 2 )]
+material = SubResource( 2 )
+rect_scale = Vector2( 3.3, 3.5 )
+texture = ExtResource( 1 )

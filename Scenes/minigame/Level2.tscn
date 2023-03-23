@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scenes/minigame/walls.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/minigame/Player.tscn" type="PackedScene" id=2]
@@ -7,13 +7,14 @@
 [ext_resource path="res://Scenes/minigame/Switch.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/minigame/MobileJoystick.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Images/background.webp" type="Texture" id=7]
-[ext_resource path="res://Scenes/minigame/stone.png" type="Texture" id=8]
-[ext_resource path="res://Scenes/minigame/HUD.gd" type="Script" id=9]
-[ext_resource path="res://Scenes/minigame/Level2.gd" type="Script" id=10]
-[ext_resource path="res://Scenes/minigame/quitButton.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/minigame/images_Minigame/stone.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/scripts/MiniGame_Script/HUD.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/scripts/MiniGame_Script/Level2.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/scripts/MiniGame_Script/quitButton.gd" type="Script" id=11]
 [ext_resource path="res://Scenes/scripts/Settingsmenu.gd" type="Script" id=12]
 [ext_resource path="res://Images/cog.png" type="Texture" id=13]
 [ext_resource path="res://Images/1413908.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/minigame/Bird.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.5, 31.5 )
@@ -85,9 +86,6 @@ shape = SubResource( 1 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Door"]
 anims/RESET = SubResource( 2 )
 anims/SlideUp = SubResource( 3 )
-
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 172, 415 )
 
 [node name="Switch" parent="." instance=ExtResource( 5 )]
 position = Vector2( 219, 1010 )
@@ -262,6 +260,12 @@ margin_bottom = 0.479996
 icon = ExtResource( 13 )
 flat = true
 expand_icon = true
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 172, 415 )
+
+[node name="Bird" parent="." instance=ExtResource( 15 )]
+position = Vector2( 614, 475 )
 
 [connection signal="body_entered" from="Switch" to="." method="_on_Switch_body_entered"]
 [connection signal="pressed" from="UI/Settingspopup/VBoxContainer/backButton" to="UI/Settingspopup/VBoxContainer/backButton" method="_on_backButton_pressed"]

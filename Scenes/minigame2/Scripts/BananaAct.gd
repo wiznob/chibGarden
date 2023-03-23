@@ -1,5 +1,5 @@
 
-extends "res://Scenes/minigame2/ScrollMovement.gd"
+extends "res://Scenes/minigame2/Scripts/ScrollMovement.gd"
 
 func _physics_process(delta):
 	move()

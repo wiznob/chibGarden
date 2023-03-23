@@ -1,13 +1,32 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scenes/minigame2/BackGround.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/minigame2/Platform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/minigame2/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/minigame2/Spawner.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/minigame2/ScoreUI.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/minigame2/GameOverUI.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/minigame2/Scripts/ScoreUI.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/minigame2/Scripts/GameOverUI.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/minigame2/Scripts/EndGame.gd" type="Script" id=7]
+[ext_resource path="res://Images/cog.png" type="Texture" id=8]
+[ext_resource path="res://foodImg/Banana.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/scripts/Settingsmenu.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/scripts/MiniGame_Script/quitButton.gd" type="Script" id=11]
+[ext_resource path="res://Images/1413908.png" type="Texture" id=12]
+[ext_resource path="res://fonts/monkeyFont.tres" type="DynamicFont" id=13]
+[ext_resource path="res://chibImage/Chib.png" type="Texture" id=14]
+[ext_resource path="res://foodImg/EnhancerP.png" type="Texture" id=15]
+[ext_resource path="res://foodImg/Apple (1).png" type="Texture" id=16]
+[ext_resource path="res://foodImg/EnhancerG.png" type="Texture" id=17]
+[ext_resource path="res://foodImg/EnhancerR.png" type="Texture" id=18]
+[ext_resource path="res://foodImg/mango (1).png" type="Texture" id=19]
+[ext_resource path="res://foodImg/Orange (1).png" type="Texture" id=20]
+[ext_resource path="res://foodImg/EnhancerY.png" type="Texture" id=21]
+[ext_resource path="res://foodImg/EnhancerB.png" type="Texture" id=22]
+[ext_resource path="res://fonts/monkeyFont2.tres" type="DynamicFont" id=23]
+[ext_resource path="res://Scenes/scripts/MiniGamePop.gd" type="Script" id=24]
 
 [node name="EndGame" type="Node2D"]
+script = ExtResource( 7 )
 
 [node name="BackGround" parent="." instance=ExtResource( 1 )]
 
@@ -18,6 +37,9 @@ position = Vector2( 143, 1023 )
 
 [node name="Spawner" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1275, 1072 )
+
+[node name="Spawner2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2069, 1084 )
 
 [node name="Score" type="Control" parent="."]
 margin_left = 385.0
@@ -51,4 +73,372 @@ margin_right = 665.0
 margin_bottom = 889.0
 text = "RESTART GAME"
 
+[node name="UI" type="CanvasLayer" parent="."]
+pause_mode = 2
+
+[node name="Settingspopup" type="PopupPanel" parent="UI"]
+anchor_left = 0.5
+anchor_top = 0.46
+anchor_right = 0.5
+anchor_bottom = 0.46
+margin_left = -410.0
+margin_top = -801.2
+margin_right = -351.0
+margin_bottom = -613.2
+rect_scale = Vector2( 14.2704, 7.4162 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Settingspopup"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -25.5
+margin_top = -90.0
+margin_right = 25.5
+margin_bottom = 90.0
+custom_constants/separation = 10
+
+[node name="saveButton" type="Button" parent="UI/Settingspopup/VBoxContainer"]
+margin_right = 51.0
+margin_bottom = 20.0
+text = "SAVE"
+
+[node name="backButton" type="Button" parent="UI/Settingspopup/VBoxContainer"]
+margin_top = 30.0
+margin_right = 51.0
+margin_bottom = 50.0
+text = "BACK"
+script = ExtResource( 10 )
+
+[node name="quitButton" type="Button" parent="UI/Settingspopup/VBoxContainer"]
+margin_top = 60.0
+margin_right = 51.0
+margin_bottom = 80.0
+text = "QUIT"
+script = ExtResource( 11 )
+
+[node name="SFXLbl" type="Label" parent="UI/Settingspopup/VBoxContainer"]
+margin_top = 90.0
+margin_right = 51.0
+margin_bottom = 104.0
+text = "SFX"
+
+[node name="SFXSlider" type="HSlider" parent="UI/Settingspopup/VBoxContainer"]
+margin_top = 114.0
+margin_right = 51.0
+margin_bottom = 130.0
+min_value = -30.0
+max_value = 0.0
+
+[node name="musicLbl" type="Label" parent="UI/Settingspopup/VBoxContainer"]
+margin_top = 140.0
+margin_right = 51.0
+margin_bottom = 154.0
+text = "MUSIC"
+align = 1
+valign = 1
+
+[node name="MusicSlider" type="HSlider" parent="UI/Settingspopup/VBoxContainer"]
+margin_top = 164.0
+margin_right = 51.0
+margin_bottom = 180.0
+min_value = -30.0
+max_value = 0.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -535.5
+margin_top = -152.0
+margin_right = 535.5
+
+[node name="gamesBTN" type="Button" parent="UI/HBoxContainer"]
+margin_right = 533.0
+margin_bottom = 152.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 13 )
+text = "Mini-Games"
+
+[node name="graveBTN" type="Button" parent="UI/HBoxContainer"]
+margin_left = 537.0
+margin_right = 1071.0
+margin_bottom = 152.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 13 )
+text = "Grave yard"
+
+[node name="shopBTN" type="Button" parent="UI"]
+anchor_left = 0.09
+anchor_top = 0.051
+anchor_right = 0.09
+anchor_bottom = 0.051
+margin_left = -79.2
+margin_top = -83.92
+margin_right = 7.8
+margin_bottom = 2.08
+icon = ExtResource( 12 )
+flat = true
+expand_icon = true
+
+[node name="settingsBTN" type="Button" parent="UI"]
+anchor_left = 0.903
+anchor_top = 0.056
+anchor_right = 0.903
+anchor_bottom = 0.056
+margin_left = -0.240051
+margin_top = -88.52
+margin_right = 87.7599
+margin_bottom = 0.479996
+icon = ExtResource( 8 )
+flat = true
+expand_icon = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -535.5
+margin_top = -152.0
+margin_right = 535.5
+
+[node name="gamesBTN" type="Button" parent="UI/HBoxContainer2"]
+margin_right = 533.0
+margin_bottom = 152.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 13 )
+text = "Mini-Games"
+
+[node name="graveBTN" type="Button" parent="UI/HBoxContainer2"]
+margin_left = 537.0
+margin_right = 1071.0
+margin_bottom = 152.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 13 )
+text = "Grave yard"
+
+[node name="shopPopUP" type="PopupPanel" parent="UI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -516.0
+margin_top = -533.0
+margin_right = 516.0
+margin_bottom = 533.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/shopPopUP"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -529.0
+margin_right = 512.0
+margin_bottom = 529.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/shopPopUP"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/shopPopUP/ScrollContainer"]
+margin_right = 1024.0
+margin_bottom = 1082.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="shopLBL" type="Label" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_right = 1012.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 23 )
+text = "Welcome to the shop"
+align = 1
+
+[node name="premiumLBL" type="Label" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 68.0
+margin_right = 1012.0
+margin_bottom = 132.0
+custom_fonts/font = ExtResource( 23 )
+text = "Premium store"
+align = 1
+
+[node name="yBooster" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 136.0
+margin_right = 1012.0
+margin_bottom = 206.0
+custom_fonts/font = ExtResource( 23 )
+text = "I love the yellow booster :3 - 60 coins"
+icon = ExtResource( 21 )
+expand_icon = true
+
+[node name="bBooster" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 210.0
+margin_right = 1012.0
+margin_bottom = 280.0
+custom_fonts/font = ExtResource( 23 )
+text = "Fucking hate the blue booster - 20 coins"
+icon = ExtResource( 22 )
+expand_icon = true
+
+[node name="gBooster" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 284.0
+margin_right = 1012.0
+margin_bottom = 354.0
+custom_fonts/font = ExtResource( 23 )
+text = "Green booster is ok - 33 coins"
+icon = ExtResource( 17 )
+expand_icon = true
+
+[node name="rBooster" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 358.0
+margin_right = 1012.0
+margin_bottom = 428.0
+custom_fonts/font = ExtResource( 23 )
+text = "Racist red booster!!!! - 100 coins"
+icon = ExtResource( 18 )
+expand_icon = true
+
+[node name="pBooster" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 432.0
+margin_right = 1012.0
+margin_bottom = 502.0
+custom_fonts/font = ExtResource( 23 )
+text = "Heehehehe - 1 coin"
+icon = ExtResource( 15 )
+expand_icon = true
+
+[node name="basicLBL" type="Label" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 506.0
+margin_right = 1012.0
+margin_bottom = 570.0
+custom_fonts/font = ExtResource( 23 )
+text = "Basic store"
+align = 1
+
+[node name="apple" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 574.0
+margin_right = 1012.0
+margin_bottom = 644.0
+custom_fonts/font = ExtResource( 23 )
+text = "Totaly not the apple logo - 16 coins"
+icon = ExtResource( 16 )
+expand_icon = true
+
+[node name="bananna" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 648.0
+margin_right = 1012.0
+margin_bottom = 718.0
+custom_fonts/font = ExtResource( 23 )
+text = "bannananana - 20 cois"
+icon = ExtResource( 9 )
+expand_icon = true
+
+[node name="mango" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 722.0
+margin_right = 1012.0
+margin_bottom = 792.0
+custom_fonts/font = ExtResource( 23 )
+text = "MANGO! - 30 coin"
+icon = ExtResource( 19 )
+expand_icon = true
+
+[node name="orange" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 796.0
+margin_right = 1012.0
+margin_bottom = 866.0
+custom_fonts/font = ExtResource( 23 )
+text = "orange :) - 70 coin"
+icon = ExtResource( 20 )
+expand_icon = true
+
+[node name="chibsLBL" type="Label" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 870.0
+margin_right = 1012.0
+margin_bottom = 934.0
+custom_fonts/font = ExtResource( 23 )
+text = "Chibs"
+align = 1
+
+[node name="basic" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 938.0
+margin_right = 1012.0
+margin_bottom = 1008.0
+custom_fonts/font = ExtResource( 23 )
+text = "Buy a basic chib - 60 coins"
+icon = ExtResource( 14 )
+expand_icon = true
+
+[node name="super" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 1012.0
+margin_right = 1012.0
+margin_bottom = 1082.0
+custom_fonts/font = ExtResource( 23 )
+text = "Super chib - 60 coins"
+icon = ExtResource( 14 )
+expand_icon = true
+
+[node name="MiniGamesPopUp" type="PopupPanel" parent="UI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -542.0
+margin_top = -578.0
+margin_right = -466.0
+margin_bottom = -414.0
+rect_scale = Vector2( 14.2704, 7.4162 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MiniGamesPopUp"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -34.0
+margin_top = -78.0
+margin_right = 34.0
+margin_bottom = 78.0
+custom_constants/separation = 10
+
+[node name="ChibRacing" type="Button" parent="UI/MiniGamesPopUp/VBoxContainer"]
+margin_right = 68.0
+margin_bottom = 20.0
+text = "RACING"
+script = ExtResource( 24 )
+
+[node name="ChibSearch" type="Button" parent="UI/MiniGamesPopUp/VBoxContainer"]
+margin_top = 30.0
+margin_right = 68.0
+margin_bottom = 50.0
+text = "SEARCH"
+script = ExtResource( 24 )
+
+[node name="ChibKarate" type="Button" parent="UI/MiniGamesPopUp/VBoxContainer"]
+margin_top = 60.0
+margin_right = 68.0
+margin_bottom = 80.0
+text = "FIGHT"
+script = ExtResource( 24 )
+
+[node name="ChibWack" type="Button" parent="UI/MiniGamesPopUp/VBoxContainer"]
+margin_top = 90.0
+margin_right = 68.0
+margin_bottom = 110.0
+text = "WACK"
+script = ExtResource( 24 )
+
 [connection signal="pressed" from="GameOver/Button" to="GameOver" method="_on_Button_pressed"]
+[connection signal="pressed" from="UI/Settingspopup/VBoxContainer/backButton" to="UI/Settingspopup/VBoxContainer/backButton" method="_on_backButton_pressed"]
+[connection signal="pressed" from="UI/Settingspopup/VBoxContainer/quitButton" to="UI/Settingspopup/VBoxContainer/quitButton" method="_on_quitButton_pressed"]
+[connection signal="pressed" from="UI/shopBTN" to="." method="_on_shopBTN_pressed"]
+[connection signal="pressed" from="UI/settingsBTN" to="." method="_on_settingsBTN_pressed"]
+[connection signal="pressed" from="UI/HBoxContainer2/gamesBTN" to="." method="_on_gamesBTN_pressed"]
+[connection signal="pressed" from="UI/MiniGamesPopUp/VBoxContainer/ChibRacing" to="UI/MiniGamesPopUp/VBoxContainer/ChibRacing" method="_on_ChibRacing_pressed"]
+[connection signal="pressed" from="UI/MiniGamesPopUp/VBoxContainer/ChibSearch" to="UI/MiniGamesPopUp/VBoxContainer/ChibSearch" method="_on_ChibSearch_pressed"]

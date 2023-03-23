@@ -10,7 +10,6 @@ var can_jump: bool = true
 
 var score = 0
 
-onready var animation = $AnimatedSprite
 
 
 func _ready():
@@ -27,7 +26,7 @@ func _input(event):
 	if can_jump:
 		if event.is_action_pressed("jump"):
 			velocity.y-=jump_velocity
-			animation.play("Jump")
+			
 
 
 

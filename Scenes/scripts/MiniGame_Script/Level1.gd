@@ -47,5 +47,3 @@ func _on_Bird_enemy(body):
 
 
 
-func _on_Bird_mouse_exited():
-	queue_free()

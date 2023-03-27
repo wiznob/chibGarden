@@ -21,7 +21,7 @@ shader = SubResource( 1 )
 shader_param/scroll_speed = 3.0
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 738, 63 )
+extents = Vector2( 547, 63 )
 
 [node name="Platform" type="Node2D"]
 
@@ -29,7 +29,7 @@ extents = Vector2( 738, 63 )
 material = SubResource( 2 )
 margin_left = -11.0
 margin_top = 1097.0
-margin_right = 2307.0
+margin_right = 4587.0
 margin_bottom = 1354.0
 rect_scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
@@ -37,5 +37,5 @@ texture = ExtResource( 1 )
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 737, 1162 )
+position = Vector2( 546, 1162 )
 shape = SubResource( 3 )

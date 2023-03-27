@@ -11,7 +11,8 @@ func _ready():
 func _on_Button_pressed():
 	get_tree().reload_current_scene()
 
+
 func gameover():
 	self.show()
-	get_tree().paused = true
+	
 	

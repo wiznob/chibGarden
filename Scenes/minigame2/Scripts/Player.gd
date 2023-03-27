@@ -8,6 +8,8 @@ export var jump_velocity = 1500.0
 export var gravity_scale = 20.0
 var can_jump: bool = true
 
+
+var jumps_available := 2
 var score = 0
 
 
@@ -24,9 +26,12 @@ func _physics_process(delta):
 func _input(event):
 	velocity = Vector2.ZERO
 	if can_jump:
-		if event.is_action_pressed("jump"):
+		if event.is_action_pressed("jump"): #and jumps_available > 0:
 			velocity.y-=jump_velocity
-			
+			jumps_available -= 1
+			#if is_on_floor() :
+				#jumps_available +=1
+
 
 
 
@@ -53,3 +58,10 @@ func killplayer():
 func rewardplayer(scoretoadd):
 	score+=scoretoadd
 	Signals.emit_signal("updatescore",score)
+
+
+
+
+
+
+

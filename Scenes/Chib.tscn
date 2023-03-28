@@ -35,7 +35,7 @@ func _ready():
 	print(safearea)
 	
 	get_node(\"hunger\").set_value(hunger)
-	get_node(\"stamina\").set_value(stamina)
+	get_node(\"stamina\").set_value(save_file.save1)
 	get_node(\"strength\").set_value(strength)
 	get_node(\"happiness\").set_value(Happniess)
 
@@ -44,12 +44,25 @@ func _ready():
 	button.text = \"add\"
 	button.connect(\"pressed\", self, \"_button_pressed\")
 	add_child(button)
-func _button_pressed():
-	get_node(\"stamina\").set_value(stamina)
-	save_file.save1 = stamina
-	stamina = [save_file.save1]
-	SaveData.save_data()
+	
+	
 
+func _button_pressed():
+	get_node(\"stamina\").set_value(save_file.save1)
+	#var one = 5 
+	#one += 1
+	#save_file.save1  = one
+	var one = save_file.save1 +1
+	
+	
+	save_file.save1 = one
+	print(save_file.save1)
+	SaveData.save_data()
+	
+	
+	print(save_file.save1)
+	print(one)
+	get_node(\"stamina\").set_value(save_file.save1)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
@@ -128,6 +141,7 @@ texture = ExtResource( 6 )
 position = Vector2( -7.60571, -679.05 )
 scale = Vector2( 0.922532, 0.876941 )
 frames = SubResource( 4 )
+frame = 2
 playing = true
 
 [node name="ChibArm2" type="Sprite" parent="ChibBody"]

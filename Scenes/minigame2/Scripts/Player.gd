@@ -53,6 +53,7 @@ func killplayer():
 	queue_free()
 
 
+
 	
 	
 func rewardplayer(scoretoadd):

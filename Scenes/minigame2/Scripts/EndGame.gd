@@ -6,13 +6,15 @@ extends "res://Scenes/minigame2/Scripts/ScrollMovement.gd"
 func _ready():
 	Signals.connect("killplayer",self,"gameover")
 	
+func gameover():
 
-
-
-
+	get_tree().paused = true
+	#get_tree().paused = true
 #func gameover():
 
-	#get_tree().paused = true
+#	get_tree().paused = true
+
+
 	
 func _on_settingsBTN_pressed():
 	if(get_tree().paused == true):

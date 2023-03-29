@@ -64,6 +64,7 @@ Global="*res://Scenes/scripts/MiniGame_Script/Level1.gd"
 ggsManager="*res://addons/GGS/src/ggs_manager.gd"
 SaveData="*res://Scenes/scripts/saveData.gd"
 Signals="*res://Scenes/minigame2/Scripts/Signals.gd"
+HighScore="*res://Scenes/minigame2/Scripts/HighScore.gd"
 
 [display]
 

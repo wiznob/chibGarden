@@ -117,16 +117,6 @@ margin_top = -533.0
 margin_right = 516.0
 margin_bottom = 533.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="shopPopUP"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -512.0
-margin_top = -529.0
-margin_right = 512.0
-margin_bottom = 529.0
-
 [node name="ScrollContainer" type="ScrollContainer" parent="shopPopUP"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -414,6 +404,7 @@ script = ExtResource( 3 )
 
 [connection signal="pressed" from="HBoxContainer/feedBTN" to="." method="_on_feedBTN_pressed"]
 [connection signal="pressed" from="HBoxContainer/gamesBTN" to="." method="_on_gamesBTN_pressed"]
+[connection signal="pressed" from="HBoxContainer/graveBTN" to="." method="_on_graveBTN_pressed"]
 [connection signal="pressed" from="settingsBTN" to="." method="_on_settingsBTN_pressed"]
 [connection signal="pressed" from="shopBTN" to="." method="_on_shopBTN_pressed"]
 [connection signal="pressed" from="Settingspopup/VBoxContainer/saveButton" to="Settingspopup/VBoxContainer/saveButton" method="_on_saveButton_pressed"]

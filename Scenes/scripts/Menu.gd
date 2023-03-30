@@ -53,3 +53,7 @@ func _on_shopBTN_pressed():
 
 func _on_item1_pressed():
 	print("green pressed") # Replace with function body.
+
+
+func _on_graveBTN_pressed():
+	get_tree().change_scene("res://Scenes/graveYard.tscn")

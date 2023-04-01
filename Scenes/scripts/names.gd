@@ -3,7 +3,7 @@ extends RichTextLabel
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var names = "This is a chib" 
+var names = "Chib" 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

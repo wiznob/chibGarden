@@ -15,54 +15,29 @@
 script/source = "extends Node2D
 onready var save_file = SaveData.gameData
 
-# Declare member variables here. Examples:
-var hunger = 5
-var stamina = 0
-var strength = 55
-var Happniess = 30
-var age
-var eyes
-var Larm
-var Lleg
-var Rarm
-var Rleg
-var rarity
-var safearea
+# no vars needed thanks to saveData
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	safearea = OS.get_window_safe_area()
-	print(safearea)
-	
-	get_node(\"hunger\").set_value(hunger)
-	get_node(\"stamina\").set_value(save_file.save1)
-	get_node(\"strength\").set_value(strength)
-	get_node(\"happiness\").set_value(Happniess)
+	get_node(\"hunger\").set_value(save_file.hunger)
+	get_node(\"stamina\").set_value(save_file.stamina)
+	get_node(\"strength\").set_value(save_file.strength)
+	get_node(\"happiness\").set_value(save_file.happiness)
 
 	
 	var button = Button.new()
 	button.text = \"add\"
 	button.connect(\"pressed\", self, \"_button_pressed\")
 	add_child(button)
-	
-	print(save_file.save3)
 
 func _button_pressed():
-	get_node(\"stamina\").set_value(save_file.save1)
-	#var one = 5 
-	#one += 1
-	#save_file.save1  = one
-	var one = save_file.save1 +1
-	
-	
-	save_file.save1 = one
-	print(save_file.save1)
+	var one = save_file.stamina +1
+	save_file.stamina = one
 	SaveData.save_data()
+	get_node(\"stamina\").set_value(save_file.stamina)
+	#print(save_file.stamina)
+	#print(one)
 	
-	
-	print(save_file.save1)
-	print(one)
-	get_node(\"stamina\").set_value(save_file.save1)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
@@ -141,7 +116,6 @@ texture = ExtResource( 6 )
 position = Vector2( -7.60571, -679.05 )
 scale = Vector2( 0.922532, 0.876941 )
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
 [node name="ChibArm2" type="Sprite" parent="ChibBody"]

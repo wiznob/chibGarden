@@ -14,6 +14,7 @@
 [sub_resource type="GDScript" id=3]
 script/source = "extends Node2D
 onready var save_file = SaveData.gameData
+onready var timer  = get_node(\"Timer\")
 
 # no vars needed thanks to saveData
 
@@ -23,14 +24,22 @@ func _ready():
 	get_node(\"stamina\").set_value(save_file.stamina)
 	get_node(\"strength\").set_value(save_file.strength)
 	get_node(\"happiness\").set_value(save_file.happiness)
+	#wait time before timer function activates in seconds
+	timer.set_wait_time(2)
+	timer.start()
+	# check if the chib died 
+	if(save_file.age > 30):
+		print(\"The chib is dead\")
 
-	
+
 	var button = Button.new()
 	button.text = \"add\"
 	button.connect(\"pressed\", self, \"_button_pressed\")
 	add_child(button)
-
+	
+#Testing Increasing and saving chib stats
 func _button_pressed():
+	#psst conor you could prorably use this block of code for feeding :D
 	var one = save_file.stamina +1
 	save_file.stamina = one
 	SaveData.save_data()
@@ -38,10 +47,46 @@ func _button_pressed():
 	#print(save_file.stamina)
 	#print(one)
 	
+	#yandre dev code warning 
+	# when timer runs out this function runs
+func timerTimeout():
+	var value = randi()%5 #genrates random number between 0 and 4
+	print(value)
+	if(value == 0):
+		var decrease = save_file.hunger - 5
+		save_file.hunger = decrease
+		SaveData.save_data()
+		get_node(\"hunger\").set_value(save_file.hunger)
+
+	elif(value == 1):
+		var decrease = save_file.stamina - 5
+		save_file.stamina = decrease
+		SaveData.save_data()
+		get_node(\"stamina\").set_value(save_file.stamina)
+
+	elif(value == 2):
+		var decrease = save_file.strength - 5
+		save_file.strength = decrease
+		SaveData.save_data()
+		get_node(\"strength\").set_value(save_file.strength)
+
+	elif(value == 3):
+		var decrease = save_file.happiness - 5
+		save_file.happiness = decrease
+		SaveData.save_data()
+		get_node(\"happiness\").set_value(save_file.happiness)
+
+	else:
+		var increase = save_file.age + 1
+		save_file.age = increase
+		SaveData.save_data()
+		print(\"current age: \", save_file.age)
+		#will check every age increas to see if dead 
+		if(save_file.age > 30):
+			print(\"The chib is dead\")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
-#	pass
-"
+#	pass"
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
@@ -116,6 +161,7 @@ texture = ExtResource( 6 )
 position = Vector2( -7.60571, -679.05 )
 scale = Vector2( 0.922532, 0.876941 )
 frames = SubResource( 4 )
+frame = 2
 playing = true
 
 [node name="ChibArm2" type="Sprite" parent="ChibBody"]
@@ -219,3 +265,7 @@ margin_right = 247.0
 margin_bottom = 34.0
 custom_fonts/font = ExtResource( 2 )
 text = "Hunger"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="timerTimeout"]

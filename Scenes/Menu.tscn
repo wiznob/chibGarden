@@ -153,7 +153,7 @@ margin_top = 96.0
 margin_right = 1024.0
 margin_bottom = 146.0
 custom_fonts/font = ExtResource( 14 )
-text = "I love the yellow booster :3 - 60 coins"
+text = "Yellow booster - 60 coins"
 icon = ExtResource( 15 )
 expand_icon = true
 
@@ -162,7 +162,7 @@ margin_top = 150.0
 margin_right = 1024.0
 margin_bottom = 200.0
 custom_fonts/font = ExtResource( 14 )
-text = "Fucking hate the blue booster - 20 coins"
+text = "Blue booster - 20 coins"
 icon = ExtResource( 12 )
 expand_icon = true
 
@@ -171,7 +171,7 @@ margin_top = 204.0
 margin_right = 1024.0
 margin_bottom = 254.0
 custom_fonts/font = ExtResource( 14 )
-text = "Green booster is ok - 33 coins"
+text = "Green booster- 33 coins"
 icon = ExtResource( 10 )
 expand_icon = true
 
@@ -180,7 +180,7 @@ margin_top = 258.0
 margin_right = 1024.0
 margin_bottom = 308.0
 custom_fonts/font = ExtResource( 14 )
-text = "Racist red booster!!!! - 100 coins"
+text = "red booster - 100 coins"
 icon = ExtResource( 13 )
 expand_icon = true
 
@@ -189,7 +189,7 @@ margin_top = 312.0
 margin_right = 1024.0
 margin_bottom = 362.0
 custom_fonts/font = ExtResource( 14 )
-text = "Heehehehe - 1 coin"
+text = "Purple Booster - 40"
 icon = ExtResource( 11 )
 expand_icon = true
 
@@ -206,7 +206,7 @@ margin_top = 414.0
 margin_right = 1024.0
 margin_bottom = 464.0
 custom_fonts/font = ExtResource( 14 )
-text = "Totaly not the apple logo - 16 coins"
+text = "Apple -  20 coins"
 icon = ExtResource( 19 )
 expand_icon = true
 
@@ -215,7 +215,7 @@ margin_top = 468.0
 margin_right = 1024.0
 margin_bottom = 518.0
 custom_fonts/font = ExtResource( 14 )
-text = "bannananana - 20 cois"
+text = "Banana - 15 coins"
 icon = ExtResource( 16 )
 expand_icon = true
 
@@ -224,7 +224,7 @@ margin_top = 522.0
 margin_right = 1024.0
 margin_bottom = 572.0
 custom_fonts/font = ExtResource( 14 )
-text = "MANGO! - 30 coin"
+text = "Mango - 30 coin"
 icon = ExtResource( 17 )
 expand_icon = true
 
@@ -233,7 +233,7 @@ margin_top = 576.0
 margin_right = 1024.0
 margin_bottom = 626.0
 custom_fonts/font = ExtResource( 14 )
-text = "orange :) - 70 coin"
+text = "Orange - 70 coin"
 icon = ExtResource( 18 )
 expand_icon = true
 
@@ -259,7 +259,7 @@ margin_top = 732.0
 margin_right = 1024.0
 margin_bottom = 782.0
 custom_fonts/font = ExtResource( 14 )
-text = "Super chib - 60 coins"
+text = "Super chib - 150 coins"
 icon = ExtResource( 20 )
 expand_icon = true
 

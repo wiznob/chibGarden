@@ -40,6 +40,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 9 )
 
+[node name="Timer" type="Timer" parent="."]
+
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 538, 1338.45 )
 scale = Vector2( 3.249, 4.46817 )
@@ -402,6 +404,47 @@ margin_bottom = 110.0
 text = "WACK"
 script = ExtResource( 3 )
 
+[node name="deathPopUp" type="PopupPanel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -497.0
+margin_top = -110.5
+margin_right = 497.0
+margin_bottom = 110.5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="deathPopUp"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="deathPopUp/ScrollContainer"]
+margin_right = 986.0
+margin_bottom = 213.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="deathPopUp/ScrollContainer/VBoxContainer"]
+margin_right = 986.0
+margin_bottom = 44.0
+custom_fonts/font = ExtResource( 14 )
+text = "Your Chib has Died! They have been moved to the grave yard"
+align = 1
+
+[node name="toGraveYard" type="Button" parent="deathPopUp/ScrollContainer/VBoxContainer"]
+margin_top = 48.0
+margin_right = 986.0
+margin_bottom = 98.0
+custom_fonts/font = ExtResource( 14 )
+text = "Ok"
+
+[connection signal="timeout" from="Timer" to="." method="timeUP"]
 [connection signal="pressed" from="HBoxContainer/feedBTN" to="." method="_on_feedBTN_pressed"]
 [connection signal="pressed" from="HBoxContainer/gamesBTN" to="." method="_on_gamesBTN_pressed"]
 [connection signal="pressed" from="HBoxContainer/graveBTN" to="." method="_on_graveBTN_pressed"]
@@ -413,3 +456,4 @@ script = ExtResource( 3 )
 [connection signal="pressed" from="Settingspopup/VBoxContainer/quitButton" to="Settingspopup/VBoxContainer/quitButton" method="_on_quitButton_pressed"]
 [connection signal="pressed" from="MiniGamesPopUp/VBoxContainer/ChibRacing" to="MiniGamesPopUp/VBoxContainer/ChibRacing" method="_on_ChibRacing_pressed"]
 [connection signal="pressed" from="MiniGamesPopUp/VBoxContainer/ChibSearch" to="MiniGamesPopUp/VBoxContainer/ChibSearch" method="_on_ChibSearch_pressed"]
+[connection signal="pressed" from="deathPopUp/ScrollContainer/VBoxContainer/toGraveYard" to="." method="_on_toGraveYard_pressed"]

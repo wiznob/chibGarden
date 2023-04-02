@@ -20,7 +20,7 @@ func load_data():
 			"stamina":100,
 			"strength":100,
 			"happiness":100,
-			"age":1
+			"age":30
 		}
 		save_data()
 	file.open(SAVE_FILE, File.READ)

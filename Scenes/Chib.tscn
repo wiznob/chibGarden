@@ -86,7 +86,8 @@ func timerTimeout():
 			print(\"The chib is dead\")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
-#	pass"
+#	pass
+"
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {

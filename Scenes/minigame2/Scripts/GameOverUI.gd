@@ -14,6 +14,6 @@ func _on_Button_pressed():
 
 func gameover():
 	self.show()
-	print("awooga")
+
 	
 	

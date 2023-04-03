@@ -1,11 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Images/BirdS_0003_Capa-0.png" type="Texture" id=1]
 [ext_resource path="res://Images/BirdS_0000_Capa-1.png" type="Texture" id=2]
 [ext_resource path="res://Images/BirdS_0001_Capa-2.png" type="Texture" id=3]
 [ext_resource path="res://Images/BirdS_0002_Capa-3.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/scripts/MiniGame_Script/Bird.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/minigame2/Pickup.tscn" type="PackedScene" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -16,35 +14,23 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 43, 28 )
+extents = Vector2( 49.9999, 39.5001 )
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 381.178, 197.026 )
-
-[node name="Bird" type="KinematicBody2D"]
+[node name="Bird" type="Area2D"]
 rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
-script = ExtResource( 5 )
-jump_velocity = 0.0
-gravity_scale = 0.0
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -13.6119, -10.7356 )
 rotation = 3.14159
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.627602, 0.717704 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -3, 1 )
+position = Vector2( -9.99994, -10.5001 )
 shape = SubResource( 2 )
-
-[node name="Collide" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1, -1 )
-scale = Vector2( 0.110185, 0.137037 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collide"]
-position = Vector2( -45.3782, 14.5945 )
-scale = Vector2( 1, 1 )
-shape = SubResource( 3 )
-
-[connection signal="body_entered" from="Collide" to="." method="_on_Collide_body_entered"]

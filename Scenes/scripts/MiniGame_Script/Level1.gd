@@ -32,10 +32,6 @@ func _on_backButton_pressed():
 	
 
 
-func _on_Bird_enemy(body):
-	if body.name == "Player":
-		queue_free()
-	
 
 
 

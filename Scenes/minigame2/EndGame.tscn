@@ -50,15 +50,27 @@ margin_right = 674.0
 margin_bottom = 308.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HighScore"]
-margin_left = 55.0
-margin_top = 159.0
-margin_right = 95.0
-margin_bottom = 199.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -47.5
+margin_top = 128.0
+margin_right = -26.5
+margin_bottom = 147.0
 rect_scale = Vector2( 12.1174, 7.13071 )
 text = "0-H
 
 "
 script = ExtResource( 26 )
+
+[node name="Label" type="Label" parent="HighScore"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -128.0
+margin_right = 128.0
+margin_bottom = 159.0
+custom_fonts/font = ExtResource( 23 )
+text = "HighScore
+"
 
 [node name="Score" type="Control" parent="."]
 margin_left = 485.0

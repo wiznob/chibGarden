@@ -1,8 +1,4 @@
-extends "res://Scenes/scripts/MiniGame_Script/Level1.gd"
-
-
-
-
+extends Node2D
 
 func _on_Switch_body_entered(body):
 	if $Switch/AnimatedSprite.frame == 1:
@@ -42,4 +38,3 @@ func _on_Bird_body_entered(body):
 			
 
 	
-

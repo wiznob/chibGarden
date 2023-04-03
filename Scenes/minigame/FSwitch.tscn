@@ -23,7 +23,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 13.3333, 11 )
 
-[node name="Switch" type="Area2D"]
+[node name="FSwitch" type="Area2D"]
 scale = Vector2( 1.5, 1.5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

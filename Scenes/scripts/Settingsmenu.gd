@@ -56,3 +56,8 @@ func _on_Back_pressed():
 
 func _on_saveButton_pressed():
 	SaveData.save_data()
+
+
+func _on_RestartBtn_pressed():
+	get_tree().reload_current_scene()
+	get_tree().paused = false

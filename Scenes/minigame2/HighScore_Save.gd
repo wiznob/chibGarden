@@ -4,7 +4,7 @@ onready var save_file = HighScore.gameData
 func _ready():
 	print(save_file.save1)
 	self.text = String(save_file.save1)
-	Signals.connect("updatescore",self,"updatescore")
+	#Signals.connect("updatescore",self,"updatescore")
 
 func updatescore(score):
 	var one = save_file.save1 

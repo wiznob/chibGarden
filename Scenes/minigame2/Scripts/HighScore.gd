@@ -1,4 +1,5 @@
 extends Node
+#please work :)
 
 
 const SAVE_FILE = "user://HighScore"

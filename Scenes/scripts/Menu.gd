@@ -1,5 +1,8 @@
 extends Control
 
+onready var save_file = SaveData.gameData
+onready var timer  = get_node("Timer")
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -8,7 +11,11 @@ var newFood = food.instance()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	timer.set_wait_time(2)
+	timer.start()
+	# check if the chib died 
+	if(save_file.age > 30):
+		$deathPopUp.show()
 
 func _on_settingsBTN_pressed():
 	get_tree().paused = true
@@ -53,3 +60,18 @@ func _on_shopBTN_pressed():
 
 func _on_item1_pressed():
 	print("green pressed") # Replace with function body.
+
+
+func _on_graveBTN_pressed():
+	get_tree().change_scene("res://Scenes/graveYard.tscn")
+
+
+func timeUP():
+	# check if the chib died 
+	if(save_file.age > 30):
+		get_tree().paused = true
+		$deathPopUp.show()
+
+func _on_toGraveYard_pressed():
+	get_tree().change_scene("res://Scenes/graveYard.tscn")
+	get_tree().paused = false 

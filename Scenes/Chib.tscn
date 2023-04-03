@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://chibImage/chib body.png" type="Texture" id=1]
-[ext_resource path="res://fonts/monkeyFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/monkeyFont3.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Scenes/scripts/names.gd" type="Script" id=3]
 [ext_resource path="res://chibImage/eyes 1.png" type="Texture" id=4]
 [ext_resource path="res://chibImage/chib arm.png" type="Texture" id=5]
@@ -14,55 +14,76 @@
 [sub_resource type="GDScript" id=3]
 script/source = "extends Node2D
 onready var save_file = SaveData.gameData
+onready var timer  = get_node(\"Timer\")
 
-# Declare member variables here. Examples:
-var hunger = 5
-var stamina = 0
-var strength = 55
-var Happniess = 30
-var age
-var eyes
-var Larm
-var Lleg
-var Rarm
-var Rleg
-var rarity
-var safearea
+# no vars needed thanks to saveData
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	safearea = OS.get_window_safe_area()
-	print(safearea)
-	
-	get_node(\"hunger\").set_value(hunger)
-	get_node(\"stamina\").set_value(save_file.save1)
-	get_node(\"strength\").set_value(strength)
-	get_node(\"happiness\").set_value(Happniess)
+	get_node(\"hunger\").set_value(save_file.hunger)
+	get_node(\"stamina\").set_value(save_file.stamina)
+	get_node(\"strength\").set_value(save_file.strength)
+	get_node(\"happiness\").set_value(save_file.happiness)
+	#wait time before timer function activates in seconds
+	timer.set_wait_time(2)
+	timer.start()
+	# check if the chib died 
+	if(save_file.age > 30):
+		print(\"The chib is dead\")
 
-	
+
 	var button = Button.new()
 	button.text = \"add\"
 	button.connect(\"pressed\", self, \"_button_pressed\")
 	add_child(button)
 	
-	print(save_file.save3)
-
+#Testing Increasing and saving chib stats
 func _button_pressed():
-	get_node(\"stamina\").set_value(save_file.save1)
-	#var one = 5 
-	#one += 1
-	#save_file.save1  = one
-	var one = save_file.save1 +1
-	
-	
-	save_file.save1 = one
-	print(save_file.save1)
+	#psst conor you could prorably use this block of code for feeding :D
+	var one = save_file.stamina +1
+	save_file.stamina = one
 	SaveData.save_data()
+	get_node(\"stamina\").set_value(save_file.stamina)
+	#print(save_file.stamina)
+	#print(one)
 	
-	
-	print(save_file.save1)
-	print(one)
-	get_node(\"stamina\").set_value(save_file.save1)
+	#yandre dev code warning 
+	# when timer runs out this function runs
+func timerTimeout():
+	var value = randi()%5 #genrates random number between 0 and 4
+	print(value)
+	if(value == 0):
+		var decrease = save_file.hunger - 5
+		save_file.hunger = decrease
+		SaveData.save_data()
+		get_node(\"hunger\").set_value(save_file.hunger)
+
+	elif(value == 1):
+		var decrease = save_file.stamina - 5
+		save_file.stamina = decrease
+		SaveData.save_data()
+		get_node(\"stamina\").set_value(save_file.stamina)
+
+	elif(value == 2):
+		var decrease = save_file.strength - 5
+		save_file.strength = decrease
+		SaveData.save_data()
+		get_node(\"strength\").set_value(save_file.strength)
+
+	elif(value == 3):
+		var decrease = save_file.happiness - 5
+		save_file.happiness = decrease
+		SaveData.save_data()
+		get_node(\"happiness\").set_value(save_file.happiness)
+
+	else:
+		var increase = save_file.age + 1
+		save_file.age = increase
+		SaveData.save_data()
+		print(\"current age: \", save_file.age)
+		#will check every age increas to see if dead 
+		if(save_file.age > 30):
+			print(\"The chib is dead\")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
@@ -245,3 +266,7 @@ margin_right = 247.0
 margin_bottom = 34.0
 custom_fonts/font = ExtResource( 2 )
 text = "Hunger"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="timerTimeout"]

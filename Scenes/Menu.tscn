@@ -40,6 +40,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 9 )
 
+[node name="Timer" type="Timer" parent="."]
+
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 538, 1338.45 )
 scale = Vector2( 3.249, 4.46817 )
@@ -117,16 +119,6 @@ margin_top = -533.0
 margin_right = 516.0
 margin_bottom = 533.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="shopPopUP"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -512.0
-margin_top = -529.0
-margin_right = 512.0
-margin_bottom = 529.0
-
 [node name="ScrollContainer" type="ScrollContainer" parent="shopPopUP"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -139,137 +131,137 @@ size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="shopPopUP/ScrollContainer"]
 margin_right = 1024.0
-margin_bottom = 1082.0
+margin_bottom = 1058.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="shopLBL" type="Label" parent="shopPopUP/ScrollContainer/VBoxContainer"]
-margin_right = 1012.0
-margin_bottom = 64.0
+margin_right = 1024.0
+margin_bottom = 44.0
 custom_fonts/font = ExtResource( 14 )
 text = "Welcome to the shop"
 align = 1
 
 [node name="premiumLBL" type="Label" parent="shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 68.0
-margin_right = 1012.0
-margin_bottom = 132.0
+margin_top = 48.0
+margin_right = 1024.0
+margin_bottom = 92.0
 custom_fonts/font = ExtResource( 14 )
 text = "Premium store"
 align = 1
 
 [node name="yBooster" type="Button" parent="shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 136.0
-margin_right = 1012.0
-margin_bottom = 206.0
+margin_top = 96.0
+margin_right = 1024.0
+margin_bottom = 146.0
 custom_fonts/font = ExtResource( 14 )
-text = "I love the yellow booster :3 - 60 coins"
+text = "Yellow booster - 60 coins"
 icon = ExtResource( 15 )
 expand_icon = true
 
 [node name="bBooster" type="Button" parent="shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 210.0
-margin_right = 1012.0
-margin_bottom = 280.0
+margin_top = 150.0
+margin_right = 1024.0
+margin_bottom = 200.0
 custom_fonts/font = ExtResource( 14 )
-text = "Fucking hate the blue booster - 20 coins"
+text = "Blue booster - 20 coins"
 icon = ExtResource( 12 )
 expand_icon = true
 
 [node name="gBooster" type="Button" parent="shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 284.0
-margin_right = 1012.0
-margin_bottom = 354.0
+margin_top = 204.0
+margin_right = 1024.0
+margin_bottom = 254.0
 custom_fonts/font = ExtResource( 14 )
-text = "Green booster is ok - 33 coins"
+text = "Green booster- 33 coins"
 icon = ExtResource( 10 )
 expand_icon = true
 
 [node name="rBooster" type="Button" parent="shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 358.0
-margin_right = 1012.0
-margin_bottom = 428.0
+margin_top = 258.0
+margin_right = 1024.0
+margin_bottom = 308.0
 custom_fonts/font = ExtResource( 14 )
-text = "Racist red booster!!!! - 100 coins"
+text = "red booster - 100 coins"
 icon = ExtResource( 13 )
 expand_icon = true
 
 [node name="pBooster" type="Button" parent="shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 432.0
-margin_right = 1012.0
-margin_bottom = 502.0
+margin_top = 312.0
+margin_right = 1024.0
+margin_bottom = 362.0
 custom_fonts/font = ExtResource( 14 )
-text = "Heehehehe - 1 coin"
+text = "Purple Booster - 40"
 icon = ExtResource( 11 )
 expand_icon = true
 
 [node name="basicLBL" type="Label" parent="shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 506.0
-margin_right = 1012.0
-margin_bottom = 570.0
+margin_top = 366.0
+margin_right = 1024.0
+margin_bottom = 410.0
 custom_fonts/font = ExtResource( 14 )
 text = "Basic store"
 align = 1
 
 [node name="apple" type="Button" parent="shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 574.0
-margin_right = 1012.0
-margin_bottom = 644.0
+margin_top = 414.0
+margin_right = 1024.0
+margin_bottom = 464.0
 custom_fonts/font = ExtResource( 14 )
-text = "Totaly not the apple logo - 16 coins"
+text = "Apple -  20 coins"
 icon = ExtResource( 19 )
 expand_icon = true
 
 [node name="bananna" type="Button" parent="shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 648.0
-margin_right = 1012.0
-margin_bottom = 718.0
+margin_top = 468.0
+margin_right = 1024.0
+margin_bottom = 518.0
 custom_fonts/font = ExtResource( 14 )
-text = "bannananana - 20 cois"
+text = "Banana - 15 coins"
 icon = ExtResource( 16 )
 expand_icon = true
 
 [node name="mango" type="Button" parent="shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 722.0
-margin_right = 1012.0
-margin_bottom = 792.0
+margin_top = 522.0
+margin_right = 1024.0
+margin_bottom = 572.0
 custom_fonts/font = ExtResource( 14 )
-text = "MANGO! - 30 coin"
+text = "Mango - 30 coin"
 icon = ExtResource( 17 )
 expand_icon = true
 
 [node name="orange" type="Button" parent="shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 796.0
-margin_right = 1012.0
-margin_bottom = 866.0
+margin_top = 576.0
+margin_right = 1024.0
+margin_bottom = 626.0
 custom_fonts/font = ExtResource( 14 )
-text = "orange :) - 70 coin"
+text = "Orange - 70 coin"
 icon = ExtResource( 18 )
 expand_icon = true
 
 [node name="chibsLBL" type="Label" parent="shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 870.0
-margin_right = 1012.0
-margin_bottom = 934.0
+margin_top = 630.0
+margin_right = 1024.0
+margin_bottom = 674.0
 custom_fonts/font = ExtResource( 14 )
 text = "Chibs"
 align = 1
 
 [node name="basic" type="Button" parent="shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 938.0
-margin_right = 1012.0
-margin_bottom = 1008.0
+margin_top = 678.0
+margin_right = 1024.0
+margin_bottom = 728.0
 custom_fonts/font = ExtResource( 14 )
 text = "Buy a basic chib - 60 coins"
 icon = ExtResource( 20 )
 expand_icon = true
 
 [node name="super" type="Button" parent="shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 1012.0
-margin_right = 1012.0
-margin_bottom = 1082.0
+margin_top = 732.0
+margin_right = 1024.0
+margin_bottom = 782.0
 custom_fonts/font = ExtResource( 14 )
-text = "Super chib - 60 coins"
+text = "Super chib - 150 coins"
 icon = ExtResource( 20 )
 expand_icon = true
 
@@ -412,8 +404,50 @@ margin_bottom = 110.0
 text = "WACK"
 script = ExtResource( 3 )
 
+[node name="deathPopUp" type="PopupPanel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -497.0
+margin_top = -110.5
+margin_right = 497.0
+margin_bottom = 110.5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="deathPopUp"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="deathPopUp/ScrollContainer"]
+margin_right = 986.0
+margin_bottom = 213.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="deathPopUp/ScrollContainer/VBoxContainer"]
+margin_right = 986.0
+margin_bottom = 44.0
+custom_fonts/font = ExtResource( 14 )
+text = "Your Chib has Died! They have been moved to the grave yard"
+align = 1
+
+[node name="toGraveYard" type="Button" parent="deathPopUp/ScrollContainer/VBoxContainer"]
+margin_top = 48.0
+margin_right = 986.0
+margin_bottom = 98.0
+custom_fonts/font = ExtResource( 14 )
+text = "Ok"
+
+[connection signal="timeout" from="Timer" to="." method="timeUP"]
 [connection signal="pressed" from="HBoxContainer/feedBTN" to="." method="_on_feedBTN_pressed"]
 [connection signal="pressed" from="HBoxContainer/gamesBTN" to="." method="_on_gamesBTN_pressed"]
+[connection signal="pressed" from="HBoxContainer/graveBTN" to="." method="_on_graveBTN_pressed"]
 [connection signal="pressed" from="settingsBTN" to="." method="_on_settingsBTN_pressed"]
 [connection signal="pressed" from="shopBTN" to="." method="_on_shopBTN_pressed"]
 [connection signal="pressed" from="Settingspopup/VBoxContainer/saveButton" to="Settingspopup/VBoxContainer/saveButton" method="_on_saveButton_pressed"]
@@ -422,3 +456,4 @@ script = ExtResource( 3 )
 [connection signal="pressed" from="Settingspopup/VBoxContainer/quitButton" to="Settingspopup/VBoxContainer/quitButton" method="_on_quitButton_pressed"]
 [connection signal="pressed" from="MiniGamesPopUp/VBoxContainer/ChibRacing" to="MiniGamesPopUp/VBoxContainer/ChibRacing" method="_on_ChibRacing_pressed"]
 [connection signal="pressed" from="MiniGamesPopUp/VBoxContainer/ChibSearch" to="MiniGamesPopUp/VBoxContainer/ChibSearch" method="_on_ChibSearch_pressed"]
+[connection signal="pressed" from="deathPopUp/ScrollContainer/VBoxContainer/toGraveYard" to="." method="_on_toGraveYard_pressed"]

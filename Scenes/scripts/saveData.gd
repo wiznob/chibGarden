@@ -15,10 +15,12 @@ func save_data():
 func load_data():
 	var file = File.new()
 	if not file.file_exists(SAVE_FILE):
-		gameData = {
-			"save1":0,
-			"save2":0,
-			"save3":0
+		gameData = {# values a new chib will start at (might have to delete save to see changes)
+			"hunger":100,
+			"stamina":100,
+			"strength":100,
+			"happiness":100,
+			"age":30
 		}
 		save_data()
 	file.open(SAVE_FILE, File.READ)

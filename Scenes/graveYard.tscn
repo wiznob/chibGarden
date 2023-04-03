@@ -1,0 +1,89 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/scripts/Back.gd" type="Script" id=1]
+[ext_resource path="res://fonts/monkeyFont2.tres" type="DynamicFont" id=2]
+[ext_resource path="res://chibImage/Chib.png" type="Texture" id=3]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends VBoxContainer
+onready var save_file = SaveData.gameData
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	if(save_file.age > 30):
+		var button = Button.new()
+		button.text =\"Age: 30, badges: 2, type: normal\"
+		button.connect(\"pressed\", self, \"_button_pressed\")
+		add_child(button)
+		#reseting (\"making\") chib stats
+		save_file.hunger  = 100
+		save_file.stamina  = 100
+		save_file.strength  = 100
+		save_file.happiness  = 100
+		save_file.age  = 1
+		print(button)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[node name="graveYard" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer"]
+margin_right = 1080.0
+margin_bottom = 1920.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = SubResource( 1 )
+
+[node name="titleLBL" type="Label" parent="Panel/ScrollContainer/VBoxContainer"]
+margin_right = 1080.0
+margin_bottom = 44.0
+custom_fonts/font = ExtResource( 2 )
+text = "This is the Grave Yard"
+align = 1
+
+[node name="title2LBL" type="Label" parent="Panel/ScrollContainer/VBoxContainer"]
+margin_top = 48.0
+margin_right = 1080.0
+margin_bottom = 92.0
+custom_fonts/font = ExtResource( 2 )
+text = "Here you can see all your past chibs"
+align = 1
+
+[node name="Back" type="Button" parent="Panel/ScrollContainer/VBoxContainer"]
+margin_top = 96.0
+margin_right = 1080.0
+margin_bottom = 146.0
+custom_fonts/font = ExtResource( 2 )
+text = "Back"
+script = ExtResource( 1 )
+
+[node name="example" type="Button" parent="Panel/ScrollContainer/VBoxContainer"]
+margin_top = 150.0
+margin_right = 1080.0
+margin_bottom = 306.0
+custom_fonts/font = ExtResource( 2 )
+text = "Example; bagdes 2; age 30."
+icon = ExtResource( 3 )
+align = 0
+
+[connection signal="pressed" from="Panel/ScrollContainer/VBoxContainer/Back" to="Panel/ScrollContainer/VBoxContainer/Back" method="_on_Back_pressed"]

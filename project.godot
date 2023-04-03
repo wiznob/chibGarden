@@ -37,7 +37,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "MyHitBox",
 "language": "GDScript",
-"path": "res://MyHitBox.gd"
+"path": "res://Scenes/scripts/MyHitBox.gd"
 } ]
 _global_script_class_icons={
 "BaseInput": "",
@@ -76,7 +76,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray(  )
+enabled=PoolStringArray( "res://addons/gut/plugin.cfg" )
 
 [global]
 

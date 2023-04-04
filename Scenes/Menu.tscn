@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Images/cog.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Chib.tscn" type="PackedScene" id=2]
@@ -20,7 +20,7 @@
 [ext_resource path="res://foodImg/Orange (1).png" type="Texture" id=18]
 [ext_resource path="res://foodImg/Apple (1).png" type="Texture" id=19]
 [ext_resource path="res://chibImage/Chib.png" type="Texture" id=20]
-
+[ext_resource path="res://Scenes/test.tscn" type="PackedScene" id=21]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.788235, 0.698039, 0.698039, 1 )
@@ -47,6 +47,9 @@ script = ExtResource( 9 )
 position = Vector2( 538, 1338.45 )
 scale = Vector2( 3.249, 4.46817 )
 texture = ExtResource( 7 )
+
+[node name="Name" parent="." instance=ExtResource( 21 )]
+visible = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_left = 0.5

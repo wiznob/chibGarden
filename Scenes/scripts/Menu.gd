@@ -16,6 +16,13 @@ func _ready():
 	# check if the chib died 
 	if(save_file.age > 30):
 		$deathPopUp.show()
+		
+			
+	if(save_file.name  == "i"):
+	#	$Name.show()
+		#print(save_file.name )
+		get_tree().change_scene("res://Scenes/test.tscn")
+
 
 func _on_settingsBTN_pressed():
 	get_tree().paused = true
@@ -75,3 +82,4 @@ func timeUP():
 func _on_toGraveYard_pressed():
 	get_tree().change_scene("res://Scenes/graveYard.tscn")
 	get_tree().paused = false 
+

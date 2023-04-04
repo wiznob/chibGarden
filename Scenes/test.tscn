@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://addons/SafeArea/SafeArea.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/scripts/titleScreen.gd" type="Script" id=2]
 [ext_resource path="res://fonts/monkeyFont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://fonts/monkeyFont3.tres" type="DynamicFont" id=4]
+[ext_resource path="res://chibImage/ChibHead.png" type="Texture" id=5]
 
 [node name="Name" type="Control"]
 anchor_right = 1.0
@@ -21,29 +23,249 @@ script = ExtResource( 1 )
 [node name="ColorRect" type="ColorRect" parent="SafeArea"]
 margin_right = 1080.0
 margin_bottom = 1920.0
-color = Color( 0.501961, 0.501961, 0.501961, 1 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="ChibHead" type="Sprite" parent="SafeArea/ColorRect"]
+position = Vector2( 66, 62 )
+rotation = -0.576741
+texture = ExtResource( 5 )
+
+[node name="ChibHead" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( -78.3513, 111.275 )
+rotation = -0.0853009
+texture = ExtResource( 5 )
+
+[node name="ChibHead2" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( 124.223, 95.1249 )
+rotation = 0.366781
+scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="ChibHead4" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( 245.939, 164.76 )
+rotation = 0.267088
+texture = ExtResource( 5 )
+
+[node name="ChibHead5" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( 392.258, 251.593 )
+rotation = 0.554301
+texture = ExtResource( 5 )
+
+[node name="ChibHead6" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( 524.822, 348.565 )
+rotation = 0.35939
+texture = ExtResource( 5 )
+
+[node name="ChibHead7" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( 661.244, 443.275 )
+rotation = 0.366645
+texture = ExtResource( 5 )
+
+[node name="ChibHead8" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( 785.728, 512.325 )
+rotation = 0.959783
+texture = ExtResource( 5 )
+
+[node name="ChibHead9" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( 709.053, 624.69 )
+rotation = 1.08921
+texture = ExtResource( 5 )
+
+[node name="ChibHead10" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( 627.471, 744.6 )
+rotation = 1.14316
+texture = ExtResource( 5 )
+
+[node name="ChibHead11" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( 551.129, 861.954 )
+rotation = 1.14316
+texture = ExtResource( 5 )
+
+[node name="ChibHead12" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( 464.306, 984.419 )
+rotation = 1.14316
+texture = ExtResource( 5 )
+
+[node name="ChibHead13" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( 390.691, 1097.58 )
+rotation = 1.14316
+texture = ExtResource( 5 )
+
+[node name="ChibHead14" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( 322.903, 1210.96 )
+rotation = 1.14316
+texture = ExtResource( 5 )
+
+[node name="ChibHead15" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( 247.107, 1327.47 )
+rotation = 1.14316
+texture = ExtResource( 5 )
+
+[node name="ChibHead16" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( 171.311, 1443.99 )
+rotation = 1.14316
+texture = ExtResource( 5 )
+
+[node name="ChibHead17" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( 95.3035, 1566.33 )
+rotation = 1.14316
+texture = ExtResource( 5 )
+
+[node name="ChibHead18" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( 26.1321, 1680 )
+rotation = 1.14316
+texture = ExtResource( 5 )
+
+[node name="ChibHead19" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( -47.2709, 1787.33 )
+rotation = 1.14316
+texture = ExtResource( 5 )
+
+[node name="ChibHead20" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( -118.916, 1902.97 )
+rotation = 1.14316
+texture = ExtResource( 5 )
+
+[node name="ChibHead3" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( -153.016, 229.72 )
+rotation = -0.0853009
+texture = ExtResource( 5 )
+
+[node name="ChibHead21" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( -225.5, 344.811 )
+rotation = -0.0853009
+texture = ExtResource( 5 )
+
+[node name="ChibHead22" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( -299.074, 461.58 )
+rotation = -0.0853009
+texture = ExtResource( 5 )
+
+[node name="ChibHead23" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( -375.374, 582.539 )
+rotation = -0.0853009
+texture = ExtResource( 5 )
+
+[node name="ChibHead24" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( -452.554, 699.348 )
+rotation = -0.0853009
+texture = ExtResource( 5 )
+
+[node name="ChibHead25" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( -536.065, 820.389 )
+rotation = -0.0853009
+texture = ExtResource( 5 )
+
+[node name="ChibHead26" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( -610.73, 938.834 )
+rotation = -0.0853009
+texture = ExtResource( 5 )
+
+[node name="ChibHead27" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( -682.164, 1048.64 )
+rotation = -0.0853009
+texture = ExtResource( 5 )
+
+[node name="ChibHead28" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( -764.544, 1171.61 )
+rotation = -0.0853009
+texture = ExtResource( 5 )
+
+[node name="ChibHead29" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( -836.482, 1285.87 )
+rotation = -0.0853009
+texture = ExtResource( 5 )
+
+[node name="ChibHead30" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( -909.844, 1396.81 )
+rotation = -0.0853009
+texture = ExtResource( 5 )
+
+[node name="ChibHead31" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( -979.227, 1516.3 )
+rotation = -0.0853009
+texture = ExtResource( 5 )
+
+[node name="ChibHead32" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( -193.662, 2014.21 )
+rotation = 1.14316
+texture = ExtResource( 5 )
+
+[node name="ChibHead33" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( -852.563, 1582 )
+rotation = 0.267088
+texture = ExtResource( 5 )
+
+[node name="ChibHead34" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( -747.994, 1655.99 )
+rotation = 0.267088
+texture = ExtResource( 5 )
+
+[node name="ChibHead35" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( -634.033, 1726.54 )
+rotation = 0.267088
+texture = ExtResource( 5 )
+
+[node name="ChibHead36" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( -530.05, 1797.77 )
+rotation = 0.267088
+texture = ExtResource( 5 )
+
+[node name="ChibHead37" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( -416.928, 1867.77 )
+rotation = 0.267088
+texture = ExtResource( 5 )
+
+[node name="ChibHead38" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
+position = Vector2( -302.674, 1939.71 )
+rotation = 0.267088
+texture = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="SafeArea/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 0.593
+margin_left = 268.0
+margin_top = 171.0
+margin_right = -584.0
+margin_bottom = -938.56
+rect_min_size = Vector2( 2.5, 2 )
+rect_scale = Vector2( 2.5, 2.5 )
+size_flags_stretch_ratio = 0.25
+custom_fonts/font = ExtResource( 4 )
+text = "Welcome To ChibGarden!"
+
+[node name="Label2" type="Label" parent="SafeArea/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 250.0
+margin_top = 302.0
+margin_right = -566.0
+margin_bottom = -565.0
+rect_min_size = Vector2( 2, 2 )
+rect_scale = Vector2( 2.5, 2.5 )
+size_flags_stretch_ratio = 0.25
+custom_fonts/font = ExtResource( 4 )
+text = "Before you start You need 
+to pick a name for your
+chib :)"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -98.5
-margin_top = -64.5
-margin_right = 98.5
-margin_bottom = 64.5
+margin_left = 301.0
+margin_top = 831.0
+margin_right = 725.0
+margin_bottom = 1018.0
 
 [node name="LineEdit" type="LineEdit" parent="HBoxContainer"]
-margin_right = 193.0
-margin_bottom = 129.0
+margin_right = 420.0
+margin_bottom = 187.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
 script = ExtResource( 2 )
 
 [node name="displayText" type="Label" parent="HBoxContainer"]
-margin_left = 197.0
-margin_top = 57.0
-margin_right = 197.0
-margin_bottom = 71.0
+margin_left = 424.0
+margin_top = 86.0
+margin_right = 424.0
+margin_bottom = 100.0
 
 [connection signal="text_entered" from="HBoxContainer/LineEdit" to="HBoxContainer/LineEdit" method="_on_LineEdit_text_entered"]

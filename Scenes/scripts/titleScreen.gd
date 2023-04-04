@@ -45,6 +45,9 @@ func _on_LineEdit_text_entered(new_text):
 		save_file.name = new_text
 		SaveData.save_data()
 		print(save_file.name)
+		get_tree().change_scene("res://Scenes/Menu.tscn")
+	else:
+		get_tree().change_scene("res://Scenes/Menu.tscn")
 	
 
 

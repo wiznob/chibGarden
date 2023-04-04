@@ -16,6 +16,9 @@ func _on_Bird_body_entered(body):
 
 
 func _on_RestartBtn_pressed():
+
 	get_tree().reload_current_scene()
 	get_tree().paused = false
+	#score = 0
+	$"../../../HUD/Label".text = "SCORE:" + String(Global.score)
 	

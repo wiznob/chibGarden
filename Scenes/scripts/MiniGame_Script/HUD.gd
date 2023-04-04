@@ -1,7 +1,12 @@
 extends Control
 
 func _ready():
+
 	$Label.text = "SCORE:" + String(Global.score)
+
+
+
+
 
 
 func _on_Coin_collected():

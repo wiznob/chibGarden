@@ -4,7 +4,21 @@
 [ext_resource path="res://Images/BirdS_0001_Capa-2.png" type="Texture" id=2]
 [ext_resource path="res://Images/BirdS_0002_Capa-3.png" type="Texture" id=3]
 [ext_resource path="res://Images/BirdS_0003_Capa-0.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/minigame3/Enemy.gd" type="Script" id=5]
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends RigidBody2D
+
+export (int) var min_speed # Minimum speed range.
+export (int) var max_speed # Maximum speed range.
+
+#
+	
+	
+	
+
+func _on_Visibility_screen_exited():
+	queue_free()
+"
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -20,7 +34,7 @@ extents = Vector2( 5, 5 )
 [node name="Enemy" type="RigidBody2D"]
 collision_mask = 0
 gravity_scale = 0.0
-script = ExtResource( 5 )
+script = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.0595973, 0.07945 )

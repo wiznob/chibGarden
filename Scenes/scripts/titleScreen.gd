@@ -1,14 +1,10 @@
 extends Node
+onready var save_file = SaveData.gameData
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,9 +34,20 @@ func _on_quitButton_pressed():
 	#get_tree().change_scene(whatever option is called when done)
 
 
-
+func _ready():
+	print(save_file.name)
 
 
 func _on_LineEdit_text_entered(new_text):
-	var chibName = new_text
-	print(chibName)
+	var check = save_file.name
+	print(check)
+	if(check == "i"):
+		save_file.name = new_text
+		SaveData.save_data()
+		print(save_file.name)
+	
+
+
+	
+		
+		

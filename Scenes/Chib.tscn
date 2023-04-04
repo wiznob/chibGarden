@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://chibImage/chib body.png" type="Texture" id=1]
 [ext_resource path="res://fonts/monkeyFont3.tres" type="DynamicFont" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://chibImage/chib arm.png" type="Texture" id=5]
 [ext_resource path="res://chibImage/chib leg.png" type="Texture" id=6]
 [ext_resource path="res://chibImage/Chib.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/test.tscn" type="PackedScene" id=8]
 [ext_resource path="res://chibImage/chib mouth neutral.png" type="Texture" id=9]
 [ext_resource path="res://chibImage/chib mouth closed.png" type="Texture" id=10]
 [ext_resource path="res://chibImage/chib mouth open.png" type="Texture" id=11]
@@ -20,6 +21,7 @@ onready var timer  = get_node(\"Timer\")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print(save_file.name)
 	get_node(\"hunger\").set_value(save_file.hunger)
 	get_node(\"stamina\").set_value(save_file.stamina)
 	get_node(\"strength\").set_value(save_file.strength)
@@ -36,6 +38,15 @@ func _ready():
 	button.text = \"add\"
 	button.connect(\"pressed\", self, \"_button_pressed\")
 	add_child(button)
+	
+	
+	
+	
+
+	if(save_file.name as int  == 0):
+		$Name.show()
+
+	
 	
 #Testing Increasing and saving chib stats
 func _button_pressed():
@@ -268,5 +279,8 @@ custom_fonts/font = ExtResource( 2 )
 text = "Hunger"
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Name" parent="." instance=ExtResource( 8 )]
+visible = false
 
 [connection signal="timeout" from="Timer" to="." method="timerTimeout"]

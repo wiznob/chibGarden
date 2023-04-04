@@ -16,6 +16,7 @@ func load_data():
 	var file = File.new()
 	if not file.file_exists(SAVE_FILE):
 		gameData = {# values a new chib will start at (might have to delete save to see changes)
+			"name": "i",
 			"hunger":100,
 			"stamina":100,
 			"strength":100,

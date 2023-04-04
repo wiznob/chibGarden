@@ -20,7 +20,7 @@ func _on_settingsBTN_pressed():
 
 func _on_Area2D_body_exited(body):
 
-	get_tree().change_scene("res://Scenes/minigame/Level3.tscn")
+	get_tree().change_scene("res://Scenes/minigame/Level5.tscn")
 
 
 func _on_FSwitch_body_entered(body):

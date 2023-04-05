@@ -56,29 +56,32 @@ func _button_pressed():
 	#yandre dev code warning 
 	# when timer runs out this function runs
 func timerTimeout():
-	var value = randi()%5 #genrates random number between 0 and 4
+	var value = randi()%4 #genrates random number between 0 and 3
 	print(value)
 	if(value == 0):
 		var decrease = save_file.hunger - 5
 		save_file.hunger = decrease
+		if(save_file.hunger < 0):
+			var reset = 0
+			save_file.hunger = reset
 		SaveData.save_data()
 		get_node(\"hunger\").set_value(save_file.hunger)
 
 	elif(value == 1):
-		var decrease = save_file.stamina - 5
-		save_file.stamina = decrease
-		SaveData.save_data()
-		get_node(\"stamina\").set_value(save_file.stamina)
-
-	elif(value == 2):
 		var decrease = save_file.strength - 5
 		save_file.strength = decrease
+		if(save_file.strength < 0):
+			var reset = 0
+			save_file.strength = reset
 		SaveData.save_data()
 		get_node(\"strength\").set_value(save_file.strength)
 
-	elif(value == 3):
+	elif(value == 2):
 		var decrease = save_file.happiness - 5
 		save_file.happiness = decrease
+		if(save_file.happiness < 0):
+			var reset = 0
+			save_file.happiness = reset
 		SaveData.save_data()
 		get_node(\"happiness\").set_value(save_file.happiness)
 
@@ -168,7 +171,6 @@ texture = ExtResource( 6 )
 position = Vector2( -7.60571, -679.05 )
 scale = Vector2( 0.922532, 0.876941 )
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
 [node name="ChibArm2" type="Sprite" parent="ChibBody"]

@@ -8,7 +8,7 @@ onready var timer  = get_node("Timer")
 # var b = "text"
 var food = load("res://Scenes/Food_Scene/Food.tscn")
 var newFood = food.instance()
-
+onready var save_file = FoodData.gameData
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	timer.set_wait_time(2)
@@ -69,6 +69,7 @@ func _on_item1_pressed():
 	print("green pressed") # Replace with function body.
 
 
+<<<<<<< Updated upstream
 func _on_graveBTN_pressed():
 	get_tree().change_scene("res://Scenes/graveYard.tscn")
 
@@ -83,3 +84,35 @@ func _on_toGraveYard_pressed():
 	get_tree().change_scene("res://Scenes/graveYard.tscn")
 	get_tree().paused = false 
 
+=======
+func _on_bananna_pressed():
+	var bananana = save_file.bananacount +1
+	save_file.bananacount = bananana
+	print(save_file.bananacount)
+	SaveData.save_data()
+	print(save_file.bananacount)
+
+
+func _on_apple_pressed():
+	var applele = save_file.applecount +1
+	save_file.applecount = applele
+	print(save_file.applecount)
+	SaveData.save_data()
+	print(save_file.applecount)
+
+
+func _on_mango_pressed():
+	var mangogo = save_file.mangocount +1
+	save_file.mangocount = mangogo
+	print(save_file.mangocount)
+	SaveData.save_data()
+	print(save_file.mangocount)
+
+
+func _on_orange_pressed():
+	var orangege = save_file.orangecount +1
+	save_file.orangecount = orangege
+	print(save_file.orangecount)
+	SaveData.save_data()
+	print(save_file.orangecount)
+>>>>>>> Stashed changes

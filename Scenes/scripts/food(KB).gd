@@ -31,7 +31,13 @@ func _ready():
 	timer.start()
 
 func do_this():
-	self.queue_free()
+	queue_free()
 	
 	
 	
+
+#drafting hitbox intersection to delete the food
+#func _on_Area2D_body_entered(body):
+	#if body.name == "Chib":
+		#Signals.emit_signal("rewardplayer",1)
+		#queue_free()

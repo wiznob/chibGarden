@@ -38,7 +38,6 @@ texture = ExtResource( 5 )
 [node name="ChibHead2" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]
 position = Vector2( 124.223, 95.1249 )
 rotation = 0.366781
-scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="ChibHead4" type="Sprite" parent="SafeArea/ColorRect/ChibHead"]

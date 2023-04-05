@@ -8,7 +8,7 @@ onready var timer  = get_node("Timer")
 # var b = "text"
 var food = load("res://Scenes/Food_Scene/Food.tscn")
 var newFood = food.instance()
-onready var save_file = FoodData.gameData
+onready var save_files = FoodData.gameData
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	timer.set_wait_time(2)
@@ -69,7 +69,6 @@ func _on_item1_pressed():
 	print("green pressed") # Replace with function body.
 
 
-<<<<<<< Updated upstream
 func _on_graveBTN_pressed():
 	get_tree().change_scene("res://Scenes/graveYard.tscn")
 
@@ -84,35 +83,35 @@ func _on_toGraveYard_pressed():
 	get_tree().change_scene("res://Scenes/graveYard.tscn")
 	get_tree().paused = false 
 
-=======
+
 func _on_bananna_pressed():
-	var bananana = save_file.bananacount +1
-	save_file.bananacount = bananana
-	print(save_file.bananacount)
+	var bananana = save_files.bananacount +1
+	save_files.bananacount = bananana
+	print(save_files.bananacount)
 	SaveData.save_data()
-	print(save_file.bananacount)
+	print(save_files.bananacount)
 
 
 func _on_apple_pressed():
-	var applele = save_file.applecount +1
-	save_file.applecount = applele
-	print(save_file.applecount)
+	var applele = save_files.applecount +1
+	save_files.applecount = applele
+	print(save_files.applecount)
 	SaveData.save_data()
-	print(save_file.applecount)
+	print(save_files.applecount)
 
 
 func _on_mango_pressed():
-	var mangogo = save_file.mangocount +1
-	save_file.mangocount = mangogo
-	print(save_file.mangocount)
+	var mangogo = save_files.mangocount +1
+	save_files.mangocount = mangogo
+	print(save_files.mangocount)
 	SaveData.save_data()
-	print(save_file.mangocount)
+	print(save_files.mangocount)
 
 
 func _on_orange_pressed():
-	var orangege = save_file.orangecount +1
-	save_file.orangecount = orangege
-	print(save_file.orangecount)
+	var orangege = save_files.orangecount +1
+	save_files.orangecount = orangege
+	print(save_files.orangecount)
 	SaveData.save_data()
-	print(save_file.orangecount)
->>>>>>> Stashed changes
+	print(save_files.orangecount)
+

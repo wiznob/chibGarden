@@ -1,9 +1,14 @@
 extends Node2D
 
+
+
 func _on_Switch_body_entered(body):
 	if $Switch/AnimatedSprite.frame == 1:
 		$Switch/AnimatedSprite.frame = 0
-		$Door/AnimationPlayer.play("SlideUp")
+		$Door/AnimationPlayer.play("SlideUp")#
+		$Door5/AnimationPlayer.play("SlideAcross")
+	
+	
 	
 func _on_settingsBTN_pressed():
 	if(get_tree().paused == true):
@@ -38,6 +43,16 @@ func _on_Bird_body_entered(body):
 			
 
 	
+
+
+func _on_Switch2_body_entered(body):
+	if $Switch2/AnimatedSprite.frame == 1:
+		$Switch2/AnimatedSprite.frame = 0
+		$Door2/AnimationPlayer.play("SlideUp")
+		$Door3/AnimationPlayer.play("SlideAcross")
+		$Door4/AnimationPlayer.play("SlideAcross")
+
+
 
 
 func _on_shopBTN_pressed():

@@ -40,6 +40,14 @@ func _on_Bird_body_entered(body):
 			$UI/DeathPopUp.show()
 			get_tree().paused = false
 			
+func _on_shopBTN_pressed():
+	if(get_tree().paused == true):
+		get_tree().paused = false
+		$UI/shopPopUP.hide()
+		$CanvasLayer.show()
+	else:
+		get_tree().paused = true
+		$UI/shopPopUP.show()
+		$CanvasLayer.hide()
 
-	
 

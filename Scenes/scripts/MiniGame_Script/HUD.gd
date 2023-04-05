@@ -32,3 +32,7 @@ func _on_Coin5_coin_collected():
 
 func _on_Coin3_coin_collected():
 	_ready()
+
+
+func _on_Coin4_coin_collected():
+	pass # Replace with function body.

@@ -47,4 +47,17 @@ func _on_Bird_body_entered(body):
 func _on_Switch2_body_entered(body):
 	if $Switch2/AnimatedSprite.frame == 1:
 		$Switch2/AnimatedSprite.frame = 0
-		$Door2/AnimationPlayer.play("SlideAcross")
+		$Door2/AnimationPlayer.play("SlideUp")
+
+
+func _on_shopBTN_pressed():
+	if(get_tree().paused == true):
+		get_tree().paused = false
+		$UI/shopPopUP.hide()
+		$CanvasLayer.show()
+	else:
+		get_tree().paused = true
+		$UI/shopPopUP.show()
+		$CanvasLayer.hide()
+
+	

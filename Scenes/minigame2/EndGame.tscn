@@ -25,7 +25,7 @@
 [ext_resource path="res://fonts/monkeyFont2.tres" type="DynamicFont" id=23]
 [ext_resource path="res://Scenes/scripts/MiniGame_Script/MiniGamePop.gd" type="Script" id=24]
 [ext_resource path="res://Scenes/minigame2/Jump_check.tscn" type="PackedScene" id=25]
-[ext_resource path="res://Scenes/scripts/HighScore_Save.gd" type="Script" id=26]
+[ext_resource path="res://Scenes/scripts/MiniGame_Script/HighScore_Save.gd" type="Script" id=26]
 [ext_resource path="res://Music/Trance - 009 Sound System Dreamscape (HD).mp3" type="AudioStream" id=27]
 
 [node name="EndGame" type="Node2D"]

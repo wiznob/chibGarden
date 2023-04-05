@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Scenes/minigame/walls.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/minigame/Player.tscn" type="PackedScene" id=2]
@@ -15,6 +15,17 @@
 [ext_resource path="res://Scenes/scripts/Settingsmenu.gd" type="Script" id=13]
 [ext_resource path="res://Scenes/scripts/MiniGame_Script/quitButton.gd" type="Script" id=14]
 [ext_resource path="res://Images/1413908.png" type="Texture" id=15]
+[ext_resource path="res://foodImg/Apple (1).png" type="Texture" id=16]
+[ext_resource path="res://foodImg/mango (1).png" type="Texture" id=17]
+[ext_resource path="res://foodImg/Orange (1).png" type="Texture" id=18]
+[ext_resource path="res://foodImg/EnhancerG.png" type="Texture" id=19]
+[ext_resource path="res://foodImg/EnhancerB.png" type="Texture" id=20]
+[ext_resource path="res://foodImg/EnhancerY.png" type="Texture" id=21]
+[ext_resource path="res://foodImg/EnhancerR.png" type="Texture" id=22]
+[ext_resource path="res://foodImg/EnhancerP.png" type="Texture" id=23]
+[ext_resource path="res://foodImg/Banana.png" type="Texture" id=24]
+[ext_resource path="res://chibImage/Chib.png" type="Texture" id=25]
+[ext_resource path="res://fonts/monkeyFont2.tres" type="DynamicFont" id=26]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.5, 31.5 )
@@ -317,6 +328,162 @@ margin_bottom = 184.0
 text = "You  
 lost. ;)"
 
+[node name="shopPopUP" type="PopupPanel" parent="UI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -516.0
+margin_top = -533.0
+margin_right = 516.0
+margin_bottom = 533.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/shopPopUP"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/shopPopUP/ScrollContainer"]
+margin_right = 1024.0
+margin_bottom = 1058.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="shopLBL" type="Label" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 44.0
+custom_fonts/font = ExtResource( 26 )
+text = "Welcome to the shop"
+align = 1
+
+[node name="premiumLBL" type="Label" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 48.0
+margin_right = 1024.0
+margin_bottom = 92.0
+custom_fonts/font = ExtResource( 26 )
+text = "Premium store"
+align = 1
+
+[node name="yBooster" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 96.0
+margin_right = 1024.0
+margin_bottom = 146.0
+custom_fonts/font = ExtResource( 26 )
+text = "Yellow booster - 60 coins"
+icon = ExtResource( 21 )
+expand_icon = true
+
+[node name="bBooster" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 150.0
+margin_right = 1024.0
+margin_bottom = 200.0
+custom_fonts/font = ExtResource( 26 )
+text = "Blue booster - 20 coins"
+icon = ExtResource( 20 )
+expand_icon = true
+
+[node name="gBooster" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 204.0
+margin_right = 1024.0
+margin_bottom = 254.0
+custom_fonts/font = ExtResource( 26 )
+text = "Green booster- 33 coins"
+icon = ExtResource( 19 )
+expand_icon = true
+
+[node name="rBooster" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 258.0
+margin_right = 1024.0
+margin_bottom = 308.0
+custom_fonts/font = ExtResource( 26 )
+text = "red booster - 100 coins"
+icon = ExtResource( 22 )
+expand_icon = true
+
+[node name="pBooster" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 312.0
+margin_right = 1024.0
+margin_bottom = 362.0
+custom_fonts/font = ExtResource( 26 )
+text = "Purple Booster - 40"
+icon = ExtResource( 23 )
+expand_icon = true
+
+[node name="basicLBL" type="Label" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 366.0
+margin_right = 1024.0
+margin_bottom = 410.0
+custom_fonts/font = ExtResource( 26 )
+text = "Basic store"
+align = 1
+
+[node name="apple" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 414.0
+margin_right = 1024.0
+margin_bottom = 464.0
+custom_fonts/font = ExtResource( 26 )
+text = "Apple -  20 coins"
+icon = ExtResource( 16 )
+expand_icon = true
+
+[node name="bananna" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 468.0
+margin_right = 1024.0
+margin_bottom = 518.0
+custom_fonts/font = ExtResource( 26 )
+text = "Banana - 15 coins"
+icon = ExtResource( 24 )
+expand_icon = true
+
+[node name="mango" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 522.0
+margin_right = 1024.0
+margin_bottom = 572.0
+custom_fonts/font = ExtResource( 26 )
+text = "Mango - 30 coin"
+icon = ExtResource( 17 )
+expand_icon = true
+
+[node name="orange" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 576.0
+margin_right = 1024.0
+margin_bottom = 626.0
+custom_fonts/font = ExtResource( 26 )
+text = "Orange - 70 coin"
+icon = ExtResource( 18 )
+expand_icon = true
+
+[node name="chibsLBL" type="Label" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 630.0
+margin_right = 1024.0
+margin_bottom = 674.0
+custom_fonts/font = ExtResource( 26 )
+text = "Chibs"
+align = 1
+
+[node name="basic" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 678.0
+margin_right = 1024.0
+margin_bottom = 728.0
+custom_fonts/font = ExtResource( 26 )
+text = "Buy a basic chib - 60 coins"
+icon = ExtResource( 25 )
+expand_icon = true
+
+[node name="super" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 732.0
+margin_right = 1024.0
+margin_bottom = 782.0
+custom_fonts/font = ExtResource( 26 )
+text = "Super chib - 150 coins"
+icon = ExtResource( 25 )
+expand_icon = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Switch" to="." method="_on_Switch_body_entered"]
@@ -326,6 +493,7 @@ lost. ;)"
 [connection signal="use_move_vector" from="CanvasLayer" to="Player" method="_on_CanvasLayer_use_move_vector"]
 [connection signal="pressed" from="UI/Settingspopup/VBoxContainer/backButton" to="UI/Settingspopup/VBoxContainer/backButton" method="_on_backButton_pressed"]
 [connection signal="pressed" from="UI/Settingspopup/VBoxContainer/quitButton" to="UI/Settingspopup/VBoxContainer/quitButton" method="_on_quitButton_pressed"]
+[connection signal="pressed" from="UI/shopBTN" to="." method="_on_shopBTN_pressed"]
 [connection signal="pressed" from="UI/settingsBTN" to="." method="_on_settingsBTN_pressed"]
 [connection signal="pressed" from="UI/EndPopUp/VBoxContainer/backButton" to="UI/EndPopUp/VBoxContainer/backButton" method="_on_backButton_pressed"]
 [connection signal="pressed" from="UI/EndPopUp/VBoxContainer/quitButton" to="UI/EndPopUp/VBoxContainer/quitButton" method="_on_quitButton_pressed"]

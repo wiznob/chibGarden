@@ -1,9 +1,200 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Images/background.webp" type="Texture" id=1]
 [ext_resource path="res://Scenes/minigame/walls.tres" type="TileSet" id=2]
+[ext_resource path="res://Scenes/scripts/MiniGame_Script/HUD.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/scripts/Settingsmenu.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/scripts/MiniGame_Script/quitButton.gd" type="Script" id=5]
+[ext_resource path="res://Images/1413908.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/minigame/images_Minigame/stone.png" type="Texture" id=7]
+[ext_resource path="res://Images/cog.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/minigame/Bird.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/minigame/Coin.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/minigame/FSwitch.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/minigame/Switch.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/minigame2/Jump_check.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/minigame/MobileJoystick.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/minigame/Player.tscn" type="PackedScene" id=15]
+[ext_resource path="res://fonts/monkeyFont.tres" type="DynamicFont" id=16]
+[ext_resource path="res://Scenes/scripts/MiniGame_Script/Level5.gd" type="Script" id=17]
+[ext_resource path="res://foodImg/Apple (1).png" type="Texture" id=18]
+[ext_resource path="res://foodImg/mango (1).png" type="Texture" id=19]
+[ext_resource path="res://foodImg/Orange (1).png" type="Texture" id=20]
+[ext_resource path="res://foodImg/EnhancerG.png" type="Texture" id=21]
+[ext_resource path="res://foodImg/EnhancerB.png" type="Texture" id=22]
+[ext_resource path="res://foodImg/EnhancerY.png" type="Texture" id=23]
+[ext_resource path="res://foodImg/EnhancerR.png" type="Texture" id=24]
+[ext_resource path="res://foodImg/EnhancerP.png" type="Texture" id=25]
+[ext_resource path="res://foodImg/Banana.png" type="Texture" id=26]
+[ext_resource path="res://chibImage/Chib.png" type="Texture" id=27]
+[ext_resource path="res://fonts/monkeyFont2.tres" type="DynamicFont" id=28]
+[ext_resource path="res://Scenes/minigame/ban.tscn" type="PackedScene" id=29]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32.5, 31.5 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 927, 417 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "SlideUp"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 927, 417 ), Vector2( 927, 353 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 32.5, 31.5 )
+
+[sub_resource type="Animation" id=14]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 417, 544 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "SlideUp"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 417, 544 ), Vector2( 352, 481 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 416, 672 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "SlideAcross"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 416, 672 ), Vector2( 480, 608 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 672, 672 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "SlideAcross"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 672, 672 ), Vector2( 608, 608 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 672, 544 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "SlideAcross"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 672, 544 ), Vector2( 736, 480 ) ]
+}
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0, 0, 0, 0.294118 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
 
 [node name="Level5" type="Node2D"]
+script = ExtResource( 17 )
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 541.5, 1139.5 )
@@ -13,4 +204,498 @@ texture = ExtResource( 1 )
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
 format = 1
-tile_data = PoolIntArray( 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 393220, 0, 0, 393228, 0, 0, 458754, 0, 0, 458757, 0, 0, 458763, 0, 0, 458766, 0, 0, 524290, 0, 0, 524294, 0, 0, 524298, 0, 0, 524302, 0, 0, 589826, 0, 0, 589831, 0, 0, 589838, 0, 0, 655362, 0, 0, 655366, 0, 0, 655368, 0, 0, 655374, 0, 0, 720898, 0, 0, 720901, 0, 0, 720904, 0, 0, 720910, 0, 0, 786434, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786446, 0, 0, 851970, 0, 0, 851973, 0, 0, 851975, 0, 0, 851977, 0, 0, 851978, 0, 0, 851979, 0, 0, 851980, 0, 0, 851982, 0, 0, 917506, 0, 0, 917509, 0, 0, 917511, 0, 0, 917518, 0, 0, 983042, 0, 0, 983054, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0 )
+tile_data = PoolIntArray( 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 393220, 0, 0, 393228, 0, 0, 458754, 0, 0, 458757, 0, 0, 458763, 0, 0, 458766, 0, 0, 524290, 0, 0, 524302, 0, 0, 589826, 0, 0, 589831, 0, 0, 589833, 0, 0, 589838, 0, 0, 655362, 0, 0, 655368, 0, 0, 655374, 0, 0, 720898, 0, 0, 720901, 0, 0, 720904, 0, 0, 720907, 0, 0, 720910, 0, 0, 786434, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786446, 0, 0, 851970, 0, 0, 851973, 0, 0, 851975, 0, 0, 851977, 0, 0, 851979, 0, 0, 851982, 0, 0, 917506, 0, 0, 917509, 0, 0, 917511, 0, 0, 917513, 0, 0, 917515, 0, 0, 917518, 0, 0, 983042, 0, 0, 983054, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 415.0
+margin_top = 280.0
+margin_right = 711.0
+margin_bottom = 324.0
+custom_fonts/font = ExtResource( 16 )
+text = "Chib Search - Level 5"
+
+[node name="Switch" parent="." instance=ExtResource( 12 )]
+position = Vector2( 563, 540 )
+
+[node name="FSwitch" parent="." instance=ExtResource( 11 )]
+position = Vector2( 657, 747 )
+
+[node name="FSwitch2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 465, 753 )
+
+[node name="Switch2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 548, 997 )
+
+[node name="Door" type="StaticBody2D" parent="."]
+position = Vector2( 927, 417 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Door"]
+modulate = Color( 0.282353, 0.2, 0.2, 1 )
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2( -0.5, -0.5 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Door"]
+anims/RESET = SubResource( 2 )
+anims/SlideUp = SubResource( 3 )
+
+[node name="Door2" type="StaticBody2D" parent="."]
+position = Vector2( 417, 544 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Door2"]
+modulate = Color( 0.282353, 0.2, 0.2, 1 )
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door2"]
+position = Vector2( -0.5, -0.5 )
+shape = SubResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Door2"]
+anims/RESET = SubResource( 14 )
+anims/SlideUp = SubResource( 15 )
+
+[node name="Door4" type="StaticBody2D" parent="."]
+position = Vector2( 416, 672 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Door4"]
+modulate = Color( 0.282353, 0.2, 0.2, 1 )
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door4"]
+position = Vector2( -0.5, -0.5 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Door4"]
+anims/RESET = SubResource( 8 )
+anims/SlideAcross = SubResource( 9 )
+
+[node name="Door3" type="StaticBody2D" parent="."]
+position = Vector2( 672, 672 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Door3"]
+modulate = Color( 0.282353, 0.2, 0.2, 1 )
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door3"]
+position = Vector2( -0.5, -0.5 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Door3"]
+anims/RESET = SubResource( 10 )
+anims/SlideAcross = SubResource( 11 )
+
+[node name="Door5" type="StaticBody2D" parent="."]
+position = Vector2( 672, 544 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Door5"]
+modulate = Color( 0.282353, 0.2, 0.2, 1 )
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door5"]
+position = Vector2( -0.5, -0.5 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Door5"]
+anims/RESET = SubResource( 12 )
+anims/SlideAcross = SubResource( 13 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+pause_mode = 2
+
+[node name="HUD" type="Control" parent="UI"]
+margin_left = 156.0
+margin_top = 345.0
+margin_right = 258.0
+margin_bottom = 404.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Panel" type="Panel" parent="UI/HUD"]
+margin_top = -1.0
+margin_right = 116.0
+margin_bottom = 58.0
+custom_styles/panel = SubResource( 7 )
+
+[node name="Label" type="Label" parent="UI/HUD"]
+margin_left = 5.0
+margin_top = 17.0
+margin_right = 70.0
+margin_bottom = 44.0
+custom_fonts/font = ExtResource( 16 )
+text = "SCORE:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -535.5
+margin_top = -152.0
+margin_right = 535.5
+
+[node name="gamesBTN" type="Button" parent="UI/HBoxContainer"]
+margin_right = 533.0
+margin_bottom = 152.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 16 )
+text = "Mini-Games"
+
+[node name="graveBTN" type="Button" parent="UI/HBoxContainer"]
+margin_left = 537.0
+margin_right = 1071.0
+margin_bottom = 152.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 16 )
+text = "Grave yard"
+
+[node name="Settingspopup" type="PopupPanel" parent="UI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -421.0
+margin_top = -856.0
+margin_right = -362.0
+margin_bottom = -668.0
+rect_scale = Vector2( 14.2704, 7.4162 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Settingspopup"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -25.5
+margin_top = -90.0
+margin_right = 25.5
+margin_bottom = 90.0
+custom_constants/separation = 10
+
+[node name="saveButton" type="Button" parent="UI/Settingspopup/VBoxContainer"]
+margin_right = 51.0
+margin_bottom = 20.0
+text = "SAVE"
+
+[node name="backButton" type="Button" parent="UI/Settingspopup/VBoxContainer"]
+margin_top = 30.0
+margin_right = 51.0
+margin_bottom = 50.0
+text = "BACK"
+script = ExtResource( 4 )
+
+[node name="quitButton" type="Button" parent="UI/Settingspopup/VBoxContainer"]
+margin_top = 60.0
+margin_right = 51.0
+margin_bottom = 80.0
+text = "QUIT"
+script = ExtResource( 5 )
+
+[node name="SFXLbl" type="Label" parent="UI/Settingspopup/VBoxContainer"]
+margin_top = 90.0
+margin_right = 51.0
+margin_bottom = 104.0
+text = "SFX"
+
+[node name="SFXSlider" type="HSlider" parent="UI/Settingspopup/VBoxContainer"]
+margin_top = 114.0
+margin_right = 51.0
+margin_bottom = 130.0
+min_value = -30.0
+max_value = 0.0
+
+[node name="musicLbl" type="Label" parent="UI/Settingspopup/VBoxContainer"]
+margin_top = 140.0
+margin_right = 51.0
+margin_bottom = 154.0
+text = "MUSIC"
+align = 1
+valign = 1
+
+[node name="MusicSlider" type="HSlider" parent="UI/Settingspopup/VBoxContainer"]
+margin_top = 164.0
+margin_right = 51.0
+margin_bottom = 180.0
+min_value = -30.0
+max_value = 0.0
+
+[node name="shopBTN" type="Button" parent="UI"]
+anchor_left = 0.09
+anchor_top = 0.051
+anchor_right = 0.09
+anchor_bottom = 0.051
+margin_left = -81.2
+margin_top = -84.92
+margin_right = 5.79999
+margin_bottom = 1.08
+icon = ExtResource( 6 )
+flat = true
+expand_icon = true
+
+[node name="settingsBTN" type="Button" parent="UI"]
+anchor_left = 0.903
+anchor_top = 0.056
+anchor_right = 0.903
+anchor_bottom = 0.056
+margin_left = -0.240051
+margin_top = -88.52
+margin_right = 87.7599
+margin_bottom = 0.479996
+icon = ExtResource( 8 )
+flat = true
+expand_icon = true
+
+[node name="DeathPopUp" type="PopupPanel" parent="UI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -421.0
+margin_top = -856.0
+margin_right = -362.0
+margin_bottom = -668.0
+rect_scale = Vector2( 14.2704, 7.4162 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/DeathPopUp"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -28.5
+margin_top = -90.0
+margin_right = 28.5
+margin_bottom = 90.0
+custom_constants/separation = 10
+
+[node name="RestartBtn" type="Button" parent="UI/DeathPopUp/VBoxContainer"]
+margin_right = 57.0
+margin_bottom = 20.0
+text = "Restart"
+
+[node name="Label" type="Label" parent="UI/DeathPopUp/VBoxContainer"]
+margin_top = 30.0
+margin_right = 57.0
+margin_bottom = 44.0
+text = "Dead:)"
+
+[node name="shopPopUP" type="PopupPanel" parent="UI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -516.0
+margin_top = -533.0
+margin_right = 516.0
+margin_bottom = 533.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/shopPopUP"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/shopPopUP/ScrollContainer"]
+margin_right = 1024.0
+margin_bottom = 1058.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="shopLBL" type="Label" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 44.0
+custom_fonts/font = ExtResource( 28 )
+text = "Welcome to the shop"
+align = 1
+
+[node name="premiumLBL" type="Label" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 48.0
+margin_right = 1024.0
+margin_bottom = 92.0
+custom_fonts/font = ExtResource( 28 )
+text = "Premium store"
+align = 1
+
+[node name="yBooster" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 96.0
+margin_right = 1024.0
+margin_bottom = 146.0
+custom_fonts/font = ExtResource( 28 )
+text = "Yellow booster - 60 coins"
+icon = ExtResource( 23 )
+expand_icon = true
+
+[node name="bBooster" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 150.0
+margin_right = 1024.0
+margin_bottom = 200.0
+custom_fonts/font = ExtResource( 28 )
+text = "Blue booster - 20 coins"
+icon = ExtResource( 22 )
+expand_icon = true
+
+[node name="gBooster" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 204.0
+margin_right = 1024.0
+margin_bottom = 254.0
+custom_fonts/font = ExtResource( 28 )
+text = "Green booster- 33 coins"
+icon = ExtResource( 21 )
+expand_icon = true
+
+[node name="rBooster" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 258.0
+margin_right = 1024.0
+margin_bottom = 308.0
+custom_fonts/font = ExtResource( 28 )
+text = "red booster - 100 coins"
+icon = ExtResource( 24 )
+expand_icon = true
+
+[node name="pBooster" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 312.0
+margin_right = 1024.0
+margin_bottom = 362.0
+custom_fonts/font = ExtResource( 28 )
+text = "Purple Booster - 40"
+icon = ExtResource( 25 )
+expand_icon = true
+
+[node name="basicLBL" type="Label" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 366.0
+margin_right = 1024.0
+margin_bottom = 410.0
+custom_fonts/font = ExtResource( 28 )
+text = "Basic store"
+align = 1
+
+[node name="apple" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 414.0
+margin_right = 1024.0
+margin_bottom = 464.0
+custom_fonts/font = ExtResource( 28 )
+text = "Apple -  20 coins"
+icon = ExtResource( 18 )
+expand_icon = true
+
+[node name="bananna" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 468.0
+margin_right = 1024.0
+margin_bottom = 518.0
+custom_fonts/font = ExtResource( 28 )
+text = "Banana - 15 coins"
+icon = ExtResource( 26 )
+expand_icon = true
+
+[node name="mango" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 522.0
+margin_right = 1024.0
+margin_bottom = 572.0
+custom_fonts/font = ExtResource( 28 )
+text = "Mango - 30 coin"
+icon = ExtResource( 19 )
+expand_icon = true
+
+[node name="orange" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 576.0
+margin_right = 1024.0
+margin_bottom = 626.0
+custom_fonts/font = ExtResource( 28 )
+text = "Orange - 70 coin"
+icon = ExtResource( 20 )
+expand_icon = true
+
+[node name="chibsLBL" type="Label" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 630.0
+margin_right = 1024.0
+margin_bottom = 674.0
+custom_fonts/font = ExtResource( 28 )
+text = "Chibs"
+align = 1
+
+[node name="basic" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 678.0
+margin_right = 1024.0
+margin_bottom = 728.0
+custom_fonts/font = ExtResource( 28 )
+text = "Buy a basic chib - 60 coins"
+icon = ExtResource( 27 )
+expand_icon = true
+
+[node name="super" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
+margin_top = 732.0
+margin_right = 1024.0
+margin_bottom = 782.0
+custom_fonts/font = ExtResource( 28 )
+text = "Super chib - 150 coins"
+icon = ExtResource( 27 )
+expand_icon = true
+
+[node name="Player" parent="." instance=ExtResource( 15 )]
+position = Vector2( 160, 404 )
+
+[node name="Jump_check" parent="." instance=ExtResource( 13 )]
+position = Vector2( 48, 413 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 14 )]
+
+[node name="Bird" parent="." instance=ExtResource( 9 )]
+position = Vector2( 837, 628 )
+
+[node name="Bird2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 479, 450 )
+
+[node name="Coin" parent="." instance=ExtResource( 10 )]
+position = Vector2( 314, 584 )
+
+[node name="Coin2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 266, 956 )
+
+[node name="Coin3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 829, 972 )
+
+[node name="Coin4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 620, 441 )
+
+[node name="Coin5" parent="." instance=ExtResource( 10 )]
+position = Vector2( 832, 515 )
+
+[node name="Area2D" parent="." instance=ExtResource( 29 )]
+position = Vector2( 1004, 421 )
+
+[connection signal="body_entered" from="Switch" to="." method="_on_Switch_body_entered"]
+[connection signal="body_entered" from="FSwitch" to="." method="_on_FSwitch_body_entered"]
+[connection signal="body_entered" from="FSwitch2" to="." method="_on_FSwitch_body_entered"]
+[connection signal="body_entered" from="Switch2" to="." method="_on_Switch2_body_entered"]
+[connection signal="pressed" from="UI/Settingspopup/VBoxContainer/backButton" to="UI/Settingspopup/VBoxContainer/backButton" method="_on_backButton_pressed"]
+[connection signal="pressed" from="UI/Settingspopup/VBoxContainer/quitButton" to="UI/Settingspopup/VBoxContainer/quitButton" method="_on_quitButton_pressed"]
+[connection signal="pressed" from="UI/shopBTN" to="." method="_on_shopBTN_pressed"]
+[connection signal="pressed" from="UI/settingsBTN" to="." method="_on_settingsBTN_pressed"]
+[connection signal="pressed" from="UI/DeathPopUp/VBoxContainer/RestartBtn" to="UI/Settingspopup/VBoxContainer/quitButton" method="_on_RestartBtn_pressed"]
+[connection signal="use_move_vector" from="CanvasLayer" to="Player" method="_on_CanvasLayer_use_move_vector"]
+[connection signal="coin_collected" from="Coin" to="UI/HUD" method="_on_Coin_coin_collected"]
+[connection signal="coin_collected" from="Coin2" to="UI/HUD" method="_on_Coin2_coin_collected"]
+[connection signal="coin_collected" from="Coin3" to="UI/HUD" method="_on_Coin3_coin_collected"]
+[connection signal="coin_collected" from="Coin4" to="UI/HUD" method="_on_Coin4_coin_collected"]
+[connection signal="coin_collected" from="Coin5" to="UI/HUD" method="_on_Coin5_coin_collected"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

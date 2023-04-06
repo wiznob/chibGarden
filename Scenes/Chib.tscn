@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://chibImage/chib body.png" type="Texture" id=1]
 [ext_resource path="res://fonts/monkeyFont3.tres" type="DynamicFont" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://chibImage/chib arm.png" type="Texture" id=5]
 [ext_resource path="res://chibImage/chib leg.png" type="Texture" id=6]
 [ext_resource path="res://chibImage/Chib.png" type="Texture" id=7]
+[ext_resource path="res://Images/eyes 2.png" type="Texture" id=8]
 [ext_resource path="res://chibImage/chib mouth neutral.png" type="Texture" id=9]
 [ext_resource path="res://chibImage/chib mouth closed.png" type="Texture" id=10]
 [ext_resource path="res://chibImage/chib mouth open.png" type="Texture" id=11]
@@ -20,11 +21,19 @@ onready var timer  = get_node(\"Timer\")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_node(\"ChibBody/Eyes1\").hide()
+	get_node(\"ChibBody/Eyes2\").hide()
 	print(save_file.name)
 	get_node(\"hunger\").set_value(save_file.hunger)
 	get_node(\"stamina\").set_value(save_file.stamina)
 	get_node(\"strength\").set_value(save_file.strength)
 	get_node(\"happiness\").set_value(save_file.happiness)
+	if(save_file.happiness < 40):
+		get_node(\"ChibBody/Eyes1\").hide()
+		get_node(\"ChibBody/Eyes2\").show()
+	else:
+		get_node(\"ChibBody/Eyes1\").show()
+		get_node(\"ChibBody/Eyes2\").hide()
 	#wait time before timer function activates in seconds
 	timer.set_wait_time(2)
 	timer.start()
@@ -46,10 +55,16 @@ func _ready():
 #Testing Increasing and saving chib stats
 func _button_pressed():
 	#psst conor you could prorably use this block of code for feeding :D
-	var one = save_file.stamina +1
-	save_file.stamina = one
+	var one = save_file.happiness +1
+	save_file.happiness = one
 	SaveData.save_data()
-	get_node(\"stamina\").set_value(save_file.stamina)
+	get_node(\"happiness\").set_value(save_file.happiness)
+	if(save_file.happiness < 40):
+		get_node(\"ChibBody/Eyes1\").hide()
+		get_node(\"ChibBody/Eyes2\").show()
+	else:
+		get_node(\"ChibBody/Eyes1\").show()
+		get_node(\"ChibBody/Eyes2\").hide()
 	#print(save_file.stamina)
 	#print(one)
 	
@@ -73,6 +88,12 @@ func timerTimeout():
 		if(save_file.happiness < 0):
 			var reset = 0
 			save_file.happiness = reset
+		if(save_file.happiness < 40):
+			get_node(\"ChibBody/Eyes1\").hide()
+			get_node(\"ChibBody/Eyes2\").show()
+		else:
+			get_node(\"ChibBody/Eyes1\").show()
+			get_node(\"ChibBody/Eyes2\").hide()
 		SaveData.save_data()
 		get_node(\"happiness\").set_value(save_file.happiness)
 
@@ -84,9 +105,11 @@ func timerTimeout():
 		if(save_file.age > 20):
 			var weaken = save_file.strength - 10
 			save_file.strength = weaken
+			get_node(\"strength\").set_value(save_file.strength)
 		else:
 			var up = save_file.strength + 5
 			save_file.strength = up
+			get_node(\"strength\").set_value(save_file.strength)
 		#will check every age increas to see if dead 
 		if(save_file.age > 30):
 			print(\"The chib is dead\")
@@ -165,10 +188,9 @@ position = Vector2( -159.719, 616.504 )
 texture = ExtResource( 6 )
 
 [node name="mouth" type="AnimatedSprite" parent="ChibBody"]
-position = Vector2( -7.60571, -679.05 )
+position = Vector2( -6.62183, -653.866 )
 scale = Vector2( 0.922532, 0.876941 )
 frames = SubResource( 4 )
-frame = 2
 playing = true
 
 [node name="ChibArm2" type="Sprite" parent="ChibBody"]
@@ -176,6 +198,11 @@ position = Vector2( 402.171, 38.5867 )
 rotation = -0.286388
 scale = Vector2( 0.97919, 0.984358 )
 texture = ExtResource( 5 )
+
+[node name="Eyes2" type="Sprite" parent="ChibBody"]
+position = Vector2( 23.4177, -693.821 )
+scale = Vector2( 0.999357, 1.35829 )
+texture = ExtResource( 8 )
 
 [node name="happiness" type="ProgressBar" parent="."]
 anchor_left = 9.562

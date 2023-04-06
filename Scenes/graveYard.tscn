@@ -23,7 +23,7 @@ func _ready():
 		#reseting (\"making\") chib stats
 		save_file.hunger  = 100
 		save_file.stamina  = 100
-		save_file.strength  = 100
+		save_file.strength  = 10
 		save_file.happiness  = 100
 		save_file.age  = 1
 		save_file.name = \"i\"

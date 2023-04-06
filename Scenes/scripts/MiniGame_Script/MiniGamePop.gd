@@ -26,3 +26,7 @@ func _on_ChibRacing_pressed():
 	get_tree().change_scene("res://Scenes/minigame2/EndGame.tscn")
 	
 	
+
+
+func _on_ChibKarate_pressed():
+	get_tree().change_scene("res://Scenes/minigame3/Masher.tscn")

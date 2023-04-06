@@ -56,7 +56,7 @@ func _button_pressed():
 	#yandre dev code warning 
 	# when timer runs out this function runs
 func timerTimeout():
-	var value = randi()%4 #genrates random number between 0 and 3
+	var value = randi()%3 #genrates random number between 0 and 2
 	print(value)
 	if(value == 0):
 		var decrease = save_file.hunger - 5
@@ -68,15 +68,6 @@ func timerTimeout():
 		get_node(\"hunger\").set_value(save_file.hunger)
 
 	elif(value == 1):
-		var decrease = save_file.strength - 5
-		save_file.strength = decrease
-		if(save_file.strength < 0):
-			var reset = 0
-			save_file.strength = reset
-		SaveData.save_data()
-		get_node(\"strength\").set_value(save_file.strength)
-
-	elif(value == 2):
 		var decrease = save_file.happiness - 5
 		save_file.happiness = decrease
 		if(save_file.happiness < 0):
@@ -90,6 +81,12 @@ func timerTimeout():
 		save_file.age = increase
 		SaveData.save_data()
 		print(\"current age: \", save_file.age)
+		if(save_file.age > 20):
+			var weaken = save_file.strength - 10
+			save_file.strength = weaken
+		else:
+			var up = save_file.strength + 5
+			save_file.strength = up
 		#will check every age increas to see if dead 
 		if(save_file.age > 30):
 			print(\"The chib is dead\")

@@ -1,6 +1,6 @@
 extends Node
 
-const SAVE_FILE = "user://save"
+const SAVE_FILE = "user://player.save"
 var gameData = {}
 
 func _ready():

@@ -1,5 +1,5 @@
 extends Button
-
+onready var save_file = SaveData.gameData
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -18,4 +18,9 @@ func _ready():
 
 func _on_Back_pressed():
 	get_tree().paused = false
-	get_tree().change_scene("res://Scenes/Menu.tscn")
+	var check = save_file.name
+	print(check)
+	if(check == "i"):
+		get_tree().change_scene("res://Scenes/titleScreen.tscn")
+	else:
+		get_tree().change_scene("res://Scenes/Menu.tscn")

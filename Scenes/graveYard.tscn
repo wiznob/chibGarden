@@ -26,6 +26,7 @@ func _ready():
 		save_file.strength  = 100
 		save_file.happiness  = 100
 		save_file.age  = 1
+		save_file.name = \"i\"
 		print(button)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

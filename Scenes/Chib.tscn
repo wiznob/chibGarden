@@ -171,6 +171,7 @@ texture = ExtResource( 6 )
 position = Vector2( -7.60571, -679.05 )
 scale = Vector2( 0.922532, 0.876941 )
 frames = SubResource( 4 )
+frame = 2
 playing = true
 
 [node name="ChibArm2" type="Sprite" parent="ChibBody"]

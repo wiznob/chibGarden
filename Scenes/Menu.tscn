@@ -475,4 +475,5 @@ text = "Ok"
 [connection signal="pressed" from="Settingspopup/VBoxContainer/quitButton" to="Settingspopup/VBoxContainer/quitButton" method="_on_quitButton_pressed"]
 [connection signal="pressed" from="MiniGamesPopUp/VBoxContainer/ChibRacing" to="MiniGamesPopUp/VBoxContainer/ChibRacing" method="_on_ChibRacing_pressed"]
 [connection signal="pressed" from="MiniGamesPopUp/VBoxContainer/ChibSearch" to="MiniGamesPopUp/VBoxContainer/ChibSearch" method="_on_ChibSearch_pressed"]
+[connection signal="pressed" from="MiniGamesPopUp/VBoxContainer/ChibKarate" to="MiniGamesPopUp/VBoxContainer/ChibKarate" method="_on_ChibKarate_pressed"]
 [connection signal="pressed" from="deathPopUp/ScrollContainer/VBoxContainer/toGraveYard" to="." method="_on_toGraveYard_pressed"]

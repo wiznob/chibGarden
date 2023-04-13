@@ -1,28 +1,21 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://foodImg/Banana.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/minigame2/Pickup.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/minigame3/Script/BannanaM.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 43.5, 32 )
+extents = Vector2( 41, 30 )
 
 [node name="BannanaM" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="Banana" type="Sprite" parent="."]
-position = Vector2( 1, -1 )
+position = Vector2( 39, 27 )
 scale = Vector2( 0.110185, 0.137037 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Pickup" parent="." instance=ExtResource( 2 )]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pickup"]
-position = Vector2( -0.5, -2 )
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
 shape = SubResource( 1 )
-
-[connection signal="mouse_entered" from="Pickup" to="." method="_on_Pickup_mouse_entered"]
-[connection signal="mouse_exited" from="Pickup" to="." method="_on_Pickup_mouse_exited"]

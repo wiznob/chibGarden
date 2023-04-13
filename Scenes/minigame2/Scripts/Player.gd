@@ -26,9 +26,9 @@ func _physics_process(delta):
 func _input(event):
 	velocity = Vector2.ZERO
 	if can_jump:
-		if event.is_action_pressed("jump"): #and jumps_available > 0:
+		if event.is_action_pressed("click"): #and jumps_available > 0:
 			velocity.y-=jump_velocity
-			jumps_available -= 1
+		
 			#if is_on_floor() :
 				#jumps_available +=1
 

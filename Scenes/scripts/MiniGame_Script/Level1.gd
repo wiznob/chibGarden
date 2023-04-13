@@ -54,3 +54,16 @@ func _on_shopBTN_pressed():
 		get_tree().paused = true
 		$UI/shopPopUP.show()
 		$CanvasLayer.hide()
+
+
+func _on_graveBTN_pressed():
+	get_tree().change_scene("res://Scenes/graveYard.tscn")
+
+
+func _on_gamesBTN_pressed():
+	if(get_tree().paused == true):
+		get_tree().paused = false
+		$UI/MiniGamesPopUp.hide()
+	else:
+		get_tree().paused = true
+		$UI/MiniGamesPopUp.show()

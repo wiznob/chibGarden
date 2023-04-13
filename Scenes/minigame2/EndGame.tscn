@@ -57,7 +57,8 @@ margin_left = -47.5
 margin_top = 128.0
 margin_right = -26.5
 margin_bottom = 147.0
-rect_scale = Vector2( 12.1174, 7.13071 )
+rect_scale = Vector2( 12, 7 )
+size_flags_stretch_ratio = 0.0
 text = "0-H
 
 "
@@ -66,11 +67,12 @@ script = ExtResource( 26 )
 [node name="Label" type="Label" parent="HighScore"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -128.0
-margin_right = 128.0
-margin_bottom = 159.0
+margin_left = -302.5
+margin_top = 147.0
+margin_right = -46.5
+margin_bottom = 238.0
 custom_fonts/font = ExtResource( 23 )
-text = "HighScore
+text = "HighScore:
 "
 
 [node name="Score" type="Control" parent="."]
@@ -80,13 +82,24 @@ margin_right = 774.0
 margin_bottom = 781.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Score"]
-margin_left = -20.0
-margin_top = 211.0
-margin_right = 20.0
-margin_bottom = 251.0
-rect_scale = Vector2( 12.1174, 7.13071 )
+margin_left = 7.0
+margin_top = -39.0
+margin_right = 47.0
+margin_bottom = 1.0
+rect_scale = Vector2( 12, 7 )
 text = "0"
 script = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="Score"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -380.5
+margin_top = -33.0
+margin_right = -124.5
+margin_bottom = 58.0
+custom_fonts/font = ExtResource( 23 )
+text = "Score:
+"
 
 [node name="GameOver" type="Control" parent="."]
 visible = false
@@ -480,6 +493,7 @@ autoplay = true
 [connection signal="pressed" from="UI/shopBTN" to="." method="_on_shopBTN_pressed"]
 [connection signal="pressed" from="UI/settingsBTN" to="." method="_on_settingsBTN_pressed"]
 [connection signal="pressed" from="UI/HBoxContainer2/gamesBTN" to="." method="_on_gamesBTN_pressed"]
+[connection signal="pressed" from="UI/HBoxContainer2/graveBTN" to="." method="_on_graveBTN_pressed"]
 [connection signal="pressed" from="UI/MiniGamesPopUp/VBoxContainer/ChibRacing" to="UI/MiniGamesPopUp/VBoxContainer/ChibRacing" method="_on_ChibRacing_pressed"]
 [connection signal="pressed" from="UI/MiniGamesPopUp/VBoxContainer/ChibSearch" to="UI/MiniGamesPopUp/VBoxContainer/ChibSearch" method="_on_ChibSearch_pressed"]
 [connection signal="tree_entered" from="Jump_check" to="Jump_check" method="_on_Jump_check_tree_entered"]

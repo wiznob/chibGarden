@@ -61,3 +61,12 @@ func _on_shopBTN_pressed():
 		$CanvasLayer.hide()
 
 	
+
+
+func _on_gamesBTN_pressed():
+	if(get_tree().paused == true):
+		get_tree().paused = false
+		$UI/MiniGamesPopUp.hide()
+	else:
+		get_tree().paused = true
+		$UI/MiniGamesPopUp.show()

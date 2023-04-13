@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Scenes/minigame/walls.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/minigame/Player.tscn" type="PackedScene" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://foodImg/Banana.png" type="Texture" id=24]
 [ext_resource path="res://chibImage/Chib.png" type="Texture" id=25]
 [ext_resource path="res://fonts/monkeyFont2.tres" type="DynamicFont" id=26]
+[ext_resource path="res://Scenes/scripts/MiniGame_Script/MiniGamePop.gd" type="Script" id=27]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.5, 31.5 )
@@ -484,6 +485,55 @@ text = "Super chib - 150 coins"
 icon = ExtResource( 25 )
 expand_icon = true
 
+[node name="MiniGamesPopUp" type="PopupPanel" parent="UI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -542.0
+margin_top = -578.0
+margin_right = -466.0
+margin_bottom = -414.0
+rect_scale = Vector2( 14.2704, 7.4162 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MiniGamesPopUp"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -34.0
+margin_top = -78.0
+margin_right = 34.0
+margin_bottom = 78.0
+custom_constants/separation = 10
+
+[node name="ChibRacing" type="Button" parent="UI/MiniGamesPopUp/VBoxContainer"]
+margin_right = 68.0
+margin_bottom = 20.0
+text = "RACING"
+script = ExtResource( 27 )
+
+[node name="ChibSearch" type="Button" parent="UI/MiniGamesPopUp/VBoxContainer"]
+margin_top = 30.0
+margin_right = 68.0
+margin_bottom = 50.0
+text = "SEARCH"
+script = ExtResource( 27 )
+
+[node name="ChibKarate" type="Button" parent="UI/MiniGamesPopUp/VBoxContainer"]
+margin_top = 60.0
+margin_right = 68.0
+margin_bottom = 80.0
+text = "FIGHT"
+script = ExtResource( 27 )
+
+[node name="ChibWack" type="Button" parent="UI/MiniGamesPopUp/VBoxContainer"]
+margin_top = 90.0
+margin_right = 68.0
+margin_bottom = 110.0
+text = "WACK"
+script = ExtResource( 27 )
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Switch" to="." method="_on_Switch_body_entered"]
@@ -493,7 +543,11 @@ expand_icon = true
 [connection signal="use_move_vector" from="CanvasLayer" to="Player" method="_on_CanvasLayer_use_move_vector"]
 [connection signal="pressed" from="UI/Settingspopup/VBoxContainer/backButton" to="UI/Settingspopup/VBoxContainer/backButton" method="_on_backButton_pressed"]
 [connection signal="pressed" from="UI/Settingspopup/VBoxContainer/quitButton" to="UI/Settingspopup/VBoxContainer/quitButton" method="_on_quitButton_pressed"]
+[connection signal="pressed" from="UI/HBoxContainer/gamesBTN" to="." method="_on_gamesBTN_pressed"]
+[connection signal="pressed" from="UI/HBoxContainer/graveBTN" to="." method="_on_graveBTN_pressed"]
 [connection signal="pressed" from="UI/shopBTN" to="." method="_on_shopBTN_pressed"]
 [connection signal="pressed" from="UI/settingsBTN" to="." method="_on_settingsBTN_pressed"]
 [connection signal="pressed" from="UI/EndPopUp/VBoxContainer/backButton" to="UI/EndPopUp/VBoxContainer/backButton" method="_on_backButton_pressed"]
 [connection signal="pressed" from="UI/EndPopUp/VBoxContainer/quitButton" to="UI/EndPopUp/VBoxContainer/quitButton" method="_on_quitButton_pressed"]
+[connection signal="pressed" from="UI/MiniGamesPopUp/VBoxContainer/ChibRacing" to="UI/MiniGamesPopUp/VBoxContainer/ChibRacing" method="_on_ChibRacing_pressed"]
+[connection signal="pressed" from="UI/MiniGamesPopUp/VBoxContainer/ChibSearch" to="UI/MiniGamesPopUp/VBoxContainer/ChibSearch" method="_on_ChibSearch_pressed"]

@@ -41,3 +41,7 @@ func _on_gamesBTN_pressed():
 		get_tree().paused = true
 		$UI/MiniGamesPopUp.show()
 
+
+
+func _on_graveBTN_pressed():
+	get_tree().change_scene("res://Scenes/graveYard.tscn")

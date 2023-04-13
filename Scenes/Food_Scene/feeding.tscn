@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Chib.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fonts/monkeyFont.tres" type="DynamicFont" id=2]
@@ -14,28 +14,7 @@
 [ext_resource path="res://foodImg/smallbackorange.png" type="Texture" id=12]
 [ext_resource path="res://foodImg/smallbackapple.png" type="Texture" id=13]
 [ext_resource path="res://foodImg/smallbackmango.png" type="Texture" id=14]
-
-[sub_resource type="Theme" id=2]
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.0313726, 0.184314, 1, 1 )
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color( 0.8, 0.8, 0.8, 0 )
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 1, 1, 1, 0 )
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color( 1, 1, 1, 1 )
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+[ext_resource path="res://Images/Coin.png" type="Texture" id=15]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.788235, 0.698039, 0.698039, 1 )
@@ -55,6 +34,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( -3281, -442 )
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 538, 1338.45 )
@@ -118,28 +100,6 @@ margin_bottom = 0.0799942
 icon = ExtResource( 8 )
 flat = true
 expand_icon = true
-
-[node name="hunger" type="ProgressBar" parent="."]
-anchor_left = 0.518
-anchor_right = 0.518
-margin_left = -225.44
-margin_top = 252.0
-margin_right = 225.56
-margin_bottom = 300.0
-rect_pivot_offset = Vector2( 248, 24 )
-theme = SubResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_styles/fg = SubResource( 3 )
-custom_styles/bg = SubResource( 4 )
-percent_visible = false
-
-[node name="hungerLBL" type="Label" parent="hunger"]
-margin_left = 188.0
-margin_top = 10.0
-margin_right = 247.0
-margin_bottom = 34.0
-custom_fonts/font = ExtResource( 2 )
-text = "Hunger"
 
 [node name="Chib" parent="." instance=ExtResource( 1 )]
 pause_mode = 1
@@ -315,6 +275,49 @@ margin_right = 926.0
 margin_bottom = 192.0
 icon = ExtResource( 12 )
 
+[node name="enhancerBbtn" type="Button" parent="TempFoodHolder"]
+margin_left = 930.0
+margin_right = 942.0
+margin_bottom = 192.0
+
+[node name="enhancerGbtn" type="Button" parent="TempFoodHolder"]
+margin_left = 946.0
+margin_right = 958.0
+margin_bottom = 192.0
+
+[node name="enhancerPbtn" type="Button" parent="TempFoodHolder"]
+margin_left = 962.0
+margin_right = 974.0
+margin_bottom = 192.0
+
+[node name="enhancerRbtn" type="Button" parent="TempFoodHolder"]
+margin_left = 978.0
+margin_right = 990.0
+margin_bottom = 192.0
+
+[node name="enhancerYbtn" type="Button" parent="TempFoodHolder"]
+margin_left = 994.0
+margin_right = 1006.0
+margin_bottom = 192.0
+
+[node name="CoinContainer" type="Container" parent="."]
+margin_left = 902.0
+margin_top = 111.0
+margin_right = 1070.0
+margin_bottom = 151.0
+
+[node name="CoinCount" type="Label" parent="CoinContainer"]
+margin_right = 40.0
+margin_bottom = 14.0
+rect_scale = Vector2( 5, 5 )
+
+[node name="Sprite" type="Sprite" parent="CoinContainer"]
+position = Vector2( 143, 31 )
+scale = Vector2( 0.475155, 0.475155 )
+texture = ExtResource( 15 )
+
+[connection signal="pressed" from="HBoxContainer/feedBTN" to="." method="_on_feedBTN_pressed"]
+[connection signal="pressed" from="HBoxContainer/graveBTN" to="." method="_on_graveBTN_pressed"]
 [connection signal="pressed" from="Settingspopup/VBoxContainer/backButton" to="Settingspopup/VBoxContainer/backButton" method="_on_backButton_pressed"]
 [connection signal="pressed" from="Settingspopup/VBoxContainer/quitButton" to="Settingspopup/VBoxContainer/quitButton" method="_on_quitButton_pressed"]
 [connection signal="pressed" from="MiniGamesPopUp/VBoxContainer/ChibSearch" to="MiniGamesPopUp/VBoxContainer/ChibSearch" method="_on_ChibSearch_pressed"]
@@ -324,3 +327,8 @@ icon = ExtResource( 12 )
 [connection signal="pressed" from="TempFoodHolder/lemonbtn" to="." method="_on_lemonbtn_pressed"]
 [connection signal="pressed" from="TempFoodHolder/mangobtn" to="." method="_on_mangobtn_pressed"]
 [connection signal="pressed" from="TempFoodHolder/orangebtn" to="." method="_on_orangebtn_pressed"]
+[connection signal="pressed" from="TempFoodHolder/enhancerBbtn" to="." method="_on_enhancerBbtn_pressed"]
+[connection signal="pressed" from="TempFoodHolder/enhancerGbtn" to="." method="_on_enhancerGbtn_pressed"]
+[connection signal="pressed" from="TempFoodHolder/enhancerPbtn" to="." method="_on_enhancerPbtn_pressed"]
+[connection signal="pressed" from="TempFoodHolder/enhancerRbtn" to="." method="_on_enhancerRbtn_pressed"]
+[connection signal="pressed" from="TempFoodHolder/enhancerYbtn" to="." method="_on_enhancerYbtn_pressed"]

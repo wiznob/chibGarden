@@ -10,13 +10,17 @@ var food = load("res://Scenes/Food_Scene/Food.tscn")
 var newFood = food.instance()
 onready var save_files = FoodData.gameData
 # Called when the node enters the scene tree for the first time.
+
 func _ready():
-	timer.set_wait_time(2)
-	timer.start()
+	$CoinContainer/CoinCount.set_text(str(save_files.money))
+	#timer.set_wait_time(2)
+	#timer.start()
 	# check if the chib died 
-	if(save_file.age > 30):
-		$deathPopUp.show()
+	#if(save_file.age > 30):
+		#$deathPopUp.show()
 		
+	#coin displaying
+	#$CoinContainer/CoinCount.set_text(save_files.money)#(String(save_files.money))
 			
 	if(save_file.name  == "i"):
 	#	$Name.show()
@@ -85,33 +89,41 @@ func _on_toGraveYard_pressed():
 
 
 func _on_bananna_pressed():
-	var bananana = save_files.bananacount +1
-	save_files.bananacount = bananana
-	print(save_files.bananacount)
-	SaveData.save_data()
-	print(save_files.bananacount)
+	if(save_files.money > 15):
+		var moneyey = save_files.money -15
+		var bananana = save_files.bananacount +1
+		save_files.bananacount = bananana
+		print(save_files.bananacount)
+		SaveData.save_data()
+		print(save_files.bananacount)
+	else: pass
 
 
 func _on_apple_pressed():
-	var applele = save_files.applecount +1
-	save_files.applecount = applele
-	print(save_files.applecount)
-	SaveData.save_data()
-	print(save_files.applecount)
-
+	if(save_files.money > 20):
+		var applele = save_files.applecount +1
+		save_files.applecount = applele
+		print(save_files.applecount)
+		SaveData.save_data()
+		print(save_files.applecount)
+	else: pass
 
 func _on_mango_pressed():
-	var mangogo = save_files.mangocount +1
-	save_files.mangocount = mangogo
-	print(save_files.mangocount)
-	SaveData.save_data()
-	print(save_files.mangocount)
-
+	if(save_files.money > 30):
+		var mangogo = save_files.mangocount +1
+		save_files.mangocount = mangogo
+		print(save_files.mangocount)
+		SaveData.save_data()
+		print(save_files.mangocount)
+	else: pass
 
 func _on_orange_pressed():
-	var orangege = save_files.orangecount +1
-	save_files.orangecount = orangege
-	print(save_files.orangecount)
-	SaveData.save_data()
-	print(save_files.orangecount)
-
+	if(save_files.money > 70):
+		var orangege = save_files.orangecount +1
+		save_files.orangecount = orangege
+		print(save_files.orangecount)
+		SaveData.save_data()
+		print(save_files.orangecount)
+	else: pass
+	
+	

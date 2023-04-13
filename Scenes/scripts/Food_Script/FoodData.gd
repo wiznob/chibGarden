@@ -18,7 +18,7 @@ func load_data():
 	if not file.file_exists(SAVE_FILE):
 		gameData = {
 			"applecount":0,
-			"bananacount":1,
+			"bananacount":0,
 			"lemoncount":0,
 			"mangocount":0,
 			"orangecount":0,
@@ -27,7 +27,7 @@ func load_data():
 			"enhancerPcount":0,
 			"enhancerRcount":0,
 			"enhancerYcount":0,
-			"money":0
+			"money":100
 		}
 		save_data()
 	file.open(SAVE_FILE, File.READ)

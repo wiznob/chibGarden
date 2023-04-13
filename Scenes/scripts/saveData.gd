@@ -5,7 +5,12 @@ var gameData = {}
 
 func _ready():
 	load_data()
-
+	
+func testMode():
+	var dir = Directory.new()
+	dir.remove("user://player.save")
+	load_data()
+	
 func save_data():
 	var file = File.new()
 	file.open(SAVE_FILE, file.WRITE)
@@ -27,3 +32,4 @@ func load_data():
 	file.open(SAVE_FILE, File.READ)
 	gameData = file.get_var()
 	file.close()
+

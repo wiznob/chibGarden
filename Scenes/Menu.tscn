@@ -395,7 +395,7 @@ custom_constants/separation = 10
 [node name="ChibRacing" type="Button" parent="MiniGamesPopUp/VBoxContainer"]
 margin_right = 68.0
 margin_bottom = 20.0
-text = "RACING"
+text = "RUNNER"
 script = ExtResource( 3 )
 
 [node name="ChibSearch" type="Button" parent="MiniGamesPopUp/VBoxContainer"]
@@ -409,14 +409,7 @@ script = ExtResource( 3 )
 margin_top = 60.0
 margin_right = 68.0
 margin_bottom = 80.0
-text = "FIGHT"
-script = ExtResource( 3 )
-
-[node name="ChibWack" type="Button" parent="MiniGamesPopUp/VBoxContainer"]
-margin_top = 90.0
-margin_right = 68.0
-margin_bottom = 110.0
-text = "WACK"
+text = "SPEED"
 script = ExtResource( 3 )
 
 [node name="deathPopUp" type="PopupPanel" parent="."]

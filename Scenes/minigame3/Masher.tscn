@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scenes/scripts/Settingsmenu.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/scripts/MiniGame_Script/quitButton.gd" type="Script" id=2]
@@ -26,7 +26,7 @@
 [ext_resource path="res://fonts/monkeyFont.tres" type="DynamicFont" id=24]
 [ext_resource path="res://fonts/monkeyFont2.tres" type="DynamicFont" id=25]
 [ext_resource path="res://Scenes/minigame3/Script/ScoreM.gd" type="Script" id=26]
-[ext_resource path="res://Scenes/minigame3/Script/HighScore.gd" type="Script" id=27]
+[ext_resource path="res://fonts/monkeyFont3.tres" type="DynamicFont" id=27]
 [ext_resource path="res://Scenes/minigame3/Script/Masher.gd" type="Script" id=28]
 [ext_resource path="res://Scenes/minigame3/Script/LabelScore.gd" type="Script" id=29]
 
@@ -37,6 +37,28 @@ animations = [ {
 "name": "default",
 "speed": 10.0
 } ]
+
+[sub_resource type="Theme" id=2]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0313726, 0.184314, 1, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 0.8, 0.8, 0.8, 0 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 1, 1, 0 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="Masher" type="Node2D"]
 script = ExtResource( 28 )
@@ -169,15 +191,14 @@ flat = true
 expand_icon = true
 
 [node name="DeathPopUp" type="PopupPanel" parent="UI"]
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -421.0
-margin_top = -856.0
-margin_right = -362.0
-margin_bottom = -668.0
+margin_left = -453.0
+margin_top = -692.0
+margin_right = -388.0
+margin_bottom = -504.0
 rect_scale = Vector2( 14.2704, 7.4162 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/DeathPopUp"]
@@ -430,7 +451,7 @@ position = Vector2( -159.719, 616.504 )
 texture = ExtResource( 9 )
 
 [node name="mouth" type="AnimatedSprite" parent="ChibBody"]
-position = Vector2( -7.60571, -679.05 )
+position = Vector2( -8.20203, -705.605 )
 scale = Vector2( 0.922532, 0.876941 )
 frames = SubResource( 1 )
 frame = 1
@@ -463,35 +484,6 @@ position = Vector2( 664, -885 )
 [node name="SpawnerM7" parent="." instance=ExtResource( 23 )]
 position = Vector2( 543, -1501 )
 
-[node name="HighScore" type="Control" parent="."]
-margin_left = 385.0
-margin_top = 8.0
-margin_right = 674.0
-margin_bottom = 308.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="HighScore"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -47.5
-margin_top = 128.0
-margin_right = -26.5
-margin_bottom = 147.0
-rect_scale = Vector2( 12.1174, 7.13071 )
-text = "0-H
-
-"
-script = ExtResource( 27 )
-
-[node name="Label" type="Label" parent="HighScore"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -99.5
-margin_right = 156.5
-margin_bottom = 159.0
-custom_fonts/font = ExtResource( 25 )
-text = "HighScore
-"
-
 [node name="Score" type="Control" parent="."]
 margin_left = 513.0
 margin_top = 218.0
@@ -510,6 +502,30 @@ script = ExtResource( 26 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+
+[node name="stamina" type="ProgressBar" parent="."]
+anchor_left = 9.578
+anchor_top = -3.641
+anchor_right = 9.578
+anchor_bottom = -3.641
+margin_left = 319.0
+margin_top = 239.0
+margin_right = 770.0
+margin_bottom = 287.0
+rect_pivot_offset = Vector2( 248, 24 )
+theme = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
+percent_visible = false
+
+[node name="StaminaLBL" type="Label" parent="stamina"]
+margin_left = 181.0
+margin_top = 12.0
+margin_right = 252.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 27 )
+text = "Stamina"
 
 [connection signal="pressed" from="UI/Settingspopup/VBoxContainer/backButton" to="UI/Settingspopup/VBoxContainer/backButton" method="_on_backButton_pressed"]
 [connection signal="pressed" from="UI/Settingspopup/VBoxContainer/quitButton" to="UI/Settingspopup/VBoxContainer/quitButton" method="_on_quitButton_pressed"]

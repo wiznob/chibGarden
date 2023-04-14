@@ -31,3 +31,4 @@ func _on_ChibRacing_pressed():
 func _on_ChibKarate_pressed():
 	get_tree().paused = false 
 	get_tree().change_scene("res://Scenes/minigame3/Masher.tscn")
+	get_tree().paused = false

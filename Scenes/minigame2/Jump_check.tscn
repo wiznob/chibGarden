@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/minigame2/Pickup.tscn" type="PackedScene" id=1]
 [ext_resource path="res://foodImg/Banana.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/minigame2/Scripts/Jump_check.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 78.5, 90 )
@@ -11,9 +10,6 @@ extents = Vector2( 78.5, 90 )
 extents = Vector2( 726.052, 656.757 )
 
 [node name="Jump_check" type="KinematicBody2D"]
-script = ExtResource( 3 )
-jump_velocity = 0.0
-gravity_scale = 0.0
 
 [node name="Banana" type="Sprite" parent="."]
 visible = false
@@ -34,7 +30,6 @@ scale = Vector2( 0.110185, 0.137037 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collide"]
 position = Vector2( -0.000244141, 7.29712 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [connection signal="body_entered" from="Collide" to="." method="_on_Collide_body_entered"]

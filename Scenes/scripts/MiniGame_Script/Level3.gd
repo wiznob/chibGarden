@@ -16,10 +16,6 @@ func _on_settingsBTN_pressed():
 
 
 
-onready var save_file = SaveData.gameData
-
-func _ready():
-	get_node("stamina").set_value(save_file.stamina)
 
 
 func _on_Area2D_body_exited(body):
@@ -54,7 +50,7 @@ func _on_shopBTN_pressed():
 		$UI/shopPopUP.show()
 		$CanvasLayer.hide()
 
-
+	
 
 
 func _on_graveBTN_pressed():

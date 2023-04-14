@@ -1,10 +1,6 @@
 extends Node2D
 
-onready var save_files = FoodData.gameData
-onready var save_file = SaveData.gameData
 
-func _ready():
-	get_node("stamina").set_value(save_file.stamina)
 
 func _on_Switch_body_entered(body):
 	if $Switch/AnimatedSprite.frame == 1:
@@ -28,13 +24,8 @@ func _on_settingsBTN_pressed():
 
 
 func _on_Area2D_body_exited(body):
-	save_files.money + 100
-	save_file.strength + 15
-	FoodData.save_data()
-	SaveData.save_data()
 
-	get_tree().change_scene("res://Scenes/Menu.tscn")
-	
+	get_tree().change_scene("res://Scenes/minigame/Level5.tscn")
 
 
 func _on_FSwitch_body_entered(body):

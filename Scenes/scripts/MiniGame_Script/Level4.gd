@@ -1,9 +1,6 @@
 extends Node2D
 
-onready var save_file = SaveData.gameData
 
-func _ready():
-	get_node("stamina").set_value(save_file.stamina)
 
 func _on_Switch_body_entered(body):
 	if $Switch/AnimatedSprite.frame == 1:
@@ -73,7 +70,3 @@ func _on_gamesBTN_pressed():
 	else:
 		get_tree().paused = true
 		$UI/MiniGamesPopUp.show()
-
-
-func _on_graveBTN_pressed():
-	get_tree().change_scene("res://Scenes/graveYard.tscn")

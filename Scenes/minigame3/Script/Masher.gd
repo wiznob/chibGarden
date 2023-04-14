@@ -10,7 +10,6 @@ func _ready():
 
 
 
-
 func _on_Timer_timeout():
 
 	if(get_tree().paused == true):
@@ -63,4 +62,4 @@ func _on_settingsBTN_pressed():
 
 
 func _on_graveBTN_pressed():
-	get_tree().change_scene("res://Scenes/graveYard.tscn")
+	pass # Replace with function body.

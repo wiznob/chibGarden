@@ -1,17 +1,6 @@
 extends Node2D
 
-
-
-onready var save_file = SaveData.gameData
 var score = 0
-func _ready():
-	Signals.connect("killplayer",self,"gameover")
-	Signals.connect("rewardplayer",self,"rewardplayer")
-	var one = 56
-	get_node("stamina2").set_value(one)
-	
-
-
 
 
 

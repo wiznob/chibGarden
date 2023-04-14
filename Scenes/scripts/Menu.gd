@@ -8,11 +8,11 @@ onready var timer  = get_node("Timer")
 # var b = "text"
 var food = load("res://Scenes/Food_Scene/Food.tscn")
 var newFood = food.instance()
-onready var save_files = FoodData.gameData
+onready var save_foods = FoodData.gameData
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
-	$CoinContainer/CoinCount.set_text(str(save_files.money))
+	$CoinContainer/CoinCount.set_text(str(save_foods.money))
 	#timer.set_wait_time(2)
 	#timer.start()
 	# check if the chib died 
@@ -20,7 +20,7 @@ func _ready():
 		#$deathPopUp.show()
 		
 	#coin displaying
-	#$CoinContainer/CoinCount.set_text(save_files.money)#(String(save_files.money))
+	#$CoinContainer/CoinCount.set_text(save_foods.money)#(String(save_foods.money))
 			
 	if(save_file.name  == "i"):
 	#	$Name.show()
@@ -89,41 +89,98 @@ func _on_toGraveYard_pressed():
 
 
 func _on_bananna_pressed():
-	if(save_files.money > 15):
-		var moneyey = save_files.money -15
-		var bananana = save_files.bananacount +1
-		save_files.bananacount = bananana
-		print(save_files.bananacount)
-		SaveData.save_data()
-		print(save_files.bananacount)
+	if(save_foods.money > 15):
+		var moneyey = save_foods.money -15
+		var bananana = save_foods.bananacount +1
+		save_foods.bananacount = bananana
+		save_foods.money = moneyey
+		FoodData.save_data()
 	else: pass
 
 
 func _on_apple_pressed():
-	if(save_files.money > 20):
-		var applele = save_files.applecount +1
-		save_files.applecount = applele
-		print(save_files.applecount)
-		SaveData.save_data()
-		print(save_files.applecount)
+	if(save_foods.money > 20):
+		var moneyey = save_foods.money -20
+		var applele = save_foods.applecount +1
+		save_foods.applecount = applele
+		save_foods.money = moneyey
+		FoodData.save_data()
 	else: pass
 
 func _on_mango_pressed():
-	if(save_files.money > 30):
-		var mangogo = save_files.mangocount +1
-		save_files.mangocount = mangogo
-		print(save_files.mangocount)
-		SaveData.save_data()
-		print(save_files.mangocount)
+	if(save_foods.money > 30):
+		var moneyey = save_foods.money -30
+		var mangogo = save_foods.mangocount +1
+		save_foods.mangocount = mangogo
+		save_foods.money = moneyey
+		FoodData.save_data()
 	else: pass
 
 func _on_orange_pressed():
-	if(save_files.money > 70):
-		var orangege = save_files.orangecount +1
-		save_files.orangecount = orangege
-		print(save_files.orangecount)
-		SaveData.save_data()
-		print(save_files.orangecount)
+	if(save_foods.money > 70):
+		var moneyey = save_foods.money -70
+		var orangege = save_foods.orangecount +1
+		save_foods.orangecount = orangege
+		save_foods.money = moneyey
+		FoodData.save_data()
 	else: pass
-	
-	
+
+
+func _on_Lemon_pressed():
+	if(save_foods.money > 15):
+		var moneyey = save_foods.money -15
+		var lemonon = save_foods.lemoncount +1
+		save_foods.lemoncount = lemonon
+		save_foods.money = moneyey
+		FoodData.save_data()
+	else: pass
+
+
+func _on_yBooster_pressed():
+	if(save_foods.money > 60):
+		var moneyey = save_foods.money -60
+		var enhancerY = save_foods.enhancerYcount +1
+		save_foods.enhancerYcount = enhancerY
+		save_foods.money = moneyey
+		FoodData.save_data()
+	else: pass
+
+
+func _on_bBooster_pressed():
+	if(save_foods.money > 20):
+		var moneyey = save_foods.money -20
+		var enhancerB = save_foods.enhancerBcount +1
+		save_foods.enhancerBcount = enhancerB
+		save_foods.money = moneyey
+		FoodData.save_data()
+	else: pass
+
+
+func _on_gBooster_pressed():
+	if(save_foods.money > 33):
+		var moneyey = save_foods.money -33
+		var enhancerG = save_foods.enhancerGcount +1
+		save_foods.enhancerGcount = enhancerG
+		save_foods.money = moneyey
+		FoodData.save_data()
+	else: pass
+
+
+func _on_rBooster_pressed():
+	if(save_foods.money > 100):
+		var moneyey = save_foods.money -100
+		var enhancerR = save_foods.enhancerRcount +1
+		save_foods.enhancerRcount = enhancerR
+		save_foods.money = moneyey
+		FoodData.save_data()
+	else: pass
+
+
+func _on_pBooster_pressed():
+	if(save_foods.money > 40):
+		var moneyey = save_foods.money -40
+		var enhancerP = save_foods.enhancerPcount +1
+		save_foods.enhancerPcount = enhancerP
+		save_foods.money = moneyey
+		FoodData.save_data()
+	else: pass

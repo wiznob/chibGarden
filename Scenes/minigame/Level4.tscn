@@ -581,7 +581,7 @@ script = ExtResource( 30 )
 position = Vector2( 160, 404 )
 
 [node name="Jump_check" parent="." instance=ExtResource( 14 )]
-position = Vector2( 48, 413 )
+position = Vector2( 48, 405 )
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 16 )]
 

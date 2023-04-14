@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scenes/scripts/Settingsmenu.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/scripts/MiniGame_Script/quitButton.gd" type="Script" id=2]
@@ -28,6 +28,7 @@
 [ext_resource path="res://fonts/monkeyFont3.tres" type="DynamicFont" id=27]
 [ext_resource path="res://Scenes/minigame3/Script/Masher.gd" type="Script" id=28]
 [ext_resource path="res://Scenes/minigame3/Script/LabelScore.gd" type="Script" id=29]
+[ext_resource path="res://Scenes/scripts/MiniGame_Script/MiniGamePop.gd" type="Script" id=30]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -407,6 +408,48 @@ margin_right = 64.0
 margin_bottom = 119.0
 script = ExtResource( 29 )
 
+[node name="MiniGamesPopUp" type="PopupPanel" parent="UI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -542.0
+margin_top = -578.0
+margin_right = -466.0
+margin_bottom = -414.0
+rect_scale = Vector2( 14.2704, 7.4162 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MiniGamesPopUp"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -34.0
+margin_top = -78.0
+margin_right = 34.0
+margin_bottom = 78.0
+custom_constants/separation = 10
+
+[node name="ChibRacing" type="Button" parent="UI/MiniGamesPopUp/VBoxContainer"]
+margin_right = 68.0
+margin_bottom = 20.0
+text = "RUNNER"
+script = ExtResource( 30 )
+
+[node name="ChibSearch" type="Button" parent="UI/MiniGamesPopUp/VBoxContainer"]
+margin_top = 30.0
+margin_right = 68.0
+margin_bottom = 50.0
+text = "SEARCH"
+script = ExtResource( 30 )
+
+[node name="ChibKarate" type="Button" parent="UI/MiniGamesPopUp/VBoxContainer"]
+margin_top = 60.0
+margin_right = 68.0
+margin_bottom = 80.0
+text = "SPEED"
+script = ExtResource( 30 )
+
 [node name="ChibBody" type="Sprite" parent="."]
 position = Vector2( 528, 940 )
 scale = Vector2( 0.36576, 0.310372 )
@@ -440,7 +483,7 @@ texture = ExtResource( 9 )
 position = Vector2( -8.20203, -705.605 )
 scale = Vector2( 0.922532, 0.876941 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="ChibArm2" type="Sprite" parent="ChibBody"]
@@ -517,4 +560,7 @@ text = "Stamina"
 [connection signal="pressed" from="UI/Settingspopup/VBoxContainer/quitButton" to="UI/Settingspopup/VBoxContainer/quitButton" method="_on_quitButton_pressed"]
 [connection signal="pressed" from="UI/DeathPopUp/VBoxContainer/RestartBtn" to="UI/Settingspopup/VBoxContainer/quitButton" method="_on_RestartBtn_pressed"]
 [connection signal="pressed" from="UI/End/VBoxContainer/RestartBtn" to="." method="_on_RestartBtn_pressed"]
+[connection signal="pressed" from="UI/MiniGamesPopUp/VBoxContainer/ChibRacing" to="UI/MiniGamesPopUp/VBoxContainer/ChibRacing" method="_on_ChibRacing_pressed"]
+[connection signal="pressed" from="UI/MiniGamesPopUp/VBoxContainer/ChibSearch" to="UI/MiniGamesPopUp/VBoxContainer/ChibSearch" method="_on_ChibSearch_pressed"]
+[connection signal="pressed" from="UI/MiniGamesPopUp/VBoxContainer/ChibKarate" to="UI/MiniGamesPopUp/VBoxContainer/ChibKarate" method="_on_ChibKarate_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

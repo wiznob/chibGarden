@@ -519,7 +519,7 @@ custom_constants/separation = 10
 [node name="ChibRacing" type="Button" parent="UI/MiniGamesPopUp/VBoxContainer"]
 margin_right = 68.0
 margin_bottom = 20.0
-text = "RACING"
+text = "RUNNER"
 script = ExtResource( 27 )
 
 [node name="ChibSearch" type="Button" parent="UI/MiniGamesPopUp/VBoxContainer"]
@@ -533,14 +533,7 @@ script = ExtResource( 27 )
 margin_top = 60.0
 margin_right = 68.0
 margin_bottom = 80.0
-text = "FIGHT"
-script = ExtResource( 27 )
-
-[node name="ChibWack" type="Button" parent="UI/MiniGamesPopUp/VBoxContainer"]
-margin_top = 90.0
-margin_right = 68.0
-margin_bottom = 110.0
-text = "WACK"
+text = "SPEED"
 script = ExtResource( 27 )
 
 [node name="stamina" type="ProgressBar" parent="."]
@@ -557,6 +550,7 @@ theme = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_styles/fg = SubResource( 6 )
 custom_styles/bg = SubResource( 7 )
+value = 65.0
 percent_visible = false
 
 [node name="StaminaLBL" type="Label" parent="stamina"]
@@ -583,3 +577,4 @@ text = "Stamina"
 [connection signal="pressed" from="UI/EndPopUp/VBoxContainer/quitButton" to="UI/EndPopUp/VBoxContainer/quitButton" method="_on_quitButton_pressed"]
 [connection signal="pressed" from="UI/MiniGamesPopUp/VBoxContainer/ChibRacing" to="UI/MiniGamesPopUp/VBoxContainer/ChibRacing" method="_on_ChibRacing_pressed"]
 [connection signal="pressed" from="UI/MiniGamesPopUp/VBoxContainer/ChibSearch" to="UI/MiniGamesPopUp/VBoxContainer/ChibSearch" method="_on_ChibSearch_pressed"]
+[connection signal="pressed" from="UI/MiniGamesPopUp/VBoxContainer/ChibKarate" to="UI/MiniGamesPopUp/VBoxContainer/ChibKarate" method="_on_ChibKarate_pressed"]

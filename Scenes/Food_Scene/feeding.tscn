@@ -58,6 +58,75 @@ position = Vector2( 538, 1338.45 )
 scale = Vector2( 3.249, 4.46817 )
 texture = ExtResource( 9 )
 
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 7.0
+margin_top = 1553.0
+margin_right = 1073.0
+margin_bottom = 1752.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+margin_right = 1856.0
+margin_bottom = 176.0
+
+[node name="applebtn" type="Button" parent="ScrollContainer/HBoxContainer"]
+margin_right = 182.0
+margin_bottom = 176.0
+icon = ExtResource( 13 )
+
+[node name="bananabtn" type="Button" parent="ScrollContainer/HBoxContainer"]
+margin_left = 186.0
+margin_right = 368.0
+margin_bottom = 176.0
+icon = ExtResource( 10 )
+
+[node name="lemonbtn" type="Button" parent="ScrollContainer/HBoxContainer"]
+margin_left = 372.0
+margin_right = 554.0
+margin_bottom = 176.0
+icon = ExtResource( 11 )
+
+[node name="mangobtn" type="Button" parent="ScrollContainer/HBoxContainer"]
+margin_left = 558.0
+margin_right = 740.0
+margin_bottom = 176.0
+icon = ExtResource( 14 )
+
+[node name="orangebtn" type="Button" parent="ScrollContainer/HBoxContainer"]
+margin_left = 744.0
+margin_right = 926.0
+margin_bottom = 176.0
+icon = ExtResource( 12 )
+
+[node name="enhancerBbtn" type="Button" parent="ScrollContainer/HBoxContainer"]
+margin_left = 930.0
+margin_right = 1112.0
+margin_bottom = 176.0
+icon = ExtResource( 17 )
+
+[node name="enhancerGbtn" type="Button" parent="ScrollContainer/HBoxContainer"]
+margin_left = 1116.0
+margin_right = 1298.0
+margin_bottom = 176.0
+icon = ExtResource( 19 )
+
+[node name="enhancerPbtn" type="Button" parent="ScrollContainer/HBoxContainer"]
+margin_left = 1302.0
+margin_right = 1484.0
+margin_bottom = 176.0
+icon = ExtResource( 18 )
+
+[node name="enhancerRbtn" type="Button" parent="ScrollContainer/HBoxContainer"]
+margin_left = 1488.0
+margin_right = 1670.0
+margin_bottom = 176.0
+icon = ExtResource( 16 )
+
+[node name="enhancerYbtn" type="Button" parent="ScrollContainer/HBoxContainer"]
+margin_left = 1674.0
+margin_right = 1856.0
+margin_bottom = 176.0
+icon = ExtResource( 20 )
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
@@ -348,71 +417,6 @@ fit_content_height = true
 scroll_active = false
 script = ExtResource( 3 )
 
-[node name="TempFoodHolder" type="HBoxContainer" parent="."]
-margin_left = 11.0
-margin_top = 1559.0
-margin_right = 1867.0
-margin_bottom = 1751.0
-
-[node name="applebtn" type="Button" parent="TempFoodHolder"]
-margin_right = 182.0
-margin_bottom = 192.0
-icon = ExtResource( 13 )
-
-[node name="bananabtn" type="Button" parent="TempFoodHolder"]
-margin_left = 186.0
-margin_right = 368.0
-margin_bottom = 192.0
-icon = ExtResource( 10 )
-
-[node name="lemonbtn" type="Button" parent="TempFoodHolder"]
-margin_left = 372.0
-margin_right = 554.0
-margin_bottom = 192.0
-icon = ExtResource( 11 )
-
-[node name="mangobtn" type="Button" parent="TempFoodHolder"]
-margin_left = 558.0
-margin_right = 740.0
-margin_bottom = 192.0
-icon = ExtResource( 14 )
-
-[node name="orangebtn" type="Button" parent="TempFoodHolder"]
-margin_left = 744.0
-margin_right = 926.0
-margin_bottom = 192.0
-icon = ExtResource( 12 )
-
-[node name="enhancerBbtn" type="Button" parent="TempFoodHolder"]
-margin_left = 930.0
-margin_right = 1112.0
-margin_bottom = 192.0
-icon = ExtResource( 17 )
-
-[node name="enhancerGbtn" type="Button" parent="TempFoodHolder"]
-margin_left = 1116.0
-margin_right = 1298.0
-margin_bottom = 192.0
-icon = ExtResource( 19 )
-
-[node name="enhancerPbtn" type="Button" parent="TempFoodHolder"]
-margin_left = 1302.0
-margin_right = 1484.0
-margin_bottom = 192.0
-icon = ExtResource( 18 )
-
-[node name="enhancerRbtn" type="Button" parent="TempFoodHolder"]
-margin_left = 1488.0
-margin_right = 1670.0
-margin_bottom = 192.0
-icon = ExtResource( 16 )
-
-[node name="enhancerYbtn" type="Button" parent="TempFoodHolder"]
-margin_left = 1674.0
-margin_right = 1856.0
-margin_bottom = 192.0
-icon = ExtResource( 20 )
-
 [node name="CoinContainer" type="Container" parent="."]
 margin_left = 889.0
 margin_top = 105.0
@@ -429,19 +433,19 @@ position = Vector2( 143, 31 )
 scale = Vector2( 0.475155, 0.475155 )
 texture = ExtResource( 15 )
 
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/applebtn" to="." method="_on_applebtn_pressed"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/bananabtn" to="." method="_on_bananabtn_pressed"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/lemonbtn" to="." method="_on_lemonbtn_pressed"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/mangobtn" to="." method="_on_mangobtn_pressed"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/orangebtn" to="." method="_on_orangebtn_pressed"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/enhancerBbtn" to="." method="_on_enhancerBbtn_pressed"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/enhancerGbtn" to="." method="_on_enhancerGbtn_pressed"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/enhancerPbtn" to="." method="_on_enhancerPbtn_pressed"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/enhancerRbtn" to="." method="_on_enhancerRbtn_pressed"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/enhancerYbtn" to="." method="_on_enhancerYbtn_pressed"]
 [connection signal="pressed" from="HBoxContainer/feedBTN" to="." method="_on_feedBTN_pressed"]
 [connection signal="pressed" from="HBoxContainer/graveBTN" to="." method="_on_graveBTN_pressed"]
+[connection signal="pressed" from="settingsBTN" to="." method="_on_settingsBTN_pressed"]
 [connection signal="pressed" from="shopBTN" to="." method="_on_shopBTN_pressed"]
 [connection signal="pressed" from="Settingspopup/VBoxContainer/backButton" to="Settingspopup/VBoxContainer/backButton" method="_on_backButton_pressed"]
 [connection signal="pressed" from="Settingspopup/VBoxContainer/quitButton" to="Settingspopup/VBoxContainer/quitButton" method="_on_quitButton_pressed"]
-[connection signal="gui_input" from="TempFoodHolder" to="." method="_on_TempFoodHolder_gui_input"]
-[connection signal="pressed" from="TempFoodHolder/applebtn" to="." method="_on_applebtn_pressed"]
-[connection signal="pressed" from="TempFoodHolder/bananabtn" to="." method="_on_bananabtn_pressed"]
-[connection signal="pressed" from="TempFoodHolder/lemonbtn" to="." method="_on_lemonbtn_pressed"]
-[connection signal="pressed" from="TempFoodHolder/mangobtn" to="." method="_on_mangobtn_pressed"]
-[connection signal="pressed" from="TempFoodHolder/orangebtn" to="." method="_on_orangebtn_pressed"]
-[connection signal="pressed" from="TempFoodHolder/enhancerBbtn" to="." method="_on_enhancerBbtn_pressed"]
-[connection signal="pressed" from="TempFoodHolder/enhancerGbtn" to="." method="_on_enhancerGbtn_pressed"]
-[connection signal="pressed" from="TempFoodHolder/enhancerPbtn" to="." method="_on_enhancerPbtn_pressed"]
-[connection signal="pressed" from="TempFoodHolder/enhancerRbtn" to="." method="_on_enhancerRbtn_pressed"]
-[connection signal="pressed" from="TempFoodHolder/enhancerYbtn" to="." method="_on_enhancerYbtn_pressed"]

@@ -1,16 +1,5 @@
-<<<<<<< Updated upstream
+
 [gd_scene load_steps=22 format=2]
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-[gd_scene load_steps=16 format=2]
-=======
-[gd_scene load_steps=22 format=2]
->>>>>>> 17ecf8b4cb9e50d1323ab8501f4999ede841542d
-=======
-[gd_scene load_steps=22 format=2]
->>>>>>> 17ecf8b4cb9e50d1323ab8501f4999ede841542d
->>>>>>> Stashed changes
 
 [ext_resource path="res://Scenes/Chib.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fonts/monkeyFont.tres" type="DynamicFont" id=2]

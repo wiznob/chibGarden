@@ -12,25 +12,9 @@ onready var save_foods = FoodData.gameData
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
-<<<<<<< Updated upstream
-	$CoinContainer/CoinCount.set_text(str(save_foods.money))
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-	$CoinContainer/CoinCount.set_text(str(save_files.money))
 
-	
-	
-	
-	
-	
-=======
 	$CoinContainer/CoinCount.set_text(str(save_foods.money))
->>>>>>> 17ecf8b4cb9e50d1323ab8501f4999ede841542d
-=======
-	$CoinContainer/CoinCount.set_text(str(save_foods.money))
->>>>>>> 17ecf8b4cb9e50d1323ab8501f4999ede841542d
->>>>>>> Stashed changes
+
 	#timer.set_wait_time(2)
 	#timer.start()
 	# check if the chib died 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Scenes/minigame/walls.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/minigame/Player.tscn" type="PackedScene" id=2]
@@ -29,6 +29,7 @@
 [ext_resource path="res://chibImage/Chib.png" type="Texture" id=27]
 [ext_resource path="res://fonts/monkeyFont2.tres" type="DynamicFont" id=28]
 [ext_resource path="res://Scenes/scripts/MiniGame_Script/MiniGamePop.gd" type="Script" id=29]
+[ext_resource path="res://fonts/monkeyFont3.tres" type="DynamicFont" id=30]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.5, 31.5 )
@@ -69,6 +70,28 @@ corner_radius_top_left = 25
 corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
+
+[sub_resource type="Theme" id=7]
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.0313726, 0.184314, 1, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 0.8, 0.8, 0.8, 0 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 1, 1, 1, 0 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="Level2" type="Node2D"]
 script = ExtResource( 10 )
@@ -491,6 +514,30 @@ position = Vector2( 1006, 804 )
 
 [node name="Jump_check" parent="." instance=ExtResource( 17 )]
 position = Vector2( 46, 411 )
+
+[node name="stamina" type="ProgressBar" parent="."]
+anchor_left = 9.578
+anchor_top = -3.641
+anchor_right = 9.578
+anchor_bottom = -3.641
+margin_left = 319.0
+margin_top = 225.0
+margin_right = 770.0
+margin_bottom = 273.0
+rect_pivot_offset = Vector2( 248, 24 )
+theme = SubResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_styles/fg = SubResource( 8 )
+custom_styles/bg = SubResource( 9 )
+percent_visible = false
+
+[node name="StaminaLBL" type="Label" parent="stamina"]
+margin_left = 181.0
+margin_top = 12.0
+margin_right = 252.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 30 )
+text = "Stamina"
 
 [connection signal="body_entered" from="Switch" to="." method="_on_Switch_body_entered"]
 [connection signal="coin_collected" from="Coin" to="UI/HUD" method="_on_Coin_coin_collected"]

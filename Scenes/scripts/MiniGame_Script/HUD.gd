@@ -1,5 +1,5 @@
 extends Control
-
+var score = 0
 func _ready():
 
 	$Label.text = "SCORE:" + String(Global.score)
@@ -35,4 +35,4 @@ func _on_Coin3_coin_collected():
 
 
 func _on_Coin4_coin_collected():
-	pass # Replace with function body.
+	_ready()

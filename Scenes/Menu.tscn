@@ -469,7 +469,6 @@ texture = ExtResource( 23 )
 margin_right = 40.0
 margin_bottom = 14.0
 rect_scale = Vector2( 5, 5 )
-script = ExtResource( 9 )
 
 [connection signal="timeout" from="Timer" to="." method="timeUP"]
 [connection signal="pressed" from="HBoxContainer/feedBTN" to="." method="_on_feedBTN_pressed"]

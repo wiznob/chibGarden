@@ -1,11 +1,22 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=22 format=2]
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+[gd_scene load_steps=16 format=2]
+=======
+[gd_scene load_steps=22 format=2]
+>>>>>>> 17ecf8b4cb9e50d1323ab8501f4999ede841542d
+=======
+[gd_scene load_steps=22 format=2]
+>>>>>>> 17ecf8b4cb9e50d1323ab8501f4999ede841542d
+>>>>>>> Stashed changes
 
 [ext_resource path="res://Scenes/Chib.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fonts/monkeyFont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Scenes/scripts/chibName.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/scripts/feedingTscn.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/scripts/Settingsmenu.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/scripts/MiniGame_Script/MiniGamePop.gd" type="Script" id=6]
 [ext_resource path="res://Images/cog.png" type="Texture" id=7]
 [ext_resource path="res://Images/1413908.png" type="Texture" id=8]
 [ext_resource path="res://Images/background.webp" type="Texture" id=9]
@@ -199,52 +210,6 @@ fit_content_height = true
 scroll_active = false
 script = ExtResource( 3 )
 
-[node name="MiniGamesPopUp" type="PopupPanel" parent="."]
-anchor_left = 0.5
-anchor_top = 0.46
-anchor_right = 0.5
-anchor_bottom = 0.46
-margin_left = -499.0
-margin_top = -630.2
-margin_right = -429.0
-margin_bottom = -466.2
-rect_scale = Vector2( 14.2704, 7.4162 )
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MiniGamesPopUp"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -31.0
-margin_top = -78.0
-margin_right = 31.0
-margin_bottom = 78.0
-custom_constants/separation = 10
-
-[node name="ChibRacing" type="Button" parent="MiniGamesPopUp/VBoxContainer"]
-margin_right = 62.0
-margin_bottom = 20.0
-text = "RACING"
-
-[node name="ChibSearch" type="Button" parent="MiniGamesPopUp/VBoxContainer"]
-margin_top = 30.0
-margin_right = 62.0
-margin_bottom = 50.0
-text = "SEARCH"
-script = ExtResource( 6 )
-
-[node name="ChibKarate" type="Button" parent="MiniGamesPopUp/VBoxContainer"]
-margin_top = 60.0
-margin_right = 62.0
-margin_bottom = 80.0
-text = "FIGHT"
-
-[node name="ChibWack" type="Button" parent="MiniGamesPopUp/VBoxContainer"]
-margin_top = 90.0
-margin_right = 62.0
-margin_bottom = 110.0
-text = "WACK"
-
 [node name="TempFoodHolder" type="HBoxContainer" parent="."]
 margin_left = 11.0
 margin_top = 1559.0
@@ -330,7 +295,6 @@ texture = ExtResource( 15 )
 [connection signal="pressed" from="HBoxContainer/graveBTN" to="." method="_on_graveBTN_pressed"]
 [connection signal="pressed" from="Settingspopup/VBoxContainer/backButton" to="Settingspopup/VBoxContainer/backButton" method="_on_backButton_pressed"]
 [connection signal="pressed" from="Settingspopup/VBoxContainer/quitButton" to="Settingspopup/VBoxContainer/quitButton" method="_on_quitButton_pressed"]
-[connection signal="pressed" from="MiniGamesPopUp/VBoxContainer/ChibSearch" to="MiniGamesPopUp/VBoxContainer/ChibSearch" method="_on_ChibSearch_pressed"]
 [connection signal="gui_input" from="TempFoodHolder" to="." method="_on_TempFoodHolder_gui_input"]
 [connection signal="pressed" from="TempFoodHolder/applebtn" to="." method="_on_applebtn_pressed"]
 [connection signal="pressed" from="TempFoodHolder/bananabtn" to="." method="_on_bananabtn_pressed"]

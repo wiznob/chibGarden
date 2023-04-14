@@ -56,7 +56,7 @@ corner_radius_bottom_left = 8
 script = ExtResource( 7 )
 
 [node name="BackGround" parent="." instance=ExtResource( 1 )]
-position = Vector2( 3, -3 )
+position = Vector2( 0, 3 )
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
 
@@ -78,10 +78,10 @@ margin_bottom = 308.0
 [node name="RichTextLabel" type="RichTextLabel" parent="HighScore"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -31.5
-margin_top = 325.0
-margin_right = -10.5
-margin_bottom = 344.0
+margin_left = -44.5
+margin_top = 353.0
+margin_right = -23.5
+margin_bottom = 372.0
 rect_scale = Vector2( 12, 7 )
 size_flags_stretch_ratio = 0.0
 text = "0-H
@@ -92,10 +92,10 @@ script = ExtResource( 26 )
 [node name="Label" type="Label" parent="HighScore"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -286.5
-margin_top = 350.0
-margin_right = -30.5
-margin_bottom = 441.0
+margin_left = -312.5
+margin_top = 395.0
+margin_right = -56.5
+margin_bottom = 486.0
 custom_fonts/font = ExtResource( 23 )
 text = "HighScore:
 "
@@ -326,130 +326,130 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="shopLBL" type="Label" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
-margin_right = 1024.0
-margin_bottom = 44.0
+margin_right = 1012.0
+margin_bottom = 64.0
 custom_fonts/font = ExtResource( 23 )
 text = "Welcome to the shop"
 align = 1
 
 [node name="premiumLBL" type="Label" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 48.0
-margin_right = 1024.0
-margin_bottom = 92.0
+margin_top = 68.0
+margin_right = 1012.0
+margin_bottom = 132.0
 custom_fonts/font = ExtResource( 23 )
 text = "Premium store"
 align = 1
 
 [node name="yBooster" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 96.0
-margin_right = 1024.0
-margin_bottom = 146.0
+margin_top = 136.0
+margin_right = 1012.0
+margin_bottom = 206.0
 custom_fonts/font = ExtResource( 23 )
 text = "I love the yellow booster :3 - 60 coins"
 icon = ExtResource( 21 )
 expand_icon = true
 
 [node name="bBooster" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 150.0
-margin_right = 1024.0
-margin_bottom = 200.0
+margin_top = 210.0
+margin_right = 1012.0
+margin_bottom = 280.0
 custom_fonts/font = ExtResource( 23 )
 text = "Fucking hate the blue booster - 20 coins"
 icon = ExtResource( 22 )
 expand_icon = true
 
 [node name="gBooster" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 204.0
-margin_right = 1024.0
-margin_bottom = 254.0
+margin_top = 284.0
+margin_right = 1012.0
+margin_bottom = 354.0
 custom_fonts/font = ExtResource( 23 )
 text = "Green booster is ok - 33 coins"
 icon = ExtResource( 17 )
 expand_icon = true
 
 [node name="rBooster" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 258.0
-margin_right = 1024.0
-margin_bottom = 308.0
+margin_top = 358.0
+margin_right = 1012.0
+margin_bottom = 428.0
 custom_fonts/font = ExtResource( 23 )
 text = "Racist red booster!!!! - 100 coins"
 icon = ExtResource( 18 )
 expand_icon = true
 
 [node name="pBooster" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 312.0
-margin_right = 1024.0
-margin_bottom = 362.0
+margin_top = 432.0
+margin_right = 1012.0
+margin_bottom = 502.0
 custom_fonts/font = ExtResource( 23 )
 text = "Heehehehe - 1 coin"
 icon = ExtResource( 15 )
 expand_icon = true
 
 [node name="basicLBL" type="Label" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 366.0
-margin_right = 1024.0
-margin_bottom = 410.0
+margin_top = 506.0
+margin_right = 1012.0
+margin_bottom = 570.0
 custom_fonts/font = ExtResource( 23 )
 text = "Basic store"
 align = 1
 
 [node name="apple" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 414.0
-margin_right = 1024.0
-margin_bottom = 464.0
+margin_top = 574.0
+margin_right = 1012.0
+margin_bottom = 644.0
 custom_fonts/font = ExtResource( 23 )
 text = "Totaly not the apple logo - 16 coins"
 icon = ExtResource( 16 )
 expand_icon = true
 
 [node name="bananna" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 468.0
-margin_right = 1024.0
-margin_bottom = 518.0
+margin_top = 648.0
+margin_right = 1012.0
+margin_bottom = 718.0
 custom_fonts/font = ExtResource( 23 )
 text = "bannananana - 20 cois"
 icon = ExtResource( 9 )
 expand_icon = true
 
 [node name="mango" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 522.0
-margin_right = 1024.0
-margin_bottom = 572.0
+margin_top = 722.0
+margin_right = 1012.0
+margin_bottom = 792.0
 custom_fonts/font = ExtResource( 23 )
 text = "MANGO! - 30 coin"
 icon = ExtResource( 19 )
 expand_icon = true
 
 [node name="orange" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 576.0
-margin_right = 1024.0
-margin_bottom = 626.0
+margin_top = 796.0
+margin_right = 1012.0
+margin_bottom = 866.0
 custom_fonts/font = ExtResource( 23 )
 text = "orange :) - 70 coin"
 icon = ExtResource( 20 )
 expand_icon = true
 
 [node name="chibsLBL" type="Label" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 630.0
-margin_right = 1024.0
-margin_bottom = 674.0
+margin_top = 870.0
+margin_right = 1012.0
+margin_bottom = 934.0
 custom_fonts/font = ExtResource( 23 )
 text = "Chibs"
 align = 1
 
 [node name="basic" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 678.0
-margin_right = 1024.0
-margin_bottom = 728.0
+margin_top = 938.0
+margin_right = 1012.0
+margin_bottom = 1008.0
 custom_fonts/font = ExtResource( 23 )
 text = "Buy a basic chib - 60 coins"
 icon = ExtResource( 14 )
 expand_icon = true
 
 [node name="super" type="Button" parent="UI/shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 732.0
-margin_right = 1024.0
-margin_bottom = 782.0
+margin_top = 1012.0
+margin_right = 1012.0
+margin_bottom = 1082.0
 custom_fonts/font = ExtResource( 23 )
 text = "Super chib - 60 coins"
 icon = ExtResource( 14 )
@@ -480,7 +480,7 @@ custom_constants/separation = 10
 [node name="ChibRacing" type="Button" parent="UI/MiniGamesPopUp/VBoxContainer"]
 margin_right = 68.0
 margin_bottom = 20.0
-text = "RACING"
+text = "RUNNER"
 script = ExtResource( 24 )
 
 [node name="ChibSearch" type="Button" parent="UI/MiniGamesPopUp/VBoxContainer"]
@@ -494,14 +494,7 @@ script = ExtResource( 24 )
 margin_top = 60.0
 margin_right = 68.0
 margin_bottom = 80.0
-text = "FIGHT"
-script = ExtResource( 24 )
-
-[node name="ChibWack" type="Button" parent="UI/MiniGamesPopUp/VBoxContainer"]
-margin_top = 90.0
-margin_right = 68.0
-margin_bottom = 110.0
-text = "WACK"
+text = "SPEED"
 script = ExtResource( 24 )
 
 [node name="Jump_check" parent="." instance=ExtResource( 25 )]
@@ -518,10 +511,10 @@ anchor_left = 9.578
 anchor_top = -3.641
 anchor_right = 9.578
 anchor_bottom = -3.641
-margin_left = 335.0
-margin_top = 147.0
-margin_right = 786.0
-margin_bottom = 195.0
+margin_left = 314.0
+margin_top = 221.0
+margin_right = 765.0
+margin_bottom = 269.0
 rect_pivot_offset = Vector2( 248, 24 )
 theme = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -538,6 +531,7 @@ custom_fonts/font = ExtResource( 29 )
 text = "Stamina"
 
 [connection signal="pressed" from="GameOver/Button" to="GameOver" method="_on_Button_pressed"]
+[connection signal="pressed" from="GameOver/Button" to="GameOver/Button" method="_on_Button_pressed"]
 [connection signal="pressed" from="UI/Settingspopup/VBoxContainer/backButton" to="UI/Settingspopup/VBoxContainer/backButton" method="_on_backButton_pressed"]
 [connection signal="pressed" from="UI/Settingspopup/VBoxContainer/quitButton" to="UI/Settingspopup/VBoxContainer/quitButton" method="_on_quitButton_pressed"]
 [connection signal="pressed" from="UI/shopBTN" to="." method="_on_shopBTN_pressed"]
@@ -546,4 +540,5 @@ text = "Stamina"
 [connection signal="pressed" from="UI/HBoxContainer2/graveBTN" to="." method="_on_graveBTN_pressed"]
 [connection signal="pressed" from="UI/MiniGamesPopUp/VBoxContainer/ChibRacing" to="UI/MiniGamesPopUp/VBoxContainer/ChibRacing" method="_on_ChibRacing_pressed"]
 [connection signal="pressed" from="UI/MiniGamesPopUp/VBoxContainer/ChibSearch" to="UI/MiniGamesPopUp/VBoxContainer/ChibSearch" method="_on_ChibSearch_pressed"]
+[connection signal="pressed" from="UI/MiniGamesPopUp/VBoxContainer/ChibKarate" to="UI/MiniGamesPopUp/VBoxContainer/ChibKarate" method="_on_ChibKarate_pressed"]
 [connection signal="tree_entered" from="Jump_check" to="Jump_check" method="_on_Jump_check_tree_entered"]

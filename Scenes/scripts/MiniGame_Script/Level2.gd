@@ -3,6 +3,9 @@ extends "res://Scenes/scripts/MiniGame_Script/Level1.gd"
 
 
 
+func _ready():
+	get_node("stamina").set_value(save_file.stamina)
+
 
 func _on_Switch_body_entered(body):
 	if $Switch/AnimatedSprite.frame == 1:
@@ -51,3 +54,7 @@ func _on_shopBTN_pressed():
 		$CanvasLayer.hide()
 
 
+
+
+func _on_graveBTN_pressed():
+	get_tree().change_scene("res://Scenes/graveYard.tscn")

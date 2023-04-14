@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Images/background.webp" type="Texture" id=1]
 [ext_resource path="res://Scenes/minigame/walls.tres" type="TileSet" id=2]
@@ -30,6 +30,7 @@
 [ext_resource path="res://chibImage/Chib.png" type="Texture" id=28]
 [ext_resource path="res://fonts/monkeyFont2.tres" type="DynamicFont" id=29]
 [ext_resource path="res://Scenes/scripts/MiniGame_Script/MiniGamePop.gd" type="Script" id=30]
+[ext_resource path="res://fonts/monkeyFont3.tres" type="DynamicFont" id=31]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.5, 31.5 )
@@ -70,6 +71,28 @@ corner_radius_top_left = 25
 corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
+
+[sub_resource type="Theme" id=5]
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.0313726, 0.184314, 1, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 0.8, 0.8, 0.8, 0 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 1, 1, 1, 0 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="Level3" type="Node2D"]
 script = ExtResource( 17 )
@@ -470,7 +493,7 @@ custom_constants/separation = 10
 [node name="ChibRacing" type="Button" parent="UI/MiniGamesPopUp/VBoxContainer"]
 margin_right = 68.0
 margin_bottom = 20.0
-text = "RACING"
+text = "RUNNER"
 script = ExtResource( 30 )
 
 [node name="ChibSearch" type="Button" parent="UI/MiniGamesPopUp/VBoxContainer"]
@@ -484,14 +507,7 @@ script = ExtResource( 30 )
 margin_top = 60.0
 margin_right = 68.0
 margin_bottom = 80.0
-text = "FIGHT"
-script = ExtResource( 30 )
-
-[node name="ChibWack" type="Button" parent="UI/MiniGamesPopUp/VBoxContainer"]
-margin_top = 90.0
-margin_right = 68.0
-margin_bottom = 110.0
-text = "WACK"
+text = "SPEED"
 script = ExtResource( 30 )
 
 [node name="Player" parent="." instance=ExtResource( 10 )]
@@ -529,6 +545,30 @@ position = Vector2( 50, 878 )
 [node name="Area2D" parent="." instance=ExtResource( 18 )]
 position = Vector2( 1004, 421 )
 
+[node name="stamina" type="ProgressBar" parent="."]
+anchor_left = 9.578
+anchor_top = -3.641
+anchor_right = 9.578
+anchor_bottom = -3.641
+margin_left = 314.0
+margin_top = 221.0
+margin_right = 765.0
+margin_bottom = 269.0
+rect_pivot_offset = Vector2( 248, 24 )
+theme = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_styles/fg = SubResource( 6 )
+custom_styles/bg = SubResource( 7 )
+percent_visible = false
+
+[node name="StaminaLBL" type="Label" parent="stamina"]
+margin_left = 181.0
+margin_top = 12.0
+margin_right = 252.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 31 )
+text = "Stamina"
+
 [connection signal="pressed" from="UI/HBoxContainer/gamesBTN" to="." method="_on_gamesBTN_pressed"]
 [connection signal="pressed" from="UI/HBoxContainer/graveBTN" to="." method="_on_graveBTN_pressed"]
 [connection signal="pressed" from="UI/Settingspopup/VBoxContainer/backButton" to="UI/Settingspopup/VBoxContainer/backButton" method="_on_backButton_pressed"]
@@ -538,9 +578,14 @@ position = Vector2( 1004, 421 )
 [connection signal="pressed" from="UI/DeathPopUp/VBoxContainer/RestartBtn" to="UI/Settingspopup/VBoxContainer/quitButton" method="_on_RestartBtn_pressed"]
 [connection signal="pressed" from="UI/MiniGamesPopUp/VBoxContainer/ChibRacing" to="UI/MiniGamesPopUp/VBoxContainer/ChibRacing" method="_on_ChibRacing_pressed"]
 [connection signal="pressed" from="UI/MiniGamesPopUp/VBoxContainer/ChibSearch" to="UI/MiniGamesPopUp/VBoxContainer/ChibSearch" method="_on_ChibSearch_pressed"]
+[connection signal="pressed" from="UI/MiniGamesPopUp/VBoxContainer/ChibKarate" to="UI/MiniGamesPopUp/VBoxContainer/ChibKarate" method="_on_ChibKarate_pressed"]
 [connection signal="body_entered" from="Switch" to="." method="_on_Switch_body_entered"]
 [connection signal="body_entered" from="FSwitch" to="." method="_on_FSwitch_body_entered"]
 [connection signal="body_entered" from="FSwitch2" to="." method="_on_FSwitch_body_entered"]
+[connection signal="coin_collected" from="Coin" to="UI/HUD" method="_on_Coin_coin_collected"]
+[connection signal="coin_collected" from="Coin2" to="UI/HUD" method="_on_Coin2_coin_collected"]
+[connection signal="coin_collected" from="Coin3" to="UI/HUD" method="_on_Coin3_coin_collected"]
+[connection signal="coin_collected" from="Coin4" to="UI/HUD" method="_on_Coin4_coin_collected"]
 [connection signal="body_entered" from="Bird" to="UI/Settingspopup/VBoxContainer/quitButton" method="_on_Bird_body_entered"]
 [connection signal="use_move_vector" from="CanvasLayer" to="Player" method="_on_CanvasLayer_use_move_vector"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

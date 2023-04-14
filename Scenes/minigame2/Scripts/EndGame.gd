@@ -6,6 +6,7 @@ onready var save_file = SaveData.gameData
 func _ready():
 	Signals.connect("killplayer",self,"gameover")
 	get_node("stamina").set_value(save_file.stamina)
+
 	
 
 	#get_tree().paused = true

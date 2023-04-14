@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Scenes/minigame/walls.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/minigame/Player.tscn" type="PackedScene" id=2]
@@ -13,7 +13,6 @@
 [ext_resource path="res://Scenes/scripts/MiniGame_Script/quitButton.gd" type="Script" id=11]
 [ext_resource path="res://Scenes/scripts/Settingsmenu.gd" type="Script" id=12]
 [ext_resource path="res://Images/cog.png" type="Texture" id=13]
-[ext_resource path="res://Images/1413908.png" type="Texture" id=14]
 [ext_resource path="res://Scenes/minigame/FSwitch.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/minigame/ban.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/minigame2/Jump_check.tscn" type="PackedScene" id=17]
@@ -271,19 +270,6 @@ margin_right = 51.0
 margin_bottom = 180.0
 min_value = -30.0
 max_value = 0.0
-
-[node name="shopBTN" type="Button" parent="UI"]
-anchor_left = 0.09
-anchor_top = 0.051
-anchor_right = 0.09
-anchor_bottom = 0.051
-margin_left = -81.2
-margin_top = -84.92
-margin_right = 5.79999
-margin_bottom = 1.08
-icon = ExtResource( 14 )
-flat = true
-expand_icon = true
 
 [node name="settingsBTN" type="Button" parent="UI"]
 anchor_left = 0.903
@@ -549,7 +535,6 @@ text = "Stamina"
 [connection signal="pressed" from="UI/HBoxContainer/graveBTN" to="." method="_on_graveBTN_pressed"]
 [connection signal="pressed" from="UI/Settingspopup/VBoxContainer/backButton" to="UI/Settingspopup/VBoxContainer/backButton" method="_on_backButton_pressed"]
 [connection signal="pressed" from="UI/Settingspopup/VBoxContainer/quitButton" to="UI/Settingspopup/VBoxContainer/quitButton" method="_on_quitButton_pressed"]
-[connection signal="pressed" from="UI/shopBTN" to="." method="_on_shopBTN_pressed"]
 [connection signal="pressed" from="UI/settingsBTN" to="." method="_on_settingsBTN_pressed"]
 [connection signal="pressed" from="UI/MiniGamesPopUp/VBoxContainer/ChibRacing" to="UI/MiniGamesPopUp/VBoxContainer/ChibRacing" method="_on_ChibRacing_pressed"]
 [connection signal="pressed" from="UI/MiniGamesPopUp/VBoxContainer/ChibSearch" to="UI/MiniGamesPopUp/VBoxContainer/ChibSearch" method="_on_ChibSearch_pressed"]

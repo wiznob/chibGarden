@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Images/cog.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Chib.tscn" type="PackedScene" id=2]
@@ -19,7 +19,6 @@
 [ext_resource path="res://foodImg/mango (1).png" type="Texture" id=17]
 [ext_resource path="res://foodImg/Orange (1).png" type="Texture" id=18]
 [ext_resource path="res://foodImg/Apple (1).png" type="Texture" id=19]
-[ext_resource path="res://chibImage/Chib.png" type="Texture" id=20]
 [ext_resource path="res://Scenes/test.tscn" type="PackedScene" id=21]
 [ext_resource path="res://foodImg/Lemon.png" type="Texture" id=22]
 [ext_resource path="res://Images/Coin.png" type="Texture" id=23]
@@ -254,32 +253,6 @@ text = "Lemon -  15 coins"
 icon = ExtResource( 22 )
 expand_icon = true
 
-[node name="chibsLBL" type="Label" parent="shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 684.0
-margin_right = 1024.0
-margin_bottom = 728.0
-custom_fonts/font = ExtResource( 14 )
-text = "Chibs"
-align = 1
-
-[node name="basic" type="Button" parent="shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 732.0
-margin_right = 1024.0
-margin_bottom = 782.0
-custom_fonts/font = ExtResource( 14 )
-text = "Buy a basic chib - 60 coins"
-icon = ExtResource( 20 )
-expand_icon = true
-
-[node name="super" type="Button" parent="shopPopUP/ScrollContainer/VBoxContainer"]
-margin_top = 786.0
-margin_right = 1024.0
-margin_bottom = 836.0
-custom_fonts/font = ExtResource( 14 )
-text = "Super chib - 150 coins"
-icon = ExtResource( 20 )
-expand_icon = true
-
 [node name="Settingspopup" type="PopupPanel" parent="."]
 anchor_left = 0.5
 anchor_top = 0.46
@@ -468,7 +441,7 @@ texture = ExtResource( 23 )
 [node name="CoinCount" type="Label" parent="CoinContainer"]
 margin_right = 40.0
 margin_bottom = 14.0
-rect_scale = Vector2( 5, 5 )
+rect_scale = Vector2( 3.5, 3.5 )
 
 [connection signal="timeout" from="Timer" to="." method="timeUP"]
 [connection signal="pressed" from="HBoxContainer/feedBTN" to="." method="_on_feedBTN_pressed"]

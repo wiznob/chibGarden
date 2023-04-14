@@ -1,9 +1,8 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Images/background.webp" type="Texture" id=1]
 [ext_resource path="res://Scenes/minigame/walls.tres" type="TileSet" id=2]
 [ext_resource path="res://Scenes/minigame/images_Minigame/stone.png" type="Texture" id=3]
-[ext_resource path="res://Images/1413908.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/scripts/MiniGame_Script/quitButton.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/scripts/Settingsmenu.gd" type="Script" id=6]
 [ext_resource path="res://Images/cog.png" type="Texture" id=7]
@@ -253,19 +252,6 @@ margin_right = 51.0
 margin_bottom = 180.0
 min_value = -30.0
 max_value = 0.0
-
-[node name="shopBTN" type="Button" parent="UI"]
-anchor_left = 0.09
-anchor_top = 0.051
-anchor_right = 0.09
-anchor_bottom = 0.051
-margin_left = -81.2
-margin_top = -84.92
-margin_right = 5.79999
-margin_bottom = 1.08
-icon = ExtResource( 4 )
-flat = true
-expand_icon = true
 
 [node name="settingsBTN" type="Button" parent="UI"]
 anchor_left = 0.903
@@ -598,7 +584,6 @@ text = "RESTART GAME"
 [connection signal="pressed" from="UI/HBoxContainer/graveBTN" to="." method="_on_graveBTN_pressed"]
 [connection signal="pressed" from="UI/Settingspopup/VBoxContainer/backButton" to="UI/Settingspopup/VBoxContainer/backButton" method="_on_backButton_pressed"]
 [connection signal="pressed" from="UI/Settingspopup/VBoxContainer/quitButton" to="UI/Settingspopup/VBoxContainer/quitButton" method="_on_quitButton_pressed"]
-[connection signal="pressed" from="UI/shopBTN" to="." method="_on_shopBTN_pressed"]
 [connection signal="pressed" from="UI/settingsBTN" to="." method="_on_settingsBTN_pressed"]
 [connection signal="pressed" from="UI/DeathPopUp/VBoxContainer/RestartBtn" to="UI/Settingspopup/VBoxContainer/quitButton" method="_on_RestartBtn_pressed"]
 [connection signal="pressed" from="UI/MiniGamesPopUp/VBoxContainer/ChibRacing" to="UI/MiniGamesPopUp/VBoxContainer/ChibRacing" method="_on_ChibRacing_pressed"]

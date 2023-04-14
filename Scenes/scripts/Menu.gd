@@ -97,6 +97,7 @@ func _on_bananna_pressed():
 		save_foods.bananacount = bananana
 		save_foods.money = moneyey
 		FoodData.save_data()
+		$CoinContainer/CoinCount.set_text(str(save_foods.money))
 	else: pass
 
 
@@ -107,6 +108,7 @@ func _on_apple_pressed():
 		save_foods.applecount = applele
 		save_foods.money = moneyey
 		FoodData.save_data()
+		$CoinContainer/CoinCount.set_text(str(save_foods.money))
 	else: pass
 
 func _on_mango_pressed():
@@ -116,6 +118,7 @@ func _on_mango_pressed():
 		save_foods.mangocount = mangogo
 		save_foods.money = moneyey
 		FoodData.save_data()
+		$CoinContainer/CoinCount.set_text(str(save_foods.money))
 	else: pass
 
 func _on_orange_pressed():
@@ -125,6 +128,7 @@ func _on_orange_pressed():
 		save_foods.orangecount = orangege
 		save_foods.money = moneyey
 		FoodData.save_data()
+		$CoinContainer/CoinCount.set_text(str(save_foods.money))
 	else: pass
 
 
@@ -135,6 +139,7 @@ func _on_Lemon_pressed():
 		save_foods.lemoncount = lemonon
 		save_foods.money = moneyey
 		FoodData.save_data()
+		$CoinContainer/CoinCount.set_text(str(save_foods.money))
 	else: pass
 
 
@@ -145,6 +150,7 @@ func _on_yBooster_pressed():
 		save_foods.enhancerYcount = enhancerY
 		save_foods.money = moneyey
 		FoodData.save_data()
+		$CoinContainer/CoinCount.set_text(str(save_foods.money))
 	else: pass
 
 
@@ -155,6 +161,7 @@ func _on_bBooster_pressed():
 		save_foods.enhancerBcount = enhancerB
 		save_foods.money = moneyey
 		FoodData.save_data()
+		$CoinContainer/CoinCount.set_text(str(save_foods.money))
 	else: pass
 
 
@@ -165,6 +172,7 @@ func _on_gBooster_pressed():
 		save_foods.enhancerGcount = enhancerG
 		save_foods.money = moneyey
 		FoodData.save_data()
+		$CoinContainer/CoinCount.set_text(str(save_foods.money))
 	else: pass
 
 
@@ -175,6 +183,7 @@ func _on_rBooster_pressed():
 		save_foods.enhancerRcount = enhancerR
 		save_foods.money = moneyey
 		FoodData.save_data()
+		$CoinContainer/CoinCount.set_text(str(save_foods.money))
 	else: pass
 
 
@@ -185,4 +194,5 @@ func _on_pBooster_pressed():
 		save_foods.enhancerPcount = enhancerP
 		save_foods.money = moneyey
 		FoodData.save_data()
+		$CoinContainer/CoinCount.set_text(str(save_foods.money))
 	else: pass

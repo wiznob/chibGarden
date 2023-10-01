@@ -7,7 +7,12 @@ var gameData = {}
 
 func _ready():
 	load_data()
-
+	
+func testMode():
+	var dir = Directory.new()
+	dir.remove("user://HighScore")
+	load_data()
+	
 func save_data():
 	var file = File.new()
 	file.open(SAVE_FILE, file.WRITE)

@@ -1,4 +1,4 @@
-extends "res://Scenes/scripts/RichTextLabel.gd"
+extends "res://Scenes/scripts/names.gd"
 
 
 # Declare member variables here. Examples:
@@ -9,6 +9,7 @@ extends "res://Scenes/scripts/RichTextLabel.gd"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	show()
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

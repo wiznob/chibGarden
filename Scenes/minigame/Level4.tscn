@@ -553,7 +553,7 @@ custom_constants/separation = 10
 [node name="ChibRacing" type="Button" parent="UI/MiniGamesPopUp/VBoxContainer"]
 margin_right = 68.0
 margin_bottom = 20.0
-text = "RUNNER"
+text = "RACING"
 script = ExtResource( 30 )
 
 [node name="ChibSearch" type="Button" parent="UI/MiniGamesPopUp/VBoxContainer"]
@@ -567,7 +567,14 @@ script = ExtResource( 30 )
 margin_top = 60.0
 margin_right = 68.0
 margin_bottom = 80.0
-text = "SPEED"
+text = "FIGHT"
+script = ExtResource( 30 )
+
+[node name="ChibWack" type="Button" parent="UI/MiniGamesPopUp/VBoxContainer"]
+margin_top = 90.0
+margin_right = 68.0
+margin_bottom = 110.0
+text = "WACK"
 script = ExtResource( 30 )
 
 [node name="Player" parent="." instance=ExtResource( 13 )]
@@ -634,7 +641,6 @@ text = "Stamina"
 [connection signal="pressed" from="UI/DeathPopUp/VBoxContainer/RestartBtn" to="UI/Settingspopup/VBoxContainer/quitButton" method="_on_RestartBtn_pressed"]
 [connection signal="pressed" from="UI/MiniGamesPopUp/VBoxContainer/ChibRacing" to="UI/MiniGamesPopUp/VBoxContainer/ChibRacing" method="_on_ChibRacing_pressed"]
 [connection signal="pressed" from="UI/MiniGamesPopUp/VBoxContainer/ChibSearch" to="UI/MiniGamesPopUp/VBoxContainer/ChibSearch" method="_on_ChibSearch_pressed"]
-[connection signal="pressed" from="UI/MiniGamesPopUp/VBoxContainer/ChibKarate" to="UI/MiniGamesPopUp/VBoxContainer/ChibKarate" method="_on_ChibKarate_pressed"]
 [connection signal="use_move_vector" from="CanvasLayer" to="Player" method="_on_CanvasLayer_use_move_vector"]
 [connection signal="coin_collected" from="Coin" to="UI/HUD" method="_on_Coin_coin_collected"]
 [connection signal="coin_collected" from="Coin2" to="UI/HUD" method="_on_Coin2_coin_collected"]
